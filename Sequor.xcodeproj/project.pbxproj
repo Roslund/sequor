@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AD1F061A236760CC00F74D9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F0619236760CC00F74D9A /* AppDelegate.swift */; };
+		AD1F061C236760CC00F74D9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F061B236760CC00F74D9A /* SceneDelegate.swift */; };
+		AD1F061E236760CC00F74D9A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F061D236760CC00F74D9A /* ContentView.swift */; };
+		AD1F0620236760CD00F74D9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD1F061F236760CD00F74D9A /* Assets.xcassets */; };
+		AD1F0623236760CD00F74D9A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD1F0622236760CD00F74D9A /* Preview Assets.xcassets */; };
+		AD1F0626236760CD00F74D9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD1F0624236760CD00F74D9A /* LaunchScreen.storyboard */; };
+		AD1F0631236760CD00F74D9A /* SequorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F0630236760CD00F74D9A /* SequorTests.swift */; };
+		AD1F063C236760CD00F74D9A /* SequorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F063B236760CD00F74D9A /* SequorUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AD1F062D236760CD00F74D9A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD1F060E236760CC00F74D9A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD1F0615236760CC00F74D9A;
+			remoteInfo = Sequor;
+		};
+		AD1F0638236760CD00F74D9A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD1F060E236760CC00F74D9A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD1F0615236760CC00F74D9A;
+			remoteInfo = Sequor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AD1F0616236760CC00F74D9A /* Sequor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sequor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD1F0619236760CC00F74D9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AD1F061B236760CC00F74D9A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AD1F061D236760CC00F74D9A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AD1F061F236760CD00F74D9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD1F0622236760CD00F74D9A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AD1F0625236760CD00F74D9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AD1F0627236760CD00F74D9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD1F062C236760CD00F74D9A /* SequorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SequorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD1F0630236760CD00F74D9A /* SequorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequorTests.swift; sourceTree = "<group>"; };
+		AD1F0632236760CD00F74D9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD1F0637236760CD00F74D9A /* SequorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SequorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD1F063B236760CD00F74D9A /* SequorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequorUITests.swift; sourceTree = "<group>"; };
+		AD1F063D236760CD00F74D9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD1F0649236761BD00F74D9A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD1F0613236760CC00F74D9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD1F0629236760CD00F74D9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD1F0634236760CD00F74D9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AD1F060D236760CC00F74D9A = {
+			isa = PBXGroup;
+			children = (
+				AD1F0649236761BD00F74D9A /* README.md */,
+				AD1F0618236760CC00F74D9A /* Sequor */,
+				AD1F062F236760CD00F74D9A /* SequorTests */,
+				AD1F063A236760CD00F74D9A /* SequorUITests */,
+				AD1F0617236760CC00F74D9A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AD1F0617236760CC00F74D9A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD1F0616236760CC00F74D9A /* Sequor.app */,
+				AD1F062C236760CD00F74D9A /* SequorTests.xctest */,
+				AD1F0637236760CD00F74D9A /* SequorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD1F0618236760CC00F74D9A /* Sequor */ = {
+			isa = PBXGroup;
+			children = (
+				AD1F064A236761C800F74D9A /* Views */,
+				AD1F0619236760CC00F74D9A /* AppDelegate.swift */,
+				AD1F061B236760CC00F74D9A /* SceneDelegate.swift */,
+				AD1F061F236760CD00F74D9A /* Assets.xcassets */,
+				AD1F0624236760CD00F74D9A /* LaunchScreen.storyboard */,
+				AD1F0627236760CD00F74D9A /* Info.plist */,
+				AD1F0621236760CD00F74D9A /* Preview Content */,
+			);
+			path = Sequor;
+			sourceTree = "<group>";
+		};
+		AD1F0621236760CD00F74D9A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AD1F0622236760CD00F74D9A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AD1F062F236760CD00F74D9A /* SequorTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD1F0630236760CD00F74D9A /* SequorTests.swift */,
+				AD1F0632236760CD00F74D9A /* Info.plist */,
+			);
+			path = SequorTests;
+			sourceTree = "<group>";
+		};
+		AD1F063A236760CD00F74D9A /* SequorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AD1F063B236760CD00F74D9A /* SequorUITests.swift */,
+				AD1F063D236760CD00F74D9A /* Info.plist */,
+			);
+			path = SequorUITests;
+			sourceTree = "<group>";
+		};
+		AD1F064A236761C800F74D9A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AD1F061D236760CC00F74D9A /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD1F0615236760CC00F74D9A /* Sequor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD1F0640236760CD00F74D9A /* Build configuration list for PBXNativeTarget "Sequor" */;
+			buildPhases = (
+				AD1F0612236760CC00F74D9A /* Sources */,
+				AD1F0613236760CC00F74D9A /* Frameworks */,
+				AD1F0614236760CC00F74D9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Sequor;
+			productName = Sequor;
+			productReference = AD1F0616236760CC00F74D9A /* Sequor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AD1F062B236760CD00F74D9A /* SequorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD1F0643236760CD00F74D9A /* Build configuration list for PBXNativeTarget "SequorTests" */;
+			buildPhases = (
+				AD1F0628236760CD00F74D9A /* Sources */,
+				AD1F0629236760CD00F74D9A /* Frameworks */,
+				AD1F062A236760CD00F74D9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD1F062E236760CD00F74D9A /* PBXTargetDependency */,
+			);
+			name = SequorTests;
+			productName = SequorTests;
+			productReference = AD1F062C236760CD00F74D9A /* SequorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AD1F0636236760CD00F74D9A /* SequorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD1F0646236760CD00F74D9A /* Build configuration list for PBXNativeTarget "SequorUITests" */;
+			buildPhases = (
+				AD1F0633236760CD00F74D9A /* Sources */,
+				AD1F0634236760CD00F74D9A /* Frameworks */,
+				AD1F0635236760CD00F74D9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD1F0639236760CD00F74D9A /* PBXTargetDependency */,
+			);
+			name = SequorUITests;
+			productName = SequorUITests;
+			productReference = AD1F0637236760CD00F74D9A /* SequorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AD1F060E236760CC00F74D9A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Anton Roslund";
+				TargetAttributes = {
+					AD1F0615236760CC00F74D9A = {
+						CreatedOnToolsVersion = 11.2;
+					};
+					AD1F062B236760CD00F74D9A = {
+						CreatedOnToolsVersion = 11.2;
+						TestTargetID = AD1F0615236760CC00F74D9A;
+					};
+					AD1F0636236760CD00F74D9A = {
+						CreatedOnToolsVersion = 11.2;
+						TestTargetID = AD1F0615236760CC00F74D9A;
+					};
+				};
+			};
+			buildConfigurationList = AD1F0611236760CC00F74D9A /* Build configuration list for PBXProject "Sequor" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AD1F060D236760CC00F74D9A;
+			productRefGroup = AD1F0617236760CC00F74D9A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD1F0615236760CC00F74D9A /* Sequor */,
+				AD1F062B236760CD00F74D9A /* SequorTests */,
+				AD1F0636236760CD00F74D9A /* SequorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AD1F0614236760CC00F74D9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD1F0626236760CD00F74D9A /* LaunchScreen.storyboard in Resources */,
+				AD1F0623236760CD00F74D9A /* Preview Assets.xcassets in Resources */,
+				AD1F0620236760CD00F74D9A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD1F062A236760CD00F74D9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD1F0635236760CD00F74D9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD1F0612236760CC00F74D9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD1F061A236760CC00F74D9A /* AppDelegate.swift in Sources */,
+				AD1F061C236760CC00F74D9A /* SceneDelegate.swift in Sources */,
+				AD1F061E236760CC00F74D9A /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD1F0628236760CD00F74D9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD1F0631236760CD00F74D9A /* SequorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD1F0633236760CD00F74D9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD1F063C236760CD00F74D9A /* SequorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AD1F062E236760CD00F74D9A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD1F0615236760CC00F74D9A /* Sequor */;
+			targetProxy = AD1F062D236760CD00F74D9A /* PBXContainerItemProxy */;
+		};
+		AD1F0639236760CD00F74D9A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD1F0615236760CC00F74D9A /* Sequor */;
+			targetProxy = AD1F0638236760CD00F74D9A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AD1F0624236760CD00F74D9A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD1F0625236760CD00F74D9A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AD1F063E236760CD00F74D9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AD1F063F236760CD00F74D9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AD1F0641236760CD00F74D9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Sequor/Preview Content\"";
+				DEVELOPMENT_TEAM = M5QH7FM2T9;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Sequor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.roslund.Sequor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AD1F0642236760CD00F74D9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Sequor/Preview Content\"";
+				DEVELOPMENT_TEAM = M5QH7FM2T9;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Sequor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.roslund.Sequor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AD1F0644236760CD00F74D9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M5QH7FM2T9;
+				INFOPLIST_FILE = SequorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.roslund.SequorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sequor.app/Sequor";
+			};
+			name = Debug;
+		};
+		AD1F0645236760CD00F74D9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M5QH7FM2T9;
+				INFOPLIST_FILE = SequorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.roslund.SequorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sequor.app/Sequor";
+			};
+			name = Release;
+		};
+		AD1F0647236760CD00F74D9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M5QH7FM2T9;
+				INFOPLIST_FILE = SequorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.roslund.SequorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Sequor;
+			};
+			name = Debug;
+		};
+		AD1F0648236760CD00F74D9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M5QH7FM2T9;
+				INFOPLIST_FILE = SequorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.roslund.SequorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Sequor;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD1F0611236760CC00F74D9A /* Build configuration list for PBXProject "Sequor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD1F063E236760CD00F74D9A /* Debug */,
+				AD1F063F236760CD00F74D9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD1F0640236760CD00F74D9A /* Build configuration list for PBXNativeTarget "Sequor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD1F0641236760CD00F74D9A /* Debug */,
+				AD1F0642236760CD00F74D9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD1F0643236760CD00F74D9A /* Build configuration list for PBXNativeTarget "SequorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD1F0644236760CD00F74D9A /* Debug */,
+				AD1F0645236760CD00F74D9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD1F0646236760CD00F74D9A /* Build configuration list for PBXNativeTarget "SequorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD1F0647236760CD00F74D9A /* Debug */,
+				AD1F0648236760CD00F74D9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AD1F060E236760CC00F74D9A /* Project object */;
+}
