@@ -218,7 +218,6 @@
 					};
 					AD1F062B236760CD00F74D9A = {
 						CreatedOnToolsVersion = 11.2;
-						TestTargetID = AD1F0615236760CC00F74D9A;
 					};
 					AD1F0636236760CD00F74D9A = {
 						CreatedOnToolsVersion = 11.2;
@@ -505,7 +504,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M5QH7FM2T9;
 				INFOPLIST_FILE = SequorTests/Info.plist;
@@ -519,7 +517,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sequor.app/Sequor";
 			};
 			name = Debug;
 		};
@@ -527,7 +524,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M5QH7FM2T9;
 				INFOPLIST_FILE = SequorTests/Info.plist;
@@ -541,7 +537,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sequor.app/Sequor";
 			};
 			name = Release;
 		};
