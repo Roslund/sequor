@@ -1,0 +1,5 @@
+language: swift
+xcode_project: Sequor.xcodeproj
+xcode_scheme: Sequor
+xcode_destination: platform=iOS Simulator,OS=13.2,name=iPhone X
+
