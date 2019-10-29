@@ -44,7 +44,6 @@ struct LoginView: View {
                         .cornerRadius(15)
                 })
             }
-            
         }.padding(.all)
     }
 }

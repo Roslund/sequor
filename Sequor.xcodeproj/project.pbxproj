@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		132F7DC8236858AF00ACE585 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132F7DC7236858AF00ACE585 /* AccountView.swift */; };
 		13BFC8E72368435500BE20D0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFC8E62368435500BE20D0 /* LoginView.swift */; };
 		AD1F061A236760CC00F74D9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F0619236760CC00F74D9A /* AppDelegate.swift */; };
 		AD1F061C236760CC00F74D9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F061B236760CC00F74D9A /* SceneDelegate.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		132F7DC7236858AF00ACE585 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		13BFC8E62368435500BE20D0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AD1F0616236760CC00F74D9A /* Sequor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sequor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD1F0619236760CC00F74D9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			children = (
 				AD1F061D236760CC00F74D9A /* ContentView.swift */,
 				13BFC8E62368435500BE20D0 /* LoginView.swift */,
+				132F7DC7236858AF00ACE585 /* AccountView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				AD1F061C236760CC00F74D9A /* SceneDelegate.swift in Sources */,
 				13BFC8E72368435500BE20D0 /* LoginView.swift in Sources */,
 				AD1F061E236760CC00F74D9A /* ContentView.swift in Sources */,
+				132F7DC8236858AF00ACE585 /* AccountView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
