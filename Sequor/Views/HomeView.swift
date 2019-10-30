@@ -1,7 +1,9 @@
 import SwiftUI
 
-struct ContentView: View {
+struct HomeView: View {
     @State private var selection = 1
+    @State private var isUserLoggedIn: Bool = false
+    @State private var showLoginView: Bool = true
 
     var body: some View {
         TabView(selection: $selection) {
@@ -22,11 +24,14 @@ struct ContentView: View {
             }.tag(3)
             
         }.edgesIgnoringSafeArea(.top)
+            .sheet(isPresented: $showLoginView) {
+                LoginView()
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HomeView()
     }
 }
