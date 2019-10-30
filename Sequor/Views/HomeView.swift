@@ -2,7 +2,6 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var selection = 1
-    @State private var isUserLoggedIn: Bool = false
     @State private var showLoginView: Bool = true
 
     var body: some View {
@@ -24,8 +23,8 @@ struct HomeView: View {
             }.tag(3)
             
         }.edgesIgnoringSafeArea(.top)
-            .sheet(isPresented: $showLoginView) {
-                LoginView()
+        .sheet(isPresented: $showLoginView) {
+            LoginView(showLoginView: self.$showLoginView)
         }
     }
 }

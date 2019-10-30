@@ -3,6 +3,7 @@ import SwiftUI
 struct LoginView: View {
     
     @State private var userTelephoneNumber = ""
+    @Binding var showLoginView: Bool
     
     var body: some View {
         VStack {
@@ -32,8 +33,7 @@ struct LoginView: View {
             
             VStack {
                 Button(action: {
-                    // TODO
-                    // Put login logic in here
+                    self.showLoginView.toggle()
                 }, label: {
                     Text("Login")
                         .font(.title)
@@ -49,7 +49,9 @@ struct LoginView: View {
 }
 
 struct LoginView_Previews: PreviewProvider {
+    @State private static var showLoginView: Bool = true
+    
     static var previews: some View {
-        LoginView()
+        LoginView(showLoginView: $showLoginView)
     }
 }
