@@ -33,7 +33,10 @@ struct LoginView: View {
             
             VStack {
                 Button(action: {
-                    self.showLoginView.toggle()
+                    // The number is only accepted if it is in range 3...12 (for now)
+                    if 3...12 ~= self.userTelephoneNumber.count {
+                        self.showLoginView.toggle()
+                    }
                 }, label: {
                     Text("Login")
                         .font(.title)
