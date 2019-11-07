@@ -20,6 +20,8 @@
 		ADBEB00923743CB9001534CD /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBEB00823743CB9001534CD /* DashboardView.swift */; };
 		ADBEB00B23743E12001534CD /* CouponsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBEB00A23743E12001534CD /* CouponsView.swift */; };
 		ADBEB00D2374423D001534CD /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBEB00C2374423D001534CD /* PurchaseView.swift */; };
+		ADDFE16A23748F24007BD2A8 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDFE16923748F24007BD2A8 /* Coupon.swift */; };
+		ADDFE16D23748F4B007BD2A8 /* CouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDFE16C23748F4B007BD2A8 /* CouponView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		ADBEB00823743CB9001534CD /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		ADBEB00A23743E12001534CD /* CouponsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsView.swift; sourceTree = "<group>"; };
 		ADBEB00C2374423D001534CD /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
+		ADDFE16923748F24007BD2A8 /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
+		ADDFE16C23748F4B007BD2A8 /* CouponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 		AD1F0618236760CC00F74D9A /* Sequor */ = {
 			isa = PBXGroup;
 			children = (
+				ADDFE16823748F15007BD2A8 /* Models */,
 				AD1F064A236761C800F74D9A /* Views */,
 				AD1F0619236760CC00F74D9A /* AppDelegate.swift */,
 				AD1F061B236760CC00F74D9A /* SceneDelegate.swift */,
@@ -151,14 +156,31 @@
 		AD1F064A236761C800F74D9A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ADDFE16B23748F3B007BD2A8 /* CouponsView */,
 				AD1F061D236760CC00F74D9A /* HomeView.swift */,
 				13BFC8E62368435500BE20D0 /* LoginView.swift */,
 				132F7DC7236858AF00ACE585 /* AccountView.swift */,
 				ADBEB00823743CB9001534CD /* DashboardView.swift */,
-				ADBEB00A23743E12001534CD /* CouponsView.swift */,
 				ADBEB00C2374423D001534CD /* PurchaseView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		ADDFE16823748F15007BD2A8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ADDFE16923748F24007BD2A8 /* Coupon.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ADDFE16B23748F3B007BD2A8 /* CouponsView */ = {
+			isa = PBXGroup;
+			children = (
+				ADBEB00A23743E12001534CD /* CouponsView.swift */,
+				ADDFE16C23748F4B007BD2A8 /* CouponView.swift */,
+			);
+			path = CouponsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,7 +336,9 @@
 			files = (
 				ADBEB00D2374423D001534CD /* PurchaseView.swift in Sources */,
 				AD1F061A236760CC00F74D9A /* AppDelegate.swift in Sources */,
+				ADDFE16D23748F4B007BD2A8 /* CouponView.swift in Sources */,
 				ADBEB00923743CB9001534CD /* DashboardView.swift in Sources */,
+				ADDFE16A23748F24007BD2A8 /* Coupon.swift in Sources */,
 				AD1F061C236760CC00F74D9A /* SceneDelegate.swift in Sources */,
 				13BFC8E72368435500BE20D0 /* LoginView.swift in Sources */,
 				ADBEB00B23743E12001534CD /* CouponsView.swift in Sources */,
