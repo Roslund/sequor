@@ -1,28 +1,7 @@
 import SwiftUI
 
 struct CouponsView: View {
-    var coupons: [Coupon] = [
-        Coupon(
-            id: 0,
-            title: "First Logged Trip",
-            text: "Congratulations, You just logged your first trip. "
-                + "On your trip you saved 34g CO₂, compared to driving.",
-            discountPersentage: 10,
-            experation: Date()),
-        Coupon(
-            id: 1,
-            title: "200g of CO₂ Saved",
-            text: "You have saved the envirorment 200g of CO₂. "
-                + "For this we want to revard you. Here, have a coupon!",
-            discountPersentage: 12,
-            experation: Date()),
-        Coupon(
-            id: 2,
-            title: "Weekend Traveler",
-            text: "Busy week? You have made 10 trips this week using public transport.",
-            discountPersentage: 15,
-            experation: Date())
-    ]
+    var coupons: [Coupon] = []
 
     var body: some View {
         NavigationView {
