@@ -1,11 +1,3 @@
-//
-//  AccountView.swift
-//  Sequor
-//
-//  Created by Mattia Righetti on 29/10/2019.
-//  Copyright © 2019 Anton Roslund. All rights reserved.
-//
-
 import SwiftUI
 
 struct AccountView: View {

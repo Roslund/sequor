@@ -1,11 +1,3 @@
-//
-//  PushaseView.swift
-//  Sequor
-//
-//  Created by Anton Roslund on 2019-11-07.
-//  Copyright © 2019 Anton Roslund. All rights reserved.
-//
-
 import SwiftUI
 
 struct PurchaseView: View {
