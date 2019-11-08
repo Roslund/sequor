@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		132F7DC8236858AF00ACE585 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132F7DC7236858AF00ACE585 /* AccountView.swift */; };
+		13BD5C0D2375A45900B44A26 /* CapsuleGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BD5C0C2375A45900B44A26 /* CapsuleGraph.swift */; };
+		13BD5C102375A7CD00B44A26 /* +Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BD5C0F2375A7CD00B44A26 /* +Double.swift */; };
 		13BFC8E72368435500BE20D0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BFC8E62368435500BE20D0 /* LoginView.swift */; };
 		AD1F061A236760CC00F74D9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F0619236760CC00F74D9A /* AppDelegate.swift */; };
 		AD1F061C236760CC00F74D9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F061B236760CC00F74D9A /* SceneDelegate.swift */; };
@@ -43,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		132F7DC7236858AF00ACE585 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		13BD5C0C2375A45900B44A26 /* CapsuleGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleGraph.swift; sourceTree = "<group>"; };
+		13BD5C0F2375A7CD00B44A26 /* +Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+Double.swift"; sourceTree = "<group>"; };
 		13BFC8E62368435500BE20D0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AD1F0616236760CC00F74D9A /* Sequor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sequor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD1F0619236760CC00F74D9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +95,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13BD5C0B2375A3B500B44A26 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				13BD5C0C2375A45900B44A26 /* CapsuleGraph.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		13BD5C0E2375A7C000B44A26 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				13BD5C0F2375A7CD00B44A26 /* +Double.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		AD1F060D236760CC00F74D9A = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +135,7 @@
 		AD1F0618236760CC00F74D9A /* Sequor */ = {
 			isa = PBXGroup;
 			children = (
+				13BD5C0E2375A7C000B44A26 /* Utils */,
 				ADDFE16823748F15007BD2A8 /* Models */,
 				AD1F064A236761C800F74D9A /* Views */,
 				AD1F0619236760CC00F74D9A /* AppDelegate.swift */,
@@ -156,6 +177,7 @@
 		AD1F064A236761C800F74D9A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				13BD5C0B2375A3B500B44A26 /* Components */,
 				ADDFE16B23748F3B007BD2A8 /* CouponsView */,
 				AD1F061D236760CC00F74D9A /* HomeView.swift */,
 				13BFC8E62368435500BE20D0 /* LoginView.swift */,
@@ -339,10 +361,12 @@
 				ADDFE16D23748F4B007BD2A8 /* CouponView.swift in Sources */,
 				ADBEB00923743CB9001534CD /* DashboardView.swift in Sources */,
 				ADDFE16A23748F24007BD2A8 /* Coupon.swift in Sources */,
+				13BD5C0D2375A45900B44A26 /* CapsuleGraph.swift in Sources */,
 				AD1F061C236760CC00F74D9A /* SceneDelegate.swift in Sources */,
 				13BFC8E72368435500BE20D0 /* LoginView.swift in Sources */,
 				ADBEB00B23743E12001534CD /* CouponsView.swift in Sources */,
 				AD1F061E236760CC00F74D9A /* HomeView.swift in Sources */,
+				13BD5C102375A7CD00B44A26 /* +Double.swift in Sources */,
 				132F7DC8236858AF00ACE585 /* AccountView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
