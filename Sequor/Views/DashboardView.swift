@@ -3,7 +3,9 @@ import SwiftUI
 struct DashboardView: View {
     var body: some View {
         NavigationView {
-            Text("Dashbard View")
+            
+            CapsuleGraph(value: 29.34, maxvalue: 50.0, textLabel: "CO2 Saved")
+            
             .navigationBarTitle("Seqour CO₂", displayMode: .inline)
         }
     }
