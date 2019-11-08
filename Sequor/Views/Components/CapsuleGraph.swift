@@ -4,8 +4,13 @@ import SwiftUI
 
 struct CapsuleGraph: View {
     
-    var value: Double = 0
-    var maxvalue: Double = 50
+    // Not the cleanest method but that's the fastest way I've found
+    // (Needed for the animation)
+    @State private var stateValue: Double = 0
+    @State private var stateMaxvalue: Double = 50
+    
+    var value: Double
+    var maxValue: Double
     var textLabel: String
     
     var body: some View {
@@ -22,12 +27,17 @@ struct CapsuleGraph: View {
                 
                 RoundedRectangle(cornerRadius: 25)
                     .fill(Color.green)
-                    .frame(width: 140, height: CGFloat(value) / CGFloat(maxvalue) * 400)
+                    .frame(width: 140, height: CGFloat(stateValue) / CGFloat(stateMaxvalue) * 400)
                 
             }
             
             Text(textLabel)
                 .font(.title)
+        }.onAppear {
+            withAnimation {
+                self.stateMaxvalue = self.maxValue
+                self.stateValue = self.value
+            }
         }
     }
     
@@ -40,6 +50,6 @@ struct CapsuleGraph: View {
 
 struct CapsuleGraph_Previews: PreviewProvider {
     static var previews: some View {
-        CapsuleGraph(value: 23.4, maxvalue: 50.0, textLabel: "CO2 saved")
+        CapsuleGraph(value: 23.4, maxValue: 50.0, textLabel: "CO2 saved")
     }
 }
