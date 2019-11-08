@@ -20,8 +20,16 @@ class SequorUITests: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
-        
-        // Use recording to get started writing UI tests.
+
+        // Just cycle though all tabs
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Home"].tap()
+        tabBarsQuery.buttons["Purchase"].tap()
+        tabBarsQuery.buttons["Dashboard"].tap()
+        tabBarsQuery.buttons["Copouns"].tap()
+        tabBarsQuery.buttons["Profile"].tap()
+        tabBarsQuery.buttons["Dashboard"].tap()
+
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
