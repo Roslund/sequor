@@ -24,6 +24,7 @@
 		ADBEB00D2374423D001534CD /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBEB00C2374423D001534CD /* PurchaseView.swift */; };
 		ADDFE16A23748F24007BD2A8 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDFE16923748F24007BD2A8 /* Coupon.swift */; };
 		ADDFE16D23748F4B007BD2A8 /* CouponView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDFE16C23748F4B007BD2A8 /* CouponView.swift */; };
+		ADECEB142375AAD70097B726 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADECEB132375AAD70097B726 /* Ticket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		ADBEB00C2374423D001534CD /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
 		ADDFE16923748F24007BD2A8 /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
 		ADDFE16C23748F4B007BD2A8 /* CouponView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponView.swift; sourceTree = "<group>"; };
+		ADECEB132375AAD70097B726 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				ADDFE16923748F24007BD2A8 /* Coupon.swift */,
+				ADECEB132375AAD70097B726 /* Ticket.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADECEB142375AAD70097B726 /* Ticket.swift in Sources */,
 				ADBEB00D2374423D001534CD /* PurchaseView.swift in Sources */,
 				AD1F061A236760CC00F74D9A /* AppDelegate.swift in Sources */,
 				ADDFE16D23748F4B007BD2A8 /* CouponView.swift in Sources */,
