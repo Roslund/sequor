@@ -1,74 +1,58 @@
 import SwiftUI
 
 struct DashboardView: View {
-    @State var tracking = false
-    var totalCO2 = 200
-    var goal = 100
-    var current = 30
+  @State var showingSheet = false
+  @EnvironmentObject var appState: AppState
 
-    var body: some View {
-        NavigationView {
-            VStack {
-                if !tracking {
-                    Text("In total, you have saved").font(.headline).padding(.top)
-                    Text("\(totalCO2)KG CO₂").font(.largeTitle).fontWeight(.heavy)
-                    Text("By taking public transpot").font(.headline)
-                    Spacer()
-                    Text("Goal: \(goal)KG")
-                    RectangleGraph(percentage: CGFloat(current)/CGFloat(goal), width: 180)
-                    Text("Currently: \(current)KG")
-                    Spacer()
-                    Button(action: { self.tracking.toggle() }, label: {
-                        HStack {
-                            Spacer()
-                            VStack {
-                                Text("Start Tracking")
-                                Text("Ticket time remaining: 38min").font(.caption)
-                            }
-                            Spacer()
-                        }
-                    })
-                        .padding(.vertical)
-                        .foregroundColor(.white)
-                        .background(Color.green)
-                        .cornerRadius(10)
-                        .padding(.horizontal, 20)
-                        .padding(.bottom, 24)
-                } else {
-                    ZStack(alignment: .bottom) {
-                        MapView()
-                        Button(action: { self.tracking.toggle() }, label: {
-                            HStack {
-                                Spacer()
-                                VStack {
-                                    Text("Stop Tracking")
-                                    Text("Ticket time remaining: 38min").font(.caption)
-                                }
-                                Spacer()
-                            }
-                        })
-                            .padding(.vertical)
-                            .foregroundColor(.white)
-                            .background(Color.red)
-                            .cornerRadius(10)
-                            .padding(.horizontal, 20)
-                            .padding(.bottom, 24)
-                    }
-                }
+  var body: some View {
+    NavigationView {
+      VStack {
+        Text("In total, you have saved")
+          .font(.headline)
+          .padding(.top)
+        Text("\(appState.totalCO2) KG CO₂")
+          .font(.largeTitle)
+          .fontWeight(.heavy)
+        Text("By taking public transpot")
+          .font(.headline)
+        Spacer()
+        ZStack {
+          Image("Apple_Stage_\(appState.treeLevel)").resizable()
+          if !appState.coupons.isEmpty {
+            Button(
+              action: {
+                self.showingSheet = true
+            },
+              label: {
+                Image(systemName: "dollarsign.circle.fill").font(.system(size: 32))
             }
-            .navigationBarTitle("Seqour CO₂", displayMode: .inline)
-            .navigationBarItems(trailing:
-                VStack {
-                    Image(systemName: "calendar")
-                    Text("History").font(.caption)
-                }
-            )
+            ).popover(isPresented: $showingSheet) {
+              CouponView(coupon: self.appState.coupons.first!)
+            }
+          }
         }
+        Spacer()
+
+      }
+      .navigationBarTitle("Seqour CO₂", displayMode: .inline)
     }
+  }
 }
 
 struct DashboardView_Previews: PreviewProvider {
-    static var previews: some View {
-        DashboardView()
-    }
+  static var previews: some View {
+    DashboardView().environmentObject({ () -> AppState in
+      let appState = AppState()
+      appState.treeLevel = 4
+      appState.coupons.append(Coupon(
+        id: 1,
+        title: "200g of CO₂ Saved",
+        text: "You have saved the envirorment 200g of CO₂. "
+          + "For this we want to revard you. Here, have a coupon!",
+        discountPersentage: 12,
+        experation: Date())
+      )
+      return appState
+      }())
+  }
 }
