@@ -4,7 +4,7 @@ import SwiftUI
 /// Provides the relatime time, in minutes, to a given date.
 /// And updates it every 30 secounds.
 struct RelativeTimeText: View {
-  @ObservedObject var relativeTime: RelativeTime
+  @ObservedObject private var relativeTime: RelativeTime
   let textAfter: String
   let textBefore: String
   
@@ -19,7 +19,7 @@ struct RelativeTimeText: View {
   }
 }
 
-class RelativeTime: ObservableObject {
+private class RelativeTime: ObservableObject {
   var timer = Timer()
   @Published var text: String
   

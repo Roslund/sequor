@@ -3,6 +3,7 @@ import SwiftUI
 struct PurchaseView: View {
   @EnvironmentObject var appState: AppState
   @EnvironmentObject var activityManager: ActivityManager
+  @State private var showActivitySheet = false
 
   var body: some View {
     NavigationView {
@@ -33,7 +34,7 @@ struct PurchaseView: View {
           if self.appState.activeTicket == nil {
             self.appState.activateTicket()
           } else {
-            self.appState.activeTicket = nil
+            self.appState.invalidateTicket()
           }
         }, label: {
           HStack {
@@ -53,7 +54,22 @@ struct PurchaseView: View {
           .padding(.horizontal, 20)
           .padding(.bottom, 24)
 
-      }.navigationBarTitle("Purchase", displayMode: .inline)
+      }
+      .navigationBarTitle("Purchase", displayMode: .inline)
+      .navigationBarItems(trailing:
+        Button(action: {
+                 self.showActivitySheet = true
+               },
+               label: {
+                 Image(systemName: "square.and.arrow.up")
+               }))
+      .sheet(isPresented: $showActivitySheet) {
+        ActivityView(activityItems: [
+          // swiftlint:disable:next force_try
+          String(data: try! JSONEncoder().encode(self.appState.locationLogger!.trip), encoding: .utf8)!
+            ], applicationActivities: nil)
+      }
+
     }
   }
 }

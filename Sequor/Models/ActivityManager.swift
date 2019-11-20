@@ -3,7 +3,7 @@ import CoreMotion
 
 /// Provides the user activity (e.g. Walking, Running, Stationary)
 final class ActivityManager: ObservableObject {
-  let manager = CMMotionActivityManager()
+  private let manager = CMMotionActivityManager()
 
   /// The activity the user is performing, represented by emoji.
   @Published var activityString: String = ""
