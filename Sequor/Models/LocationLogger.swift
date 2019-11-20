@@ -1,6 +1,6 @@
 import CoreLocation
 
-class LocationLogger: NSObject, ObservableObject, CLLocationManagerDelegate {
+final class LocationLogger: NSObject, ObservableObject, CLLocationManagerDelegate {
   let locationManager = CLLocationManager()
   var trip: Trip
 

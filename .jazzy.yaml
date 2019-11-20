@@ -1,4 +1,6 @@
+readme: readme.md
 github_url: https://github.com/Roslund/sequor
+theme: apple
 
 min_acl: internal
 

@@ -202,6 +202,7 @@
 		ADA166EC238430D800C53998 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				ADD8B722237B4ECF00D8DD55 /* RelativeTime.swift */,
 				ADA166ED238430E700C53998 /* ActivityView.swift */,
 			);
 			path = Components;
@@ -234,7 +235,6 @@
 				ADDFE16923748F24007BD2A8 /* Coupon.swift */,
 				ADECEB132375AAD70097B726 /* Ticket.swift */,
 				ADD8B71C237B0C9F00D8DD55 /* AppState.swift */,
-				ADD8B722237B4ECF00D8DD55 /* RelativeTime.swift */,
 				ADD8B724237BF99900D8DD55 /* ActivityManager.swift */,
 				AD18F04D2385352300F3D1B8 /* LocationLogger.swift */,
 				AD18F04F2385358300F3D1B8 /* Trip.swift */,

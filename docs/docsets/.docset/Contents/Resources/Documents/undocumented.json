@@ -1,0 +1,103 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Models/ActivityManager.swift",
+      "line": 14,
+      "symbol": "ActivityManager.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Models/ActivityManager.swift",
+      "line": 20,
+      "symbol": "ActivityManager.startMonitoring()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Models/ActivityManager.swift",
+      "line": 31,
+      "symbol": "ActivityManager.stopMonitoring()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Models/AppState.swift",
+      "line": 22,
+      "symbol": "AppState.lastTrip",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Models/AppState.swift",
+      "line": 24,
+      "symbol": "AppState.locationLogger",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Models/AppState.swift",
+      "line": 26,
+      "symbol": "AppState.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Models/LocationLogger.swift",
+      "line": 3,
+      "symbol": "LocationLogger",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Models/LocationLogger.swift",
+      "line": 4,
+      "symbol": "LocationLogger.locationManager",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Models/LocationLogger.swift",
+      "line": 5,
+      "symbol": "LocationLogger.trip",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Models/LocationLogger.swift",
+      "line": 7,
+      "symbol": "LocationLogger.init(trip:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Models/LocationLogger.swift",
+      "line": 27,
+      "symbol": "LocationLogger.locationManager(_:didUpdateLocations:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Models/LocationLogger.swift",
+      "line": 38,
+      "symbol": "LocationLogger.locationManager(_:didFailWithError:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Models/LocationLogger.swift",
+      "line": 42,
+      "symbol": "LocationLogger.end()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Models/Ticket.swift",
+      "line": 7,
+      "symbol": "Ticket.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/enari/Documents/Repos/Sequor"
+}
