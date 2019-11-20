@@ -19,6 +19,10 @@ final class AppState: ObservableObject {
   /// Valid coupons the user has erned.
   @Published var coupons: [Coupon] = []
 
+  @Published var lastTrip: Trip?
+
+  var locationLogger: LocationLogger?
+
   init() {
     // We probably want to request the state from the backend when we instanciate the object
   }
@@ -27,12 +31,14 @@ final class AppState: ObservableObject {
   func activateTicket() {
     // Temp for testing. Should make request to server.
     activeTicket = Ticket(id: 1, experation: Date(timeInterval: 90*60, since: Date()))
+    locationLogger = LocationLogger(trip: Trip())
   }
 
   /// Sends a request to the server to invalidate the ticket but changing experation date.
   func invalidateTicket() {
     // Temp for testing. Should make request to server.
     activeTicket = nil
+    lastTrip = locationLogger?.end()
   }
 
 }
