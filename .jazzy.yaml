@@ -1,0 +1,20 @@
+github_url: https://github.com/Roslund/sequor
+
+min_acl: internal
+
+exclude:
+  - "**/AppDelegate.swift"
+  - "**/SceneDelegate.swift"
+  - "**/Views/*"
+
+
+
+#custom_categories:
+#  - name: Views
+#children:
+#    - HomeView
+#    - CouponView
+#    - DashboardView
+#    - PurchaseView
+#    - ProfileView
+#    - TypedContentAccessors
