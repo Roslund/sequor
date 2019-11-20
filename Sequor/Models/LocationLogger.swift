@@ -2,7 +2,7 @@ import CoreLocation
 
 class LocationLogger: NSObject, ObservableObject, CLLocationManagerDelegate {
   let locationManager = CLLocationManager()
-  let trip: Trip
+  var trip: Trip
 
   init(trip: Trip) {
     self.trip = trip
@@ -26,8 +26,12 @@ class LocationLogger: NSObject, ObservableObject, CLLocationManagerDelegate {
 
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     trip.locations += locations.map { location in
-      Coordinate(latitude: location.coordinate.latitude,
-                 longitude: location.coordinate.longitude)
+      Location(timestamp: location.timestamp,
+               speed: location.speed,
+               course: location.course,
+               coordinate: Coordinate(latitude: location.coordinate.latitude,
+                                      longitude: location.coordinate.longitude)
+      )
     }
   }
 
