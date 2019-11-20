@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD18F04E2385352300F3D1B8 /* LocationLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD18F04D2385352300F3D1B8 /* LocationLogger.swift */; };
+		AD18F0502385358300F3D1B8 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD18F04F2385358300F3D1B8 /* Trip.swift */; };
 		AD1F061A236760CC00F74D9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F0619236760CC00F74D9A /* AppDelegate.swift */; };
 		AD1F061C236760CC00F74D9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F061B236760CC00F74D9A /* SceneDelegate.swift */; };
 		AD1F061E236760CC00F74D9A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F061D236760CC00F74D9A /* HomeView.swift */; };
@@ -49,6 +51,8 @@
 		13BD5C0F2375A7CD00B44A26 /* +Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+Double.swift"; sourceTree = "<group>"; };
 		13BFC8E62368435500BE20D0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AD114B672378A5E400313515 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		AD18F04D2385352300F3D1B8 /* LocationLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationLogger.swift; sourceTree = "<group>"; };
+		AD18F04F2385358300F3D1B8 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		AD1F0616236760CC00F74D9A /* Sequor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sequor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD1F0619236760CC00F74D9A /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AD1F061B236760CC00F74D9A /* SceneDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -232,6 +236,8 @@
 				ADD8B71C237B0C9F00D8DD55 /* AppState.swift */,
 				ADD8B722237B4ECF00D8DD55 /* RelativeTime.swift */,
 				ADD8B724237BF99900D8DD55 /* ActivityManager.swift */,
+				AD18F04D2385352300F3D1B8 /* LocationLogger.swift */,
+				AD18F04F2385358300F3D1B8 /* Trip.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -400,6 +406,8 @@
 				ADA166EE238430E700C53998 /* ActivityView.swift in Sources */,
 				AD1F061C236760CC00F74D9A /* SceneDelegate.swift in Sources */,
 				AD1F061E236760CC00F74D9A /* HomeView.swift in Sources */,
+				AD18F0502385358300F3D1B8 /* Trip.swift in Sources */,
+				AD18F04E2385352300F3D1B8 /* LocationLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
