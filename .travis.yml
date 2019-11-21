@@ -3,7 +3,7 @@ language: swift
 
 xcode_project: Sequor.xcodeproj
 xcode_scheme: Sequor
-xcode_destination: platform=iOS Simulator,OS=13.2,name=iPhone 11 Pro
+xcode_destination: platform=iOS Simulator,OS=13.2.2,name=iPhone 11 Pro
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
