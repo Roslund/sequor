@@ -20,6 +20,7 @@
 		ADA166EE238430E700C53998 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA166ED238430E700C53998 /* ActivityView.swift */; };
 		ADBEB00923743CB9001534CD /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBEB00823743CB9001534CD /* DashboardView.swift */; };
 		ADBEB00D2374423D001534CD /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBEB00C2374423D001534CD /* PurchaseView.swift */; };
+		ADC2A22B238714B10096F1ED /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC2A22A238714B10096F1ED /* Network.swift */; };
 		ADD8B71D237B0C9F00D8DD55 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD8B71C237B0C9F00D8DD55 /* AppState.swift */; };
 		ADD8B71F237B0DDD00D8DD55 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD8B71E237B0DDD00D8DD55 /* Profile.swift */; };
 		ADD8B723237B4ECF00D8DD55 /* RelativeTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD8B722237B4ECF00D8DD55 /* RelativeTime.swift */; };
@@ -73,6 +74,7 @@
 		ADBEB00823743CB9001534CD /* DashboardView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		ADBEB00A23743E12001534CD /* CouponsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsView.swift; sourceTree = "<group>"; };
 		ADBEB00C2374423D001534CD /* PurchaseView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; tabWidth = 2; };
+		ADC2A22A238714B10096F1ED /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		ADD8B71C237B0C9F00D8DD55 /* AppState.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; tabWidth = 2; };
 		ADD8B71E237B0DDD00D8DD55 /* Profile.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; tabWidth = 2; };
 		ADD8B722237B4ECF00D8DD55 /* RelativeTime.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = RelativeTime.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -151,6 +153,7 @@
 				AD1F064A236761C800F74D9A /* Views */,
 				AD1F0619236760CC00F74D9A /* AppDelegate.swift */,
 				AD1F061B236760CC00F74D9A /* SceneDelegate.swift */,
+				ADC2A22A238714B10096F1ED /* Network.swift */,
 				AD1F061F236760CD00F74D9A /* Assets.xcassets */,
 				AD1F0624236760CD00F74D9A /* LaunchScreen.storyboard */,
 				AD1F0627236760CD00F74D9A /* Info.plist */,
@@ -395,6 +398,7 @@
 			files = (
 				ADECEB142375AAD70097B726 /* Ticket.swift in Sources */,
 				ADD8B723237B4ECF00D8DD55 /* RelativeTime.swift in Sources */,
+				ADC2A22B238714B10096F1ED /* Network.swift in Sources */,
 				ADD8B71D237B0C9F00D8DD55 /* AppState.swift in Sources */,
 				ADBEB00D2374423D001534CD /* PurchaseView.swift in Sources */,
 				AD1F061A236760CC00F74D9A /* AppDelegate.swift in Sources */,

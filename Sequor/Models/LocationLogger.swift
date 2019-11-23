@@ -41,6 +41,7 @@ final class LocationLogger: NSObject, ObservableObject, CLLocationManagerDelegat
 
   func end() -> Trip {
     locationManager.stopUpdatingLocation()
+    trip.endDate = Date()
     return trip
   }
 }
