@@ -19,8 +19,6 @@ final class AppState: ObservableObject {
   /// Valid coupons the user has erned.
   @Published var coupons: [Coupon] = []
 
-  @Published var lastTrip: Trip?
-
   var locationLogger: LocationLogger?
 
   init() {
@@ -34,11 +32,14 @@ final class AppState: ObservableObject {
     locationLogger = LocationLogger(trip: Trip())
   }
 
-  /// Sends a request to the server to invalidate the ticket but changing experation date.
+  // Should send a request to the server to invalidate the ticket.
+  /// Currently invalidates the ticket client side and send the trip to the server.
   func invalidateTicket() {
     // Temp for testing. Should make request to server.
     activeTicket = nil
-    lastTrip = locationLogger?.end()
+    if let trip = locationLogger?.end() {
+      HTTP.post(asJSON: trip, to: URL(string: "http://10.3.10.102:8000/trip")!)
+    }
   }
 
 }
