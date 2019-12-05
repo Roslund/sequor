@@ -24,20 +24,13 @@
     {
       "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Models/AppState.swift",
       "line": 22,
-      "symbol": "AppState.lastTrip",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Models/AppState.swift",
-      "line": 24,
       "symbol": "AppState.locationLogger",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Models/AppState.swift",
-      "line": 26,
+      "line": 24,
       "symbol": "AppState.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -96,6 +89,27 @@
       "line": 7,
       "symbol": "Ticket.id",
       "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Network.swift",
+      "line": 3,
+      "symbol": "HTTP",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Network.swift",
+      "line": 29,
+      "symbol": "HTTP.downloadTask(url:headders:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Network.swift",
+      "line": 56,
+      "symbol": "HTTP.post(data:to:additionalHeaders:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     }
   ],

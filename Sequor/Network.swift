@@ -1,10 +1,13 @@
 import Foundation
 
+/// Simple HTTP "library"
 enum HTTP {
-  static func get(url: URL,
-                  headers: [AnyHashable: Any]? = nil,
+  /// Get request with compleation handeler **with** error handeling
+  static func get(url: URL, headers: [AnyHashable: Any]? = nil,
                   completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
+    // Configureation
     let configuration = URLSessionConfiguration.ephemeral
+    configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
     configuration.httpAdditionalHeaders = headers
 
     let defaultSession = URLSession(configuration: configuration)
@@ -12,8 +15,8 @@ enum HTTP {
     dataTask.resume()
   }
 
-  static func get(url: URL,
-                  headers: [AnyHashable: Any]? = nil,
+  /// Get request with compleation handeler **without** error handeling
+  static func get(url: URL, headers: [AnyHashable: Any]? = nil,
                   completionHandler: @escaping (Data) -> Void) {
     get(url: url, headers: headers) { data, response, _ in
       if let data = data,
@@ -24,10 +27,11 @@ enum HTTP {
     }
   }
 
-  static func downloadTask(url: URL,
-                           headders: [AnyHashable: Any]? = nil,
+  static func downloadTask(url: URL, headders: [AnyHashable: Any]? = nil,
                            completionHandler: @escaping (Data) -> Void) {
+    // Configuration
     let configuration = URLSessionConfiguration.ephemeral
+    configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
     configuration.httpAdditionalHeaders = headders
     configuration.shouldUseExtendedBackgroundIdleMode = true
 
@@ -49,7 +53,8 @@ enum HTTP {
     dataTask.resume()
   }
 
-  static func post(data body: Data, to url: URL, headers: [String: String] = [:]) {
+  // Work in progress, should probabally take a compleation handeler as well
+  static func post(data body: Data, to url: URL, additionalHeaders headers: [String: String] = [:]) {
     var request = URLRequest(url: url)
     request.httpMethod = "POST"
     request.httpBody = body
@@ -72,6 +77,7 @@ enum HTTP {
     task.resume()
   }
 
+  /// Encodes data as JSON and post json to url, with appropiate headers.
   static func post<Data: Encodable>(asJSON data: Data, to url: URL) {
     let encoder = JSONEncoder()
     encoder.dateEncodingStrategy = .secondsSince1970
@@ -80,6 +86,6 @@ enum HTTP {
     // If not, we want the app to crash, so it's easier to debug.
     // swiftlint:disable:next force_try
     let json = try! encoder.encode(data)
-    post(data: json, to: url, headers: ["Content-Type": "application/json"])
+    post(data: json, to: url, additionalHeaders: ["Content-Type": "application/json"])
   }
 }
