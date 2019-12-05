@@ -1,21 +1,24 @@
 import Foundation
 
+/// Simple HTTP "library"
 enum HTTP {
-  static func get(url: URL,
-                  headders: [AnyHashable: Any]? = nil,
+  /// Get request with compleation handeler **with** error handeling
+  static func get(url: URL, headers: [AnyHashable: Any]? = nil,
                   completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
+    // Configureation
     let configuration = URLSessionConfiguration.ephemeral
-    configuration.httpAdditionalHeaders = headders
+    configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
+    configuration.httpAdditionalHeaders = headers
 
     let defaultSession = URLSession(configuration: configuration)
     let dataTask = defaultSession.dataTask(with: url, completionHandler: completionHandler)
     dataTask.resume()
   }
 
-  static func get(url: URL,
-                  headders: [AnyHashable: Any]? = nil,
+  /// Get request with compleation handeler **without** error handeling
+  static func get(url: URL, headers: [AnyHashable: Any]? = nil,
                   completionHandler: @escaping (Data) -> Void) {
-    get(url: url) { data, response, _ in
+    get(url: url, headers: headers) { data, response, _ in
       if let data = data,
         let response = response as? HTTPURLResponse,
         response.statusCode == 200 {
@@ -24,10 +27,11 @@ enum HTTP {
     }
   }
 
-  static func downloadTask(url: URL,
-                           headders: [AnyHashable: Any]? = nil,
+  static func downloadTask(url: URL, headders: [AnyHashable: Any]? = nil,
                            completionHandler: @escaping (Data) -> Void) {
+    // Configuration
     let configuration = URLSessionConfiguration.ephemeral
+    configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
     configuration.httpAdditionalHeaders = headders
     configuration.shouldUseExtendedBackgroundIdleMode = true
 
@@ -49,17 +53,22 @@ enum HTTP {
     dataTask.resume()
   }
 
-  static func post(data body: Data, to url: URL) {
+  // Work in progress, should probabally take a compleation handeler as well
+  static func post(data body: Data, to url: URL, additionalHeaders headers: [String: String] = [:]) {
     var request = URLRequest(url: url)
     request.httpMethod = "POST"
     request.httpBody = body
-    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    for (key, value) in headers {
+      request.addValue(value, forHTTPHeaderField: key)
+    }
 
     let task = URLSession.shared.dataTask(with: request) { data, _, error in
       guard let data = data, error == nil else {
         print(error?.localizedDescription ?? "No data")
         return
       }
+
+      // Expect JSON respone and just print it.
       let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
       if let responseJSON = responseJSON as? [String: Any] {
         print(responseJSON)
@@ -68,14 +77,15 @@ enum HTTP {
     task.resume()
   }
 
-  static func post(asJSON data: Trip, to url: URL) {
+  /// Encodes data as JSON and post json to url, with appropiate headers.
+  static func post<Data: Encodable>(asJSON data: Data, to url: URL) {
     let encoder = JSONEncoder()
     encoder.dateEncodingStrategy = .secondsSince1970
+
+    // Since the data conforms to codable we should be able to encode,
+    // If not, we want the app to crash, so it's easier to debug.
     // swiftlint:disable:next force_try
     let json = try! encoder.encode(data)
-    print(String(data: json, encoding: .utf8)!)
-    post(data: json, to: url)
-
-    [1,2].firstIndex(of: 4)
+    post(data: json, to: url, additionalHeaders: ["Content-Type": "application/json"])
   }
 }
