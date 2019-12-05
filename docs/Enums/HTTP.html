@@ -14,7 +14,7 @@
     <a title="HTTP Enumeration Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (68% documented)</p>
+        <p><a href="../index.html"> Docs</a> (72% documented)</p>
         <p class="header-right"><a href="https://github.com/Roslund/sequor"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -82,7 +82,7 @@
 
                 </div>
               </div>
-            <p>Undocumented</p>
+            <p>Simple HTTP <q>library</q></p>
 
           </section>
           <section class="section task-group-section">
@@ -101,7 +101,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Simple HTTP get request with compleation handeler <strong>with</strong> error handeling</p>
+                        <p>Get request with compleation handeler <strong>with</strong> error handeling</p>
 
                       </div>
                       <div class="declaration">
@@ -129,7 +129,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Simple HTTP get request with compleation handeler <strong>without</strong> error handeling</p>
+                        <p>Get request with compleation handeler <strong>without</strong> error handeling</p>
 
                       </div>
                       <div class="declaration">
@@ -175,9 +175,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Sequor4HTTPO4post4data2to17additionalHeadersy10Foundation4DataV_AH3URLVSDyS2SGtFZ"></a>
-                    <a name="//apple_ref/swift/Method/post(data:to:additionalHeaders:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Sequor4HTTPO4post4data2to17additionalHeadersy10Foundation4DataV_AH3URLVSDyS2SGtFZ">post(data:to:additionalHeaders:)</a>
+                    <a name="/s:6Sequor4HTTPO4post4data2to17additionalHeaders17completionHandlery10Foundation4DataV_AI3URLVSDyS2SGyAKctFZ"></a>
+                    <a name="//apple_ref/swift/Method/post(data:to:additionalHeaders:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Sequor4HTTPO4post4data2to17additionalHeaders17completionHandlery10Foundation4DataV_AI3URLVSDyS2SGyAKctFZ">post(data:to:additionalHeaders:completionHandler:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -185,14 +185,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Post request</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">post</span><span class="p">(</span><span class="n">data</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="n">to</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span> <span class="n">additionalHeaders</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:])</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">post</span><span class="p">(</span><span class="n">data</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="n">to</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span>
+                 <span class="n">additionalHeaders</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:],</span>
+                 <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -202,9 +204,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Sequor4HTTPO4post6asJSON2toyx_10Foundation3URLVtSERzlFZ"></a>
-                    <a name="//apple_ref/swift/Method/post(asJSON:to:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Sequor4HTTPO4post6asJSON2toyx_10Foundation3URLVtSERzlFZ">post(asJSON:to:)</a>
+                    <a name="/s:6Sequor4HTTPO4post6asJSON2to17completionHandleryx_10Foundation3URLVyAH4DataVctSERzlFZ"></a>
+                    <a name="//apple_ref/swift/Method/post(asJSON:to:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Sequor4HTTPO4post6asJSON2to17completionHandleryx_10Foundation3URLVyAH4DataVctSERzlFZ">post(asJSON:to:completionHandler:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -219,7 +221,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="n">post</span><span class="o">&lt;</span><span class="kt">Data</span><span class="o">&gt;</span><span class="p">(</span><span class="n">asJSON</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="n">to</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">)</span> <span class="k">where</span> <span class="kt">Data</span> <span class="p">:</span> <span class="kt">Encodable</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="n">post</span><span class="o">&lt;</span><span class="kt">POSTDATA</span><span class="p">:</span> <span class="kt">Encodable</span><span class="o">&gt;</span><span class="p">(</span><span class="n">asJSON</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">POSTDATA</span><span class="p">,</span> <span class="n">to</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span>
+                                      <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>

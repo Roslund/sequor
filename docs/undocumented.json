@@ -93,22 +93,8 @@
     },
     {
       "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Network.swift",
-      "line": 3,
-      "symbol": "HTTP",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Network.swift",
-      "line": 29,
+      "line": 30,
       "symbol": "HTTP.downloadTask(url:headders:completionHandler:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Network.swift",
-      "line": 56,
-      "symbol": "HTTP.post(data:to:additionalHeaders:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     }
