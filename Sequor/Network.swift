@@ -53,8 +53,10 @@ enum HTTP {
     dataTask.resume()
   }
 
-  // Work in progress, should probabally take a compleation handeler as well
-  static func post(data body: Data, to url: URL, additionalHeaders headers: [String: String] = [:]) {
+  /// Post request
+  static func post(data body: Data, to url: URL,
+                   additionalHeaders headers: [String: String] = [:],
+                   completionHandler: @escaping (Data) -> Void) {
     var request = URLRequest(url: url)
     request.httpMethod = "POST"
     request.httpBody = body
@@ -68,17 +70,14 @@ enum HTTP {
         return
       }
 
-      // Expect JSON respone and just print it.
-      let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-      if let responseJSON = responseJSON as? [String: Any] {
-        print(responseJSON)
-      }
+      completionHandler(data)
     }
     task.resume()
   }
 
   /// Encodes data as JSON and post json to url, with appropiate headers.
-  static func post<Data: Encodable>(asJSON data: Data, to url: URL) {
+  static func post<POSTDATA: Encodable>(asJSON data: POSTDATA, to url: URL,
+                                        completionHandler: @escaping (Data) -> Void) {
     let encoder = JSONEncoder()
     encoder.dateEncodingStrategy = .secondsSince1970
 
@@ -86,6 +85,8 @@ enum HTTP {
     // If not, we want the app to crash, so it's easier to debug.
     // swiftlint:disable:next force_try
     let json = try! encoder.encode(data)
-    post(data: json, to: url, additionalHeaders: ["Content-Type": "application/json"])
+    post(data: json, to: url,
+         additionalHeaders: ["Content-Type": "application/json"],
+         completionHandler: completionHandler)
   }
 }

@@ -17,6 +17,8 @@
 		AD1F0626236760CD00F74D9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD1F0624236760CD00F74D9A /* LaunchScreen.storyboard */; };
 		AD1F0631236760CD00F74D9A /* SequorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F0630236760CD00F74D9A /* SequorTests.swift */; };
 		AD1F063C236760CD00F74D9A /* SequorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F063B236760CD00F74D9A /* SequorUITests.swift */; };
+		AD7E5A5A2399147400A22B7C /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E5A592399147400A22B7C /* NetworkTests.swift */; };
+		AD7E5A5B2399164C00A22B7C /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC2A22A238714B10096F1ED /* Network.swift */; };
 		ADA166EE238430E700C53998 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA166ED238430E700C53998 /* ActivityView.swift */; };
 		ADBEB00923743CB9001534CD /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBEB00823743CB9001534CD /* DashboardView.swift */; };
 		ADBEB00D2374423D001534CD /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBEB00C2374423D001534CD /* PurchaseView.swift */; };
@@ -69,6 +71,7 @@
 		AD1F063B236760CD00F74D9A /* SequorUITests.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SequorUITests.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AD1F063D236760CD00F74D9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD1F0649236761BD00F74D9A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AD7E5A592399147400A22B7C /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		ADA166ED238430E700C53998 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		ADA7E08423775FAF0077E225 /* RectangleGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleGraph.swift; sourceTree = "<group>"; };
 		ADBEB00823743CB9001534CD /* DashboardView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -175,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				AD1F0630236760CD00F74D9A /* SequorTests.swift */,
+				AD7E5A592399147400A22B7C /* NetworkTests.swift */,
 				AD1F0632236760CD00F74D9A /* Info.plist */,
 			);
 			path = SequorTests;
@@ -419,7 +423,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD7E5A5A2399147400A22B7C /* NetworkTests.swift in Sources */,
 				AD1F0631236760CD00F74D9A /* SequorTests.swift in Sources */,
+				AD7E5A5B2399164C00A22B7C /* Network.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
