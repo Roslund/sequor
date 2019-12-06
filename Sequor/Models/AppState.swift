@@ -38,9 +38,7 @@ final class AppState: ObservableObject {
     // Temp for testing. Should make request to server.
     activeTicket = nil
     if let trip = locationLogger?.end() {
-      HTTP.post(asJSON: trip, to: URL(string: "http://10.3.10.102:8000/trip")!) { _ in
-        
-      }
+      HTTP.post(asJSON: trip, to: Endpoint.postTrip(userID: "test", ticketID: "test").url!) { _ in }
     }
   }
 
