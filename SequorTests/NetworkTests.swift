@@ -1,6 +1,15 @@
 import XCTest
+@testable import Sequor
 
 class NetworkTests: XCTestCase {
+  /// Validates that all endpoints can be constructed.
+  /// Does **NOT** validate that they are reachable.
+  func testEndpoints() {
+    XCTAssertNotNil(Endpoint.allCouponsFor(userID: "test").url)
+    XCTAssertNotNil(Endpoint.postTrip(userID: "test", ticketID: "test").url)
+    XCTAssertNotNil(Endpoint.ticket().url)
+    XCTAssertNotNil(Endpoint.useCoupon(userID: "test", couponID: "test"))
+  }
 
   func testGET() {
     let expectation = self.expectation(description: "Network Request")
