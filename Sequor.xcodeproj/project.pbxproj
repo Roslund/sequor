@@ -10,10 +10,6 @@
 		AD142BED239997B200A26F0B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD142BEC239997B200A26F0B /* Endpoint.swift */; };
 		AD142BEF23999D5F00A26F0B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD142BEC239997B200A26F0B /* Endpoint.swift */; };
 		AD142BF5239A686400A26F0B /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC2A22A238714B10096F1ED /* HTTP.swift */; };
-		AD142BF7239A6D5F00A26F0B /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDFE16923748F24007BD2A8 /* Coupon.swift */; };
-		AD142BF8239A6D5F00A26F0B /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADECEB132375AAD70097B726 /* Ticket.swift */; };
-		AD142BF9239A6D5F00A26F0B /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD8B71C237B0C9F00D8DD55 /* AppState.swift */; };
-		AD142BFC239A6D5F00A26F0B /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD18F04F2385358300F3D1B8 /* Trip.swift */; };
 		AD18F04E2385352300F3D1B8 /* LocationLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD18F04D2385352300F3D1B8 /* LocationLogger.swift */; };
 		AD18F0502385358300F3D1B8 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD18F04F2385358300F3D1B8 /* Trip.swift */; };
 		AD1F061A236760CC00F74D9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F0619236760CC00F74D9A /* AppDelegate.swift */; };
@@ -440,10 +436,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD142BFC239A6D5F00A26F0B /* Trip.swift in Sources */,
-				AD142BF7239A6D5F00A26F0B /* Coupon.swift in Sources */,
-				AD142BF8239A6D5F00A26F0B /* Ticket.swift in Sources */,
-				AD142BF9239A6D5F00A26F0B /* AppState.swift in Sources */,
 				AD7E5A5A2399147400A22B7C /* NetworkTests.swift in Sources */,
 				AD142BF5239A686400A26F0B /* HTTP.swift in Sources */,
 				AD1F0631236760CD00F74D9A /* SequorTests.swift in Sources */,
