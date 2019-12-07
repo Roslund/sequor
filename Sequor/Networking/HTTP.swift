@@ -2,82 +2,78 @@ import Foundation
 
 /// Simple HTTP "library"
 enum HTTP {
-  /// Get request with compleation handeler **with** error handeling
-  static func get(url: URL, headers: [AnyHashable: Any]? = nil,
-                  completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
-    // Configureation
-    let configuration = URLSessionConfiguration.ephemeral
-    configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
-    configuration.httpAdditionalHeaders = headers
-
-    let defaultSession = URLSession(configuration: configuration)
-    let dataTask = defaultSession.dataTask(with: url, completionHandler: completionHandler)
-    dataTask.resume()
+  enum Method: String {
+    case GET
+    case POST
+    case PUT
+    case DELETE
   }
 
-  /// Get request with compleation handeler **without** error handeling
-  static func get(url: URL, headers: [AnyHashable: Any]? = nil,
-                  completionHandler: @escaping (Data) -> Void) {
-    get(url: url, headers: headers) { data, response, _ in
-      if let data = data,
-        let response = response as? HTTPURLResponse,
-        response.statusCode == 200 {
-        completionHandler(data)
-      }
-    }
-  }
+//  static func downloadTask(url: URL, headders: [AnyHashable: Any]? = nil,
+//                           completionHandler: @escaping (Data) -> Void) {
+//    // Configuration
+//    let configuration = URLSessionConfiguration.ephemeral
+//    configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
+//    configuration.httpAdditionalHeaders = headders
+//    configuration.shouldUseExtendedBackgroundIdleMode = true
+//
+//    let defaultSession = URLSession(configuration: configuration)
+//    var dataTask: URLSessionDownloadTask
+//
+//    dataTask = defaultSession
+//      .downloadTask(with: url) { url, response, _ in
+//        if let url = url,
+//          let response = response as? HTTPURLResponse,
+//          response.statusCode == 200 {
+//          guard let data = try? Data(contentsOf: url) else {
+//            return
+//          }
+//
+//          completionHandler(data)
+//        }
+//    }
+//    dataTask.resume()
+//  }
 
-  static func downloadTask(url: URL, headders: [AnyHashable: Any]? = nil,
-                           completionHandler: @escaping (Data) -> Void) {
-    // Configuration
-    let configuration = URLSessionConfiguration.ephemeral
-    configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
-    configuration.httpAdditionalHeaders = headders
-    configuration.shouldUseExtendedBackgroundIdleMode = true
-
-    let defaultSession = URLSession(configuration: configuration)
-    var dataTask: URLSessionDownloadTask
-
-    dataTask = defaultSession
-      .downloadTask(with: url) { url, response, _ in
-        if let url = url,
-          let response = response as? HTTPURLResponse,
-          response.statusCode == 200 {
-          guard let data = try? Data(contentsOf: url) else {
-            return
-          }
-
-          completionHandler(data)
-        }
-    }
-    dataTask.resume()
-  }
-
-  /// Post request
-  static func post(data body: Data, to url: URL,
-                   additionalHeaders headers: [String: String] = [:],
-                   completionHandler: @escaping (Data) -> Void) {
+  /// Request with compleation handeler **with** error handeling
+  static func request(method: Method = .GET, url: URL, body: Data? = nil,
+                      additionalHeaders headers: [String: String] = [:],
+                      completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
     var request = URLRequest(url: url)
-    request.httpMethod = "POST"
+    request.httpMethod = method.rawValue
     request.httpBody = body
+    request.cachePolicy = .reloadIgnoringLocalCacheData
     for (key, value) in headers {
       request.addValue(value, forHTTPHeaderField: key)
     }
 
-    let task = URLSession.shared.dataTask(with: request) { data, _, error in
+    let task = URLSession.shared.dataTask(with: request, completionHandler: completionHandler)
+    task.resume()
+  }
+
+  /// Request with compleation handeler **with** error handeling
+  static func request(method: Method = .GET, url: URL, body: Data? = nil,
+                      additionalHeaders headers: [String: String] = [:],
+                      completionHandler: @escaping (Data) -> Void) {
+    request(method: method, url: url, body: body, additionalHeaders: headers) { data, _, error in
       guard let data = data, error == nil else {
         print(error?.localizedDescription ?? "No data")
         return
       }
-
       completionHandler(data)
     }
-    task.resume()
+  }
+
+  /// Request **with out** compleation handeler
+  static func request(method: Method = .GET, url: URL, body: Data? = nil,
+                      additionalHeaders headers: [String: String] = [:]) {
+    request(method: method, url: url, body: body, additionalHeaders: headers) { _, _, _ in }
   }
 
   /// Encodes data as JSON and post json to url, with appropiate headers.
   static func post<POSTDATA: Encodable>(asJSON data: POSTDATA, to url: URL,
                                         completionHandler: @escaping (Data) -> Void) {
+
     let encoder = JSONEncoder()
     encoder.dateEncodingStrategy = .secondsSince1970
 
@@ -85,8 +81,9 @@ enum HTTP {
     // If not, we want the app to crash, so it's easier to debug.
     // swiftlint:disable:next force_try
     let json = try! encoder.encode(data)
-    post(data: json, to: url,
-         additionalHeaders: ["Content-Type": "application/json"],
-         completionHandler: completionHandler)
+
+    request(method: .POST, url: url, body: json,
+            additionalHeaders: ["Content-Type": "application/json"],
+            completionHandler: completionHandler)
   }
 }

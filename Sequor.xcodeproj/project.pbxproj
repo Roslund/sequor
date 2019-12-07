@@ -10,6 +10,8 @@
 		AD142BED239997B200A26F0B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD142BEC239997B200A26F0B /* Endpoint.swift */; };
 		AD142BEF23999D5F00A26F0B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD142BEC239997B200A26F0B /* Endpoint.swift */; };
 		AD142BF5239A686400A26F0B /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC2A22A238714B10096F1ED /* HTTP.swift */; };
+		AD142C01239BC8DD00A26F0B /* IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD142C00239BC8DD00A26F0B /* IntegrationTests.swift */; };
+		AD142C02239BCBD900A26F0B /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD18F04F2385358300F3D1B8 /* Trip.swift */; };
 		AD18F04E2385352300F3D1B8 /* LocationLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD18F04D2385352300F3D1B8 /* LocationLogger.swift */; };
 		AD18F0502385358300F3D1B8 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD18F04F2385358300F3D1B8 /* Trip.swift */; };
 		AD1F061A236760CC00F74D9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F0619236760CC00F74D9A /* AppDelegate.swift */; };
@@ -57,6 +59,7 @@
 		13BFC8E62368435500BE20D0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AD114B672378A5E400313515 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		AD142BEC239997B200A26F0B /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		AD142C00239BC8DD00A26F0B /* IntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationTests.swift; sourceTree = "<group>"; };
 		AD18F04D2385352300F3D1B8 /* LocationLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationLogger.swift; sourceTree = "<group>"; };
 		AD18F04F2385358300F3D1B8 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		AD1F0616236760CC00F74D9A /* Sequor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sequor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,8 +192,9 @@
 		AD1F062F236760CD00F74D9A /* SequorTests */ = {
 			isa = PBXGroup;
 			children = (
-				AD1F0630236760CD00F74D9A /* SequorTests.swift */,
+				AD142C00239BC8DD00A26F0B /* IntegrationTests.swift */,
 				AD7E5A592399147400A22B7C /* NetworkTests.swift */,
+				AD1F0630236760CD00F74D9A /* SequorTests.swift */,
 				AD1F0632236760CD00F74D9A /* Info.plist */,
 			);
 			path = SequorTests;
@@ -436,8 +440,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD142C02239BCBD900A26F0B /* Trip.swift in Sources */,
 				AD7E5A5A2399147400A22B7C /* NetworkTests.swift in Sources */,
 				AD142BF5239A686400A26F0B /* HTTP.swift in Sources */,
+				AD142C01239BC8DD00A26F0B /* IntegrationTests.swift in Sources */,
 				AD1F0631236760CD00F74D9A /* SequorTests.swift in Sources */,
 				AD142BEF23999D5F00A26F0B /* Endpoint.swift in Sources */,
 			);
