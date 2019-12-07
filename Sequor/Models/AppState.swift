@@ -28,7 +28,7 @@ final class AppState: ObservableObject {
   /// Sends a request for ticket mocking to server
   func activateTicket() {
     // Temp for testing. Should make request to server.
-    activeTicket = Ticket(id: 1, experation: Date(timeInterval: 90*60, since: Date()))
+    activeTicket = Ticket(uuid: "1", expiration: Date(timeInterval: 90*60, since: Date()))
     locationLogger = LocationLogger(trip: Trip())
   }
 

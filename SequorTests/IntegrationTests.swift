@@ -35,6 +35,19 @@ class IntegrationTests: XCTestCase {
     waitForExpectations(timeout: 5, handler: nil)
   }
 
+  func testTicketEndpoint() {
+    let expectation = self.expectation(description: "Network Request")
+
+    HTTP.request(url: Endpoint.ticket().url!) { data in
+      let ticket = try? JSONDecoder().decode(Ticket.self, from: data)
+      
+      XCTAssertNotNil(ticket)
+      expectation.fulfill()
+    }
+
+    waitForExpectations(timeout: 5, handler: nil)
+  }
+
 //  func testAddWalletCURD() {
 //    let expectation = self.expectation(description: "Network Request")
 //    let url = URL(string: "https://polimi-demo.partners.mia-platform.eu/v2/wallets/")!

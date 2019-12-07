@@ -30,7 +30,7 @@ extension Endpoint {
   
   /// Endpoint for getting an active ticket from the backend
   static func ticket() -> Endpoint {
-    Endpoint(path: "/geolocalization/ticket")
+    Endpoint(path: "/ticket/")
   }
   
   /// Endpoint for getting all coupons owned by a userId
