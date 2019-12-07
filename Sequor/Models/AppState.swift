@@ -28,7 +28,7 @@ final class AppState: ObservableObject {
   /// Sends a request for ticket mocking to server
   func activateTicket() {
     // Temp for testing. Should make request to server.
-    activeTicket = Ticket(id: 1, experation: Date(timeInterval: 90*60, since: Date()))
+    activeTicket = Ticket(uuid: "1", expiration: Date(timeInterval: 90*60, since: Date()))
     locationLogger = LocationLogger(trip: Trip())
   }
 
@@ -38,9 +38,7 @@ final class AppState: ObservableObject {
     // Temp for testing. Should make request to server.
     activeTicket = nil
     if let trip = locationLogger?.end() {
-      HTTP.post(asJSON: trip, to: URL(string: "http://10.3.10.102:8000/trip")!) { _ in
-        
-      }
+      HTTP.post(asJSON: trip, to: Endpoint.postTrip(userID: "test", ticketID: "test").url!) { _ in }
     }
   }
 

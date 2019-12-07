@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD142BED239997B200A26F0B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD142BEC239997B200A26F0B /* Endpoint.swift */; };
+		AD142BEF23999D5F00A26F0B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD142BEC239997B200A26F0B /* Endpoint.swift */; };
+		AD142BF5239A686400A26F0B /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC2A22A238714B10096F1ED /* HTTP.swift */; };
+		AD142C01239BC8DD00A26F0B /* IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD142C00239BC8DD00A26F0B /* IntegrationTests.swift */; };
+		AD142C02239BCBD900A26F0B /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD18F04F2385358300F3D1B8 /* Trip.swift */; };
+		AD142C03239C0C2C00A26F0B /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADECEB132375AAD70097B726 /* Ticket.swift */; };
 		AD18F04E2385352300F3D1B8 /* LocationLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD18F04D2385352300F3D1B8 /* LocationLogger.swift */; };
 		AD18F0502385358300F3D1B8 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD18F04F2385358300F3D1B8 /* Trip.swift */; };
 		AD1F061A236760CC00F74D9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F0619236760CC00F74D9A /* AppDelegate.swift */; };
@@ -15,14 +21,12 @@
 		AD1F0620236760CD00F74D9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD1F061F236760CD00F74D9A /* Assets.xcassets */; };
 		AD1F0623236760CD00F74D9A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD1F0622236760CD00F74D9A /* Preview Assets.xcassets */; };
 		AD1F0626236760CD00F74D9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD1F0624236760CD00F74D9A /* LaunchScreen.storyboard */; };
-		AD1F0631236760CD00F74D9A /* SequorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F0630236760CD00F74D9A /* SequorTests.swift */; };
 		AD1F063C236760CD00F74D9A /* SequorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F063B236760CD00F74D9A /* SequorUITests.swift */; };
 		AD7E5A5A2399147400A22B7C /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E5A592399147400A22B7C /* NetworkTests.swift */; };
-		AD7E5A5B2399164C00A22B7C /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC2A22A238714B10096F1ED /* Network.swift */; };
 		ADA166EE238430E700C53998 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA166ED238430E700C53998 /* ActivityView.swift */; };
 		ADBEB00923743CB9001534CD /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBEB00823743CB9001534CD /* DashboardView.swift */; };
 		ADBEB00D2374423D001534CD /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBEB00C2374423D001534CD /* PurchaseView.swift */; };
-		ADC2A22B238714B10096F1ED /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC2A22A238714B10096F1ED /* Network.swift */; };
+		ADC2A22B238714B10096F1ED /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC2A22A238714B10096F1ED /* HTTP.swift */; };
 		ADD8B71D237B0C9F00D8DD55 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD8B71C237B0C9F00D8DD55 /* AppState.swift */; };
 		ADD8B71F237B0DDD00D8DD55 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD8B71E237B0DDD00D8DD55 /* Profile.swift */; };
 		ADD8B723237B4ECF00D8DD55 /* RelativeTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD8B722237B4ECF00D8DD55 /* RelativeTime.swift */; };
@@ -54,6 +58,8 @@
 		13BD5C0F2375A7CD00B44A26 /* +Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+Double.swift"; sourceTree = "<group>"; };
 		13BFC8E62368435500BE20D0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AD114B672378A5E400313515 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		AD142BEC239997B200A26F0B /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		AD142C00239BC8DD00A26F0B /* IntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationTests.swift; sourceTree = "<group>"; };
 		AD18F04D2385352300F3D1B8 /* LocationLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationLogger.swift; sourceTree = "<group>"; };
 		AD18F04F2385358300F3D1B8 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		AD1F0616236760CC00F74D9A /* Sequor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sequor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,7 +83,7 @@
 		ADBEB00823743CB9001534CD /* DashboardView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		ADBEB00A23743E12001534CD /* CouponsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsView.swift; sourceTree = "<group>"; };
 		ADBEB00C2374423D001534CD /* PurchaseView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; tabWidth = 2; };
-		ADC2A22A238714B10096F1ED /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		ADC2A22A238714B10096F1ED /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		ADD8B71C237B0C9F00D8DD55 /* AppState.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; tabWidth = 2; };
 		ADD8B71E237B0DDD00D8DD55 /* Profile.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; tabWidth = 2; };
 		ADD8B722237B4ECF00D8DD55 /* RelativeTime.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = RelativeTime.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -128,6 +134,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		AD142BEE23999D5700A26F0B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				ADC2A22A238714B10096F1ED /* HTTP.swift */,
+				AD142BEC239997B200A26F0B /* Endpoint.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		AD1F060D236760CC00F74D9A = {
 			isa = PBXGroup;
 			children = (
@@ -152,11 +167,11 @@
 		AD1F0618236760CC00F74D9A /* Sequor */ = {
 			isa = PBXGroup;
 			children = (
+				AD142BEE23999D5700A26F0B /* Networking */,
 				ADDFE16823748F15007BD2A8 /* Models */,
 				AD1F064A236761C800F74D9A /* Views */,
 				AD1F0619236760CC00F74D9A /* AppDelegate.swift */,
 				AD1F061B236760CC00F74D9A /* SceneDelegate.swift */,
-				ADC2A22A238714B10096F1ED /* Network.swift */,
 				AD1F061F236760CD00F74D9A /* Assets.xcassets */,
 				AD1F0624236760CD00F74D9A /* LaunchScreen.storyboard */,
 				AD1F0627236760CD00F74D9A /* Info.plist */,
@@ -177,8 +192,9 @@
 		AD1F062F236760CD00F74D9A /* SequorTests */ = {
 			isa = PBXGroup;
 			children = (
-				AD1F0630236760CD00F74D9A /* SequorTests.swift */,
+				AD142C00239BC8DD00A26F0B /* IntegrationTests.swift */,
 				AD7E5A592399147400A22B7C /* NetworkTests.swift */,
+				AD1F0630236760CD00F74D9A /* SequorTests.swift */,
 				AD1F0632236760CD00F74D9A /* Info.plist */,
 			);
 			path = SequorTests;
@@ -402,7 +418,7 @@
 			files = (
 				ADECEB142375AAD70097B726 /* Ticket.swift in Sources */,
 				ADD8B723237B4ECF00D8DD55 /* RelativeTime.swift in Sources */,
-				ADC2A22B238714B10096F1ED /* Network.swift in Sources */,
+				ADC2A22B238714B10096F1ED /* HTTP.swift in Sources */,
 				ADD8B71D237B0C9F00D8DD55 /* AppState.swift in Sources */,
 				ADBEB00D2374423D001534CD /* PurchaseView.swift in Sources */,
 				AD1F061A236760CC00F74D9A /* AppDelegate.swift in Sources */,
@@ -415,6 +431,7 @@
 				AD1F061C236760CC00F74D9A /* SceneDelegate.swift in Sources */,
 				AD1F061E236760CC00F74D9A /* HomeView.swift in Sources */,
 				AD18F0502385358300F3D1B8 /* Trip.swift in Sources */,
+				AD142BED239997B200A26F0B /* Endpoint.swift in Sources */,
 				AD18F04E2385352300F3D1B8 /* LocationLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,9 +440,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD142C02239BCBD900A26F0B /* Trip.swift in Sources */,
+				AD142C03239C0C2C00A26F0B /* Ticket.swift in Sources */,
 				AD7E5A5A2399147400A22B7C /* NetworkTests.swift in Sources */,
-				AD1F0631236760CD00F74D9A /* SequorTests.swift in Sources */,
-				AD7E5A5B2399164C00A22B7C /* Network.swift in Sources */,
+				AD142BF5239A686400A26F0B /* HTTP.swift in Sources */,
+				AD142C01239BC8DD00A26F0B /* IntegrationTests.swift in Sources */,
+				AD142BEF23999D5F00A26F0B /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

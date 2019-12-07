@@ -22,9 +22,9 @@ struct PurchaseView: View {
         Spacer()
         if appState.activeTicket != nil {
           VStack(alignment: .leading) {
-            Text("Ticket.ID: \(appState.activeTicket!.id)")
-            Text("Ticket.experation: \(ISO8601DateFormatter().string(from: appState.activeTicket!.experation))")
-            RelativeTimeText(to: appState.activeTicket!.experation, textBefore: "Time Remaining: ")
+            Text("Ticket.ID: \(appState.activeTicket!.uuid)")
+            Text("Ticket.experation: \(ISO8601DateFormatter().string(from: appState.activeTicket!.expiration))")
+            RelativeTimeText(to: appState.activeTicket!.expiration, textBefore: "Time Remaining: ")
             Text("Activity: \(activityManager.activityString)")
             Text("Confidence: \(activityManager.confidenceString)")
           }

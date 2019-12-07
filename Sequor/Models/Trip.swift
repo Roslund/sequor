@@ -18,9 +18,9 @@ struct Location: Codable {
   /// The timestam the location was recorded
   let timestamp: Date
   /// Speed at location (m/s)
-  let speed: Double
+  let speed: Double?
   /// Course 0-359.9 degrees
-  let course: Double
+  let course: Double?
   /// The poistion
   let coordinate: Coordinate
 }
