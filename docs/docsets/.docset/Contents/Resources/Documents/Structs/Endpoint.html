@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>LocationLogger Class Reference</title>
+    <title>Endpoint Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/LocationLogger" class="dashAnchor"></a>
-    <a title="LocationLogger Class Reference"></a>
+    <a name="//apple_ref/swift/Struct/Endpoint" class="dashAnchor"></a>
+    <a title="Endpoint Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (74% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        LocationLogger Class Reference
+        Endpoint Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -78,14 +78,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>LocationLogger</h1>
+            <h1>Endpoint</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">final</span> <span class="kd">class</span> <span class="kt">LocationLogger</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">ObservableObject</span><span class="p">,</span> <span class="kt">CLLocationManagerDelegate</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Endpoint</span></code></pre>
 
                 </div>
               </div>
-            <p>Undocumented</p>
+            <p>Endpoints to access the REST API of the backend</p>
 
           </section>
           <section class="section task-group-section">
@@ -94,9 +94,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Sequor14LocationLoggerC15locationManagerSo010CLLocationE0Cvp"></a>
-                    <a name="//apple_ref/swift/Property/locationManager" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Sequor14LocationLoggerC15locationManagerSo010CLLocationE0Cvp">locationManager</a>
+                    <a name="/s:6Sequor8EndpointV10components10Foundation13URLComponentsVvp"></a>
+                    <a name="//apple_ref/swift/Property/components" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Sequor8EndpointV10components10Foundation13URLComponentsVvp">components</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -111,7 +111,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">locationManager</span><span class="p">:</span> <span class="kt">CLLocationManager</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">components</span><span class="p">:</span> <span class="kt">URLComponents</span></code></pre>
 
                         </div>
                       </div>
@@ -121,9 +121,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Sequor14LocationLoggerC4tripAA4TripVvp"></a>
-                    <a name="//apple_ref/swift/Property/trip" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Sequor14LocationLoggerC4tripAA4TripVvp">trip</a>
+                    <a name="/s:6Sequor8EndpointV4pathSSvp"></a>
+                    <a name="//apple_ref/swift/Property/path" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Sequor8EndpointV4pathSSvp">path</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -138,7 +138,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">trip</span><span class="p">:</span> <span class="kt"><a href="../Structs/Trip.html">Trip</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">path</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -148,9 +148,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Sequor14LocationLoggerC4tripAcA4TripV_tcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(trip:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Sequor14LocationLoggerC4tripAcA4TripV_tcfc">init(trip:)</a>
+                    <a name="/s:6Sequor8EndpointV3url10Foundation3URLVSgvp"></a>
+                    <a name="//apple_ref/swift/Property/url" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Sequor8EndpointV3url10Foundation3URLVSgvp">url</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -158,14 +158,45 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The URL of the endpoint</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">trip</span><span class="p">:</span> <span class="kt"><a href="../Structs/Trip.html">Trip</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Sequor8EndpointV8postTrip6userID06ticketF0ACSS_SStFZ"></a>
+                    <a name="//apple_ref/swift/Method/postTrip(userID:ticketID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Sequor8EndpointV8postTrip6userID06ticketF0ACSS_SStFZ">postTrip(userID:ticketID:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Endpoint for posting trip data to the backend</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">postTrip</span><span class="p">(</span><span class="nv">userID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">ticketID</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Endpoint</span></code></pre>
 
                         </div>
                       </div>
@@ -175,9 +206,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Sequor@objc(cs)LocationLogger(im)locationManager:didUpdateLocations:"></a>
-                    <a name="//apple_ref/swift/Method/locationManager(_:didUpdateLocations:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Sequor@objc(cs)LocationLogger(im)locationManager:didUpdateLocations:">locationManager(_:didUpdateLocations:)</a>
+                    <a name="/s:6Sequor8EndpointV6ticketACyFZ"></a>
+                    <a name="//apple_ref/swift/Method/ticket()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Sequor8EndpointV6ticketACyFZ">ticket()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -185,14 +216,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Endpoint for getting an active ticket from the backend</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">locationManager</span><span class="p">(</span><span class="n">_</span> <span class="nv">manager</span><span class="p">:</span> <span class="kt">CLLocationManager</span><span class="p">,</span> <span class="n">didUpdateLocations</span> <span class="nv">locations</span><span class="p">:</span> <span class="p">[</span><span class="kt">CLLocation</span><span class="p">])</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">ticket</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Endpoint</span></code></pre>
 
                         </div>
                       </div>
@@ -202,9 +233,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Sequor@objc(cs)LocationLogger(im)locationManager:didFailWithError:"></a>
-                    <a name="//apple_ref/swift/Method/locationManager(_:didFailWithError:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Sequor@objc(cs)LocationLogger(im)locationManager:didFailWithError:">locationManager(_:didFailWithError:)</a>
+                    <a name="/s:6Sequor8EndpointV13allCouponsFor6userIDACSS_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/allCouponsFor(userID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Sequor8EndpointV13allCouponsFor6userIDACSS_tFZ">allCouponsFor(userID:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -212,14 +243,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Endpoint for getting all coupons owned by a userId</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">locationManager</span><span class="p">(</span><span class="n">_</span> <span class="nv">manager</span><span class="p">:</span> <span class="kt">CLLocationManager</span><span class="p">,</span> <span class="n">didFailWithError</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">allCouponsFor</span><span class="p">(</span><span class="nv">userID</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Endpoint</span></code></pre>
 
                         </div>
                       </div>
@@ -229,9 +260,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Sequor14LocationLoggerC3endAA4TripVyF"></a>
-                    <a name="//apple_ref/swift/Method/end()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Sequor14LocationLoggerC3endAA4TripVyF">end()</a>
+                    <a name="/s:6Sequor8EndpointV9useCoupon6userID06couponF0ACSS_SStFZ"></a>
+                    <a name="//apple_ref/swift/Method/useCoupon(userID:couponID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Sequor8EndpointV9useCoupon6userID06couponF0ACSS_SStFZ">useCoupon(userID:couponID:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -239,14 +270,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Endpoint to use a coupon identified by a id
+<strong>Expects PUT request</strong></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">end</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Trip.html">Trip</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">useCoupon</span><span class="p">(</span><span class="nv">userID</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">couponID</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Endpoint</span></code></pre>
 
                         </div>
                       </div>

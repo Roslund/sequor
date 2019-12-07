@@ -2,6 +2,7 @@ import Foundation
 
 /// Simple HTTP "library"
 enum HTTP {
+  /// :nodoc:
   enum Method: String {
     case GET
     case POST
@@ -35,7 +36,7 @@ enum HTTP {
 //    dataTask.resume()
 //  }
 
-  /// Request with compleation handeler **with** error handeling
+  /// Request with compleation handler **with** error handeling
   static func request(method: Method = .GET, url: URL, body: Data? = nil,
                       additionalHeaders headers: [String: String] = [:],
                       completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
@@ -51,7 +52,7 @@ enum HTTP {
     task.resume()
   }
 
-  /// Request with compleation handeler **with** error handeling
+  /// Request with compleation handler **without** error handeling
   static func request(method: Method = .GET, url: URL, body: Data? = nil,
                       additionalHeaders headers: [String: String] = [:],
                       completionHandler: @escaping (Data) -> Void) {
@@ -64,7 +65,7 @@ enum HTTP {
     }
   }
 
-  /// Request **with out** compleation handeler
+  /// Request **without** compleation handler
   static func request(method: Method = .GET, url: URL, body: Data? = nil,
                       additionalHeaders headers: [String: String] = [:]) {
     request(method: method, url: url, body: body, additionalHeaders: headers) { _, _, _ in }

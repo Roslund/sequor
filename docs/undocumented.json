@@ -92,10 +92,17 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Network.swift",
-      "line": 30,
-      "symbol": "HTTP.downloadTask(url:headders:completionHandler:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Networking/Endpoint.swift",
+      "line": 5,
+      "symbol": "Endpoint.components",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Networking/Endpoint.swift",
+      "line": 7,
+      "symbol": "Endpoint.path",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     }
   ],
