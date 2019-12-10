@@ -2,7 +2,7 @@ import SwiftUI
 
 struct PurchaseView: View {
   @EnvironmentObject var appState: AppState
-  @EnvironmentObject var activityManager: ActivityManager
+  @EnvironmentObject var tripSegmentator: TripSegmentator
   @State private var showActivitySheet = false
 
   var body: some View {
@@ -25,17 +25,23 @@ struct PurchaseView: View {
             Text("Ticket.ID: \(appState.activeTicket!.uuid)")
             Text("Ticket.experation: \(ISO8601DateFormatter().string(from: appState.activeTicket!.expiration))")
             RelativeTimeText(to: appState.activeTicket!.expiration, textBefore: "Time Remaining: ")
-            Text("Activity: \(activityManager.activityString)")
-            Text("Confidence: \(activityManager.confidenceString)")
+            Text("Activity: \(tripSegmentator.activity.rawValue)")
           }
         }
         Spacer()
         Button(action: {
           if self.appState.activeTicket == nil {
             self.appState.activateTicket()
+            self.tripSegmentator.startMonitoring()
           } else {
             self.appState.invalidateTicket()
+            self.tripSegmentator.stopMonitoring()
           }
+
+          // Haptic feedback
+          let generator = UIImpactFeedbackGenerator(style: .heavy)
+          generator.impactOccurred()
+
         }, label: {
           HStack {
             Spacer()
@@ -53,20 +59,22 @@ struct PurchaseView: View {
           .cornerRadius(10)
           .padding(.horizontal, 20)
           .padding(.bottom, 24)
-
       }
       .navigationBarTitle("Purchase", displayMode: .inline)
       .navigationBarItems(trailing:
         Button(action: {
+                  // Haptic feedback
+                  let generator = UIImpactFeedbackGenerator(style: .heavy)
+                  generator.impactOccurred()
                  self.showActivitySheet = true
                },
                label: {
-                 Image(systemName: "square.and.arrow.up")
+                Image(systemName: "square.and.arrow.up").resizable().font(.system(size: 25)).padding(.trailing, 12)
                }))
       .sheet(isPresented: $showActivitySheet) {
         ActivityView(activityItems: [
           // swiftlint:disable:next force_try
-          String(data: try! JSONEncoder().encode(self.appState.locationLogger!.trip), encoding: .utf8)!
+          String(data: try! JSONEncoder().encode(self.tripSegmentator.trips), encoding: .utf8)!
             ], applicationActivities: nil)
       }
 
@@ -89,6 +97,6 @@ struct PurchaseView_Previews: PreviewProvider {
         experation: Date())
       )
       return appState
-      }())
+      }()).environmentObject(TripSegmentator())
   }
 }
