@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct HomeView: View {
+  @EnvironmentObject var tripSegmentator: TripSegmentator
   @State private var selection = 3
   
   var body: some View {
@@ -17,7 +18,7 @@ struct HomeView: View {
         Image(systemName: "cloud")
         Text("Dashboard")
       }.tag(3)
-      Text("Discovery View").tabItem {
+      MapView(tripSegmentator: tripSegmentator).edgesIgnoringSafeArea(.vertical).tabItem {
         Image(systemName: "arrowtriangle.up")
         Text("Discovery")
       }.tag(4)

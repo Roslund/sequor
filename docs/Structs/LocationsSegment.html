@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Ticket Structure Reference</title>
+    <title>LocationsSegment Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/Ticket" class="dashAnchor"></a>
-    <a title="Ticket Structure Reference"></a>
+    <a name="//apple_ref/swift/Struct/LocationsSegment" class="dashAnchor"></a>
+    <a title="LocationsSegment Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (63% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Ticket Structure Reference
+        LocationsSegment Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -89,15 +89,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Ticket</h1>
+            <h1>LocationsSegment</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Ticket</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">LocationsSegment</span></code></pre>
 
                 </div>
               </div>
-            <p>Represent an active ticket recived from the backend.
-Since we are mocking tickets, there is no need for security.</p>
+            <p>Structure for displaying trip segments on a MKMapView</p>
 
           </section>
           <section class="section task-group-section">
@@ -106,9 +105,9 @@ Since we are mocking tickets, there is no need for security.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Sequor6TicketV4uuidSSvp"></a>
-                    <a name="//apple_ref/swift/Property/uuid" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Sequor6TicketV4uuidSSvp">uuid</a>
+                    <a name="/s:6Sequor16LocationsSegmentV8activitySo16CMMotionActivityCAAE14ClassificationOvp"></a>
+                    <a name="//apple_ref/swift/Property/activity" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Sequor16LocationsSegmentV8activitySo16CMMotionActivityCAAE14ClassificationOvp">activity</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -123,7 +122,7 @@ Since we are mocking tickets, there is no need for security.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">uuid</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">activity</span><span class="p">:</span> <span class="kt">CMMotionActivity</span><span class="o">.</span><span class="kt">Classification</span></code></pre>
 
                         </div>
                       </div>
@@ -133,9 +132,9 @@ Since we are mocking tickets, there is no need for security.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Sequor6TicketV10expiration10Foundation4DateVvp"></a>
-                    <a name="//apple_ref/swift/Property/expiration" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Sequor6TicketV10expiration10Foundation4DateVvp">expiration</a>
+                    <a name="/s:6Sequor16LocationsSegmentV11coordinatesSaySo22CLLocationCoordinate2DVGvp"></a>
+                    <a name="//apple_ref/swift/Property/coordinates" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Sequor16LocationsSegmentV11coordinatesSaySo22CLLocationCoordinate2DVGvp">coordinates</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -143,14 +142,14 @@ Since we are mocking tickets, there is no need for security.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The specific time when the ticket expires. Normaly 90 minutes after created</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">expiration</span><span class="p">:</span> <span class="kt">Date</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">coordinates</span><span class="p">:</span> <span class="p">[</span><span class="kt">CLLocationCoordinate2D</span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>

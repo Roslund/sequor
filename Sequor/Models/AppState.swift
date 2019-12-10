@@ -19,8 +19,6 @@ final class AppState: ObservableObject {
   /// Valid coupons the user has erned.
   @Published var coupons: [Coupon] = []
 
-  var locationLogger: LocationLogger?
-
   init() {
     // We probably want to request the state from the backend when we instanciate the object
   }
@@ -29,7 +27,6 @@ final class AppState: ObservableObject {
   func activateTicket() {
     // Temp for testing. Should make request to server.
     activeTicket = Ticket(uuid: "1", expiration: Date(timeInterval: 90*60, since: Date()))
-    locationLogger = LocationLogger(trip: Trip())
   }
 
   // Should send a request to the server to invalidate the ticket.
@@ -37,9 +34,9 @@ final class AppState: ObservableObject {
   func invalidateTicket() {
     // Temp for testing. Should make request to server.
     activeTicket = nil
-    if let trip = locationLogger?.end() {
-      HTTP.post(asJSON: trip, to: Endpoint.postTrip(userID: "test", ticketID: "test").url!) { _ in }
-    }
+//    if let trip = locationLogger?.end() {
+//      HTTP.post(asJSON: trip, to: Endpoint.postTrip(userID: "test", ticketID: "test").url!) { _ in }
+//    }
   }
 
 }
