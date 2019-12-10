@@ -105,4 +105,3 @@ final class TripSegmentator: NSObject, ObservableObject, CLLocationManagerDelega
         trips = []
     }
 }
-

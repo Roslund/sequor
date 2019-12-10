@@ -87,7 +87,7 @@
     {
       "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Models/Ticket.swift",
       "line": 7,
-      "symbol": "Ticket.id",
+      "symbol": "Ticket.uuid",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },

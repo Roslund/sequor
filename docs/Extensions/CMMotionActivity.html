@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Ticket Structure Reference</title>
+    <title>CMMotionActivity Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/Ticket" class="dashAnchor"></a>
-    <a title="Ticket Structure Reference"></a>
+    <a name="//apple_ref/swift/Extension/CMMotionActivity" class="dashAnchor"></a>
+    <a title="CMMotionActivity Extension Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (63% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Ticket Structure Reference
+        CMMotionActivity Extension Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -89,16 +89,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Ticket</h1>
+            <h1>CMMotionActivity</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Ticket</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">CMMotionActivity</span></code></pre>
 
                 </div>
               </div>
-            <p>Represent an active ticket recived from the backend.
-Since we are mocking tickets, there is no need for security.</p>
-
+            
           </section>
           <section class="section task-group-section">
             <div class="task-group">
@@ -106,9 +104,37 @@ Since we are mocking tickets, there is no need for security.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Sequor6TicketV4uuidSSvp"></a>
-                    <a name="//apple_ref/swift/Property/uuid" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Sequor6TicketV4uuidSSvp">uuid</a>
+                    <a name="/s:So16CMMotionActivityC6SequorE14ClassificationO"></a>
+                    <a name="//apple_ref/swift/Enum/Classification" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16CMMotionActivityC6SequorE14ClassificationO">Classification</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>CMActityManager</p>
+
+                        <a href="../Extensions/CMMotionActivity/Classification.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">Classification</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So16CMMotionActivityC6SequorE14classificationAbCE14ClassificationOvp"></a>
+                    <a name="//apple_ref/swift/Property/classification" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So16CMMotionActivityC6SequorE14classificationAbCE14ClassificationOvp">classification</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -123,34 +149,7 @@ Since we are mocking tickets, there is no need for security.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">uuid</span><span class="p">:</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:6Sequor6TicketV10expiration10Foundation4DateVvp"></a>
-                    <a name="//apple_ref/swift/Property/expiration" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Sequor6TicketV10expiration10Foundation4DateVvp">expiration</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The specific time when the ticket expires. Normaly 90 minutes after created</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">expiration</span><span class="p">:</span> <span class="kt">Date</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">classification</span><span class="p">:</span> <span class="kt"><a href="../Extensions/CMMotionActivity/Classification.html">Classification</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
