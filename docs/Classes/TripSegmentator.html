@@ -14,7 +14,7 @@
     <a title="TripSegmentator Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (63% documented)</p>
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
         <p class="header-right"><a href="https://github.com/Roslund/sequor"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -44,17 +44,6 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Enums/HTTP.html">HTTP</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="../Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Extensions/CMMotionActivity.html">CMMotionActivity</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Extensions/CMMotionActivity/Classification.html">– Classification</a>
               </li>
             </ul>
           </li>
@@ -96,7 +85,8 @@
 
                 </div>
               </div>
-            <p>Undocumented</p>
+            <p>Used for recording location data.
+Uses CoreMotion to classify the activity and only store trip information when travling on a automotive vheicle.</p>
 
           </section>
           <section class="section task-group-section">
@@ -105,9 +95,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Sequor15TripSegmentatorC15locationManagerSo010CLLocationE0Cvp"></a>
-                    <a name="//apple_ref/swift/Property/locationManager" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Sequor15TripSegmentatorC15locationManagerSo010CLLocationE0Cvp">locationManager</a>
+                    <a name="/s:6Sequor15TripSegmentatorC7mapViewSo05MKMapE0CSgvp"></a>
+                    <a name="//apple_ref/swift/Property/mapView" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Sequor15TripSegmentatorC7mapViewSo05MKMapE0CSgvp">mapView</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -115,41 +105,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>mapView to update with new location and classification data.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">locationManager</span><span class="p">:</span> <span class="kt">CLLocationManager</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:6Sequor15TripSegmentatorC15activityManagerSo016CMMotionActivityE0Cvp"></a>
-                    <a name="//apple_ref/swift/Property/activityManager" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Sequor15TripSegmentatorC15activityManagerSo016CMMotionActivityE0Cvp">activityManager</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">activityManager</span><span class="p">:</span> <span class="kt">CMMotionActivityManager</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">weak</span> <span class="k">var</span> <span class="nv">mapView</span><span class="p">:</span> <span class="kt">MKMapView</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -186,60 +149,6 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Sequor15TripSegmentatorC7mapViewSo05MKMapE0CSgvp"></a>
-                    <a name="//apple_ref/swift/Property/mapView" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Sequor15TripSegmentatorC7mapViewSo05MKMapE0CSgvp">mapView</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">weak</span> <span class="k">var</span> <span class="nv">mapView</span><span class="p">:</span> <span class="kt">MKMapView</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:6Sequor15TripSegmentatorC18previousCoordinateSo22CLLocationCoordinate2DVSgvp"></a>
-                    <a name="//apple_ref/swift/Property/previousCoordinate" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Sequor15TripSegmentatorC18previousCoordinateSo22CLLocationCoordinate2DVSgvp">previousCoordinate</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">previousCoordinate</span><span class="p">:</span> <span class="kt">CLLocationCoordinate2D</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/s:6Sequor15TripSegmentatorC8activitySo16CMMotionActivityCAAE14ClassificationOvp"></a>
                     <a name="//apple_ref/swift/Property/activity" class="dashAnchor"></a>
                     <a class="token" href="#/s:6Sequor15TripSegmentatorC8activitySo16CMMotionActivityCAAE14ClassificationOvp">activity</a>
@@ -250,7 +159,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The identified motion activity</p>
 
                       </div>
                       <div class="declaration">
@@ -278,7 +187,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Stores trips durring the tracking session</p>
 
                       </div>
                       <div class="declaration">
@@ -305,7 +214,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Initializer.
+Also sets up the locationmanager. Maybe this should be at a later point? We&rsquo;ll have to test</p>
 
                       </div>
                       <div class="declaration">
@@ -332,7 +242,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Delegate method called when new location data is available.</p>
 
                       </div>
                       <div class="declaration">
@@ -359,7 +269,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Required function. If something fails we just print it.</p>
 
                       </div>
                       <div class="declaration">
@@ -386,7 +296,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Should be called when a ticket is active. Will classify the users activity and store trip data untill
+<code>stopMinitoring()</code> is called.</p>
 
                       </div>
                       <div class="declaration">
@@ -413,7 +324,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Stops monitoring and empties logged trips and segments.</p>
 
                       </div>
                       <div class="declaration">
@@ -432,7 +343,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-12-10)</p>
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-12-11)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.12.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
