@@ -3,36 +3,23 @@ import SwiftUI
 struct DashboardView: View {
   @State var showingSheet = false
   @EnvironmentObject var appState: AppState
+  let gameScene = GameScene(size: CGSize(width: 3375, height: 7308))
 
   var body: some View {
     NavigationView {
-      VStack {
-        Text("In total, you have saved")
-          .font(.headline)
-          .padding(.top)
-        Text("\(appState.totalCO2) KG CO₂")
-          .font(.largeTitle)
-          .fontWeight(.heavy)
-        Text("By taking public transpot")
-          .font(.headline)
-        Spacer()
         ZStack {
-          Image("Apple_Stage_\(appState.treeLevel)").resizable()
-          if !appState.coupons.isEmpty {
-            Button(
-              action: {
-                self.showingSheet = true
-            },
-              label: {
-                Image(systemName: "dollarsign.circle.fill").font(.system(size: 32))
-            }
-            ).popover(isPresented: $showingSheet) {
-              CouponView(coupon: self.appState.coupons.first!)
-            }
+          SceneView(scene: gameScene)
+          VStack {
+            Text("In total, you have saved")
+              .font(.headline)
+              .padding(.top)
+            Text("\(appState.totalCO2) KG CO₂")
+              .font(.largeTitle)
+              .fontWeight(.heavy)
+            Text("By taking public transpot")
+              .font(.headline)
+            Spacer()
           }
-        }
-        Spacer()
-
       }
       .navigationBarTitle("Seqour CO₂", displayMode: .inline)
     }

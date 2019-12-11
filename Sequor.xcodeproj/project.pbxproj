@@ -30,6 +30,9 @@
 		ADC2A22B238714B10096F1ED /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC2A22A238714B10096F1ED /* HTTP.swift */; };
 		ADCD0ADD23A02DDB0038114F /* LocationSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCD0ADC23A02DDB0038114F /* LocationSegment.swift */; };
 		ADCD0AE023A02E260038114F /* +CMMotionActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCD0ADF23A02E260038114F /* +CMMotionActivity.swift */; };
+		ADCD0AE523A03F870038114F /* TreeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCD0AE323A03F870038114F /* TreeFactory.swift */; };
+		ADCD0AE623A03F870038114F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCD0AE423A03F870038114F /* GameScene.swift */; };
+		ADCD0AE823A03FFC0038114F /* SceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCD0AE723A03FFC0038114F /* SceneView.swift */; };
 		ADD8B71D237B0C9F00D8DD55 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD8B71C237B0C9F00D8DD55 /* AppState.swift */; };
 		ADD8B71F237B0DDD00D8DD55 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD8B71E237B0DDD00D8DD55 /* Profile.swift */; };
 		ADD8B723237B4ECF00D8DD55 /* RelativeTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD8B722237B4ECF00D8DD55 /* RelativeTime.swift */; };
@@ -89,6 +92,9 @@
 		ADC2A22A238714B10096F1ED /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		ADCD0ADC23A02DDB0038114F /* LocationSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSegment.swift; sourceTree = "<group>"; };
 		ADCD0ADF23A02E260038114F /* +CMMotionActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+CMMotionActivity.swift"; sourceTree = "<group>"; };
+		ADCD0AE323A03F870038114F /* TreeFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeFactory.swift; sourceTree = "<group>"; };
+		ADCD0AE423A03F870038114F /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		ADCD0AE723A03FFC0038114F /* SceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneView.swift; sourceTree = "<group>"; };
 		ADD8B71C237B0C9F00D8DD55 /* AppState.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; tabWidth = 2; };
 		ADD8B71E237B0DDD00D8DD55 /* Profile.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; tabWidth = 2; };
 		ADD8B722237B4ECF00D8DD55 /* RelativeTime.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = RelativeTime.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -172,6 +178,7 @@
 		AD1F0618236760CC00F74D9A /* Sequor */ = {
 			isa = PBXGroup;
 			children = (
+				ADCD0AE223A03F040038114F /* Gamification */,
 				ADCD0ADE23A02E1B0038114F /* Utils */,
 				AD142BEE23999D5700A26F0B /* Networking */,
 				ADDFE16823748F15007BD2A8 /* Models */,
@@ -234,6 +241,7 @@
 			children = (
 				ADD8B722237B4ECF00D8DD55 /* RelativeTime.swift */,
 				ADA166ED238430E700C53998 /* ActivityView.swift */,
+				ADCD0AE723A03FFC0038114F /* SceneView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -253,6 +261,15 @@
 				AD18F04D2385352300F3D1B8 /* LocationLogger.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		ADCD0AE223A03F040038114F /* Gamification */ = {
+			isa = PBXGroup;
+			children = (
+				ADCD0AE423A03F870038114F /* GameScene.swift */,
+				ADCD0AE323A03F870038114F /* TreeFactory.swift */,
+			);
+			path = Gamification;
 			sourceTree = "<group>";
 		};
 		ADD8B71A237B0BBF00D8DD55 /* Unused */ = {
@@ -452,10 +469,13 @@
 				AD7FAB06239FA9DE002EAAEB /* MapView.swift in Sources */,
 				ADBEB00923743CB9001534CD /* DashboardView.swift in Sources */,
 				ADDFE16A23748F24007BD2A8 /* Coupon.swift in Sources */,
+				ADCD0AE623A03F870038114F /* GameScene.swift in Sources */,
 				ADD8B71F237B0DDD00D8DD55 /* Profile.swift in Sources */,
 				ADA166EE238430E700C53998 /* ActivityView.swift in Sources */,
+				ADCD0AE823A03FFC0038114F /* SceneView.swift in Sources */,
 				AD1F061C236760CC00F74D9A /* SceneDelegate.swift in Sources */,
 				AD1F061E236760CC00F74D9A /* HomeView.swift in Sources */,
+				ADCD0AE523A03F870038114F /* TreeFactory.swift in Sources */,
 				AD18F0502385358300F3D1B8 /* Trip.swift in Sources */,
 				ADCD0AE023A02E260038114F /* +CMMotionActivity.swift in Sources */,
 				AD142BED239997B200A26F0B /* Endpoint.swift in Sources */,
