@@ -2,9 +2,9 @@ import Foundation
 
 /// Endpoints to access the REST API of the backend
 struct Endpoint {
-  var components = URLComponents()
+  private var components = URLComponents()
   private let host = "polimi-demo.partners.mia-platform.eu"
-  let path: String
+  private let path: String
   
   // Private initializer to make it impossible to create endpoints manually.
   private init(path: String) {

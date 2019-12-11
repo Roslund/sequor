@@ -2,18 +2,27 @@ import CoreLocation
 import CoreMotion
 import MapKit
 
+/// Used for recording location data.
+/// Uses CoreMotion to classify the activity and only store trip information when travling on a automotive vheicle.
 final class TripSegmentator: NSObject, ObservableObject, CLLocationManagerDelegate {
-    let locationManager = CLLocationManager()
-    let activityManager = CMMotionActivityManager()
+    private let locationManager = CLLocationManager()
+    private let activityManager = CMMotionActivityManager()
+
+    /// mapView to update with new location and classification data.
+    weak var mapView: MKMapView?
+    private var previousCoordinate: CLLocationCoordinate2D?
 
     /// Only used for debugging and showing information on the debug map
     var segments: [LocationsSegment] = []
-    weak var mapView: MKMapView?
-    var previousCoordinate: CLLocationCoordinate2D?
 
+    /// The identified motion activity
     @Published var activity: CMMotionActivity.Classification = .unknown
+
+    /// Stores trips durring the tracking session
     var trips: [Trip] = []
 
+    /// Initializer.
+    /// Also sets up the locationmanager. Maybe this should be at a later point? We'll have to test
     override init() {
         super.init()
 
@@ -23,17 +32,28 @@ final class TripSegmentator: NSObject, ObservableObject, CLLocationManagerDelega
         if CLLocationManager.locationServicesEnabled() {
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.allowsBackgroundLocationUpdates = true
+            locationManager.pausesLocationUpdatesAutomatically = false
+
             // The minimum distance (measured in meters) a device must
             // move horizontally before an update event is generated.
             locationManager.distanceFilter = 10.0
-            // Try not to update on heading change
+
+            // No need to triger locationupdates when changing heading.
+            // Found no way to turn this off, but a 360 degree change should be rare.
             locationManager.headingFilter = 359.9
-            locationManager.pausesLocationUpdatesAutomatically = false
+
+            // Just true for testing, making sure that the app records data in the background.
             locationManager.showsBackgroundLocationIndicator = true
         }
     }
 
+    /// Delegate method called when new location data is available.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // Filter out any reading with too poor accuracy. These should be locations derermined by cell tower or wifi triangulation. Or GPS Positions when the user is inside or underground.
+        let locations = locations.filter { location in
+            location.horizontalAccuracy < 100
+        }
+
         // Storing segments to display historic info on the map
         if !segments.isEmpty {
             segments[segments.count-1].coordinates.append(contentsOf: locations.map({$0.coordinate}))
@@ -43,11 +63,14 @@ final class TripSegmentator: NSObject, ObservableObject, CLLocationManagerDelega
         if let coordinate = previousCoordinate, mapView != nil {
             var area = locations.map({$0.coordinate}) + [coordinate]
             let polyline = MKPolyline(coordinates: &area, count: area.count)
+
+            // The title is used to color the line segment on the map.
             polyline.title = self.activity.rawValue
             mapView?.addOverlay(polyline)
             previousCoordinate = locations.last?.coordinate
         }
 
+        // We only want to store trip data when the user is automotive (or cycling)
         if activity == .cycling || activity == .automotive {
             trips[trips.count-1].locations.append(contentsOf: locations.map { location in
                 Location(timestamp: location.timestamp, speed: location.speed, course: location.course,
@@ -58,10 +81,13 @@ final class TripSegmentator: NSObject, ObservableObject, CLLocationManagerDelega
 
     }
 
+    /// Required function. If something fails we just print it.
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
     }
 
+    /// Should be called when a ticket is active. Will classify the users activity and store trip data untill
+    /// `stopMinitoring()` is called.
     func startMonitoring() {
         // Activity Manager
         activityManager.startActivityUpdates(to: .main) { (activity) in
@@ -96,6 +122,7 @@ final class TripSegmentator: NSObject, ObservableObject, CLLocationManagerDelega
         self.previousCoordinate = locationManager.location?.coordinate
     }
 
+    /// Stops monitoring and empties logged trips and segments.
     func stopMonitoring() {
         activityManager.stopActivityUpdates()
         locationManager.stopUpdatingLocation()

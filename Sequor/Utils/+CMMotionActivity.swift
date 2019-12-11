@@ -1,5 +1,7 @@
 import CoreMotion
 
+/// :nodoc:
+/// Convenice method for returning an enum instead of having to query all functions.
 extension CMMotionActivity {
     /// CMActityManager
     enum Classification: String {
