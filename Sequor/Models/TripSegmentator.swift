@@ -49,9 +49,9 @@ final class TripSegmentator: NSObject, ObservableObject, CLLocationManagerDelega
 
     /// Delegate method called when new location data is available.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        // Filter out any reading with too poor accuracy
+        // Filter out any reading with too poor accuracy. These should be locations derermined by cell tower or wifi triangulation. Or GPS Positions when the user is inside or underground.
         let locations = locations.filter { location in
-            location.horizontalAccuracy < 25
+            location.horizontalAccuracy < 100
         }
 
         // Storing segments to display historic info on the map
