@@ -49,9 +49,16 @@ final class TripSegmentator: NSObject, ObservableObject, CLLocationManagerDelega
 
     /// Delegate method called when new location data is available.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        // Filter out any reading with too poor accuracy. These should be locations derermined by cell tower or wifi triangulation. Or GPS Positions when the user is inside or underground.
+        // Filter out any reading with too poor accuracy. These should be locations derermined by cell tower
+        //or wifi triangulation. Or GPS Positions when the user is inside or underground.
         let locations = locations.filter { location in
             location.horizontalAccuracy < 100
+        }
+
+        // Just used for the line updates on the MKMapView.
+        // However we need to keep track of it, even if we're currently not showing the mapview.
+        if let coordinate = locations.last?.coordinate {
+            previousCoordinate = coordinate
         }
 
         // Storing segments to display historic info on the map
@@ -67,7 +74,6 @@ final class TripSegmentator: NSObject, ObservableObject, CLLocationManagerDelega
             // The title is used to color the line segment on the map.
             polyline.title = self.activity.rawValue
             mapView?.addOverlay(polyline)
-            previousCoordinate = locations.last?.coordinate
         }
 
         // We only want to store trip data when the user is automotive (or cycling)
