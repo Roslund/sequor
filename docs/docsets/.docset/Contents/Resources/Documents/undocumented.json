@@ -1,12 +1,6 @@
 {
   "warnings": [
-    {
-      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Networking/Endpoint.swift",
-      "line": 7,
-      "symbol": "Endpoint.path",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    }
+
   ],
   "source_directory": "/Users/enari/Documents/Repos/Sequor"
 }
