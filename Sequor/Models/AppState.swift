@@ -19,6 +19,7 @@ final class AppState: ObservableObject {
   /// Valid coupons the user has erned.
   @Published var coupons: [Coupon] = []
 
+  /// :nodoc:
   init() {
     // We probably want to request the state from the backend when we instanciate the object
   }
