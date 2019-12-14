@@ -32,9 +32,8 @@ struct PurchaseView: View {
         Button(action: {
           if self.appState.activeTicket == nil {
             self.appState.activateTicket()
-            self.tripSegmentator.startMonitoring()
           } else {
-            self.appState.invalidateTicket()
+            self.appState.activeTicket = nil
             self.tripSegmentator.stopMonitoring()
           }
 

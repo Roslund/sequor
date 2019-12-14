@@ -14,9 +14,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // (see `application:configurationForConnectingSceneSession` instead).
 
     // Create the SwiftUI view that provides the window contents.
+    let tripSegmentator = TripSegmentator()
     let homeView = HomeView()
-      .environmentObject(AppState())
-      .environmentObject(TripSegmentator())
+      .environmentObject(AppState(tripSegmentator: tripSegmentator))
+      .environmentObject(tripSegmentator)
 
     // Use a UIHostingController as window root view controller.
     if let windowScene = scene as? UIWindowScene {

@@ -39,8 +39,9 @@ class IntegrationTests: XCTestCase {
     let expectation = self.expectation(description: "Network Request")
 
     HTTP.request(url: Endpoint.ticket().url!) { data in
-      let ticket = try? JSONDecoder().decode(Ticket.self, from: data)
-      
+      let decoder = JSONDecoder()
+      decoder.dateDecodingStrategy = .millisecondsSince1970
+      let ticket = try? decoder.decode(Ticket.self, from: data)
       XCTAssertNotNil(ticket)
       expectation.fulfill()
     }
