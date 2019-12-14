@@ -13,8 +13,13 @@ final class AppState: ObservableObject {
   /// The total amount of CO2 the user has saved by taking public tansport
   @Published var totalCO2: Int = 0
 
-  /// Represents the visual state the tree should be in
-  @Published var treeLevel: Int = 1
+  /// For udpating totalCO2 with a bindable Double
+  var doubbleCO2 = 0.0 {
+    willSet {
+      totalCO2 = Int(newValue)
+      //objectWillChange.send()
+    }
+  }
 
   /// Valid coupons the user has erned.
   @Published var coupons: [Coupon] = []
@@ -40,4 +45,20 @@ final class AppState: ObservableObject {
 //    }
   }
 
+}
+
+extension AppState {
+  /// Represents the visual state the tree should be in
+  var treeLevel: Int {
+    switch totalCO2 {
+    case ...200:
+      return 1
+    case ...400:
+      return 2
+    case ...800:
+      return 3
+    default:
+      return 3
+    }
+  }
 }

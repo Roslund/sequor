@@ -42,7 +42,6 @@ struct HomeView_Previews: PreviewProvider {
     HomeView().environmentObject({ () -> AppState in
       let appState = AppState()
       appState.totalCO2 = 200
-      appState.treeLevel = 4
       appState.coupons.append(Coupon(
         id: 1,
         title: "200g of CO₂ Saved",
