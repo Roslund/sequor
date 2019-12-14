@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ProfileView: View {
   @EnvironmentObject var appState: AppState
-  
+
   var body: some View {
     NavigationView {
       VStack {
@@ -22,14 +22,8 @@ struct ProfileView: View {
           Text("User 3").tag(3)
           Text("User 4").tag(4)
         }.pickerStyle(SegmentedPickerStyle())
-        Text("Select Tree Level:")
-        Picker("Level", selection: $appState.treeLevel) {
-          Text("Level 1").tag(1)
-          Text("Level 2").tag(2)
-          Text("Level 3").tag(3)
-          Text("Level 4").tag(4)
-          Text("Level 4").tag(5)
-        }.pickerStyle(SegmentedPickerStyle())
+        Text("total CO2: \(appState.totalCO2)")
+        Slider(value: $appState.doubbleCO2, in: 0...1000)
         Spacer()
         
       }.navigationBarTitle("Purchase", displayMode: .inline)
