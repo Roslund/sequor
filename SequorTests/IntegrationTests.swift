@@ -1,12 +1,6 @@
 import XCTest
 
 class IntegrationTests: XCTestCase {
-
-  struct Wallet: Codable {
-    let userId: String
-    let totalCO2: Int
-  }
-
   func testGetWalletsCURD() {
     let expectation = self.expectation(description: "Network Request")
     let url = URL(string: "https://polimi-demo.partners.mia-platform.eu/v2/wallets/")!
@@ -18,6 +12,19 @@ class IntegrationTests: XCTestCase {
       expectation.fulfill()
     }
 
+    waitForExpectations(timeout: 5, handler: nil)
+  }
+
+  func testGetWallet() {
+    let expectation = self.expectation(description: "Network Request")
+    let endpoint = Endpoint.walletFor(userID: "000000000000000000000001")
+
+    HTTP.request(url: endpoint.url!) { data in
+      let wallet = try? JSONDecoder().decode(Wallet.self, from: data)
+      XCTAssertNotNil(wallet)
+      expectation.fulfill()
+    }
+    
     waitForExpectations(timeout: 5, handler: nil)
   }
 

@@ -5,10 +5,12 @@ struct Endpoint {
   private var components = URLComponents()
   private let host = "polimi-demo.partners.mia-platform.eu"
   private let path: String
+  private let query: String
   
   // Private initializer to make it impossible to create endpoints manually.
-  private init(path: String) {
+  private init(path: String, query: String = "") {
     self.path = path
+    self.query = query
   }
   
   /// The URL of the endpoint
@@ -17,6 +19,7 @@ struct Endpoint {
     components.scheme = "https"
     components.host = host
     components.path = path
+    components.query = query
     
     return components.url
   }
@@ -42,5 +45,10 @@ extension Endpoint {
   /// **Expects PUT request**
   static func useCoupon(userID: String, couponID: String) -> Endpoint {
     Endpoint(path: "/coupon/\(userID)/\(couponID)/use")
+  }
+
+  /// Endpoint for getting all coupons owned by a userId
+  static func walletFor(userID: String) -> Endpoint {
+    Endpoint(path: "/geolocalization/wallet", query: "userId=\(userID)")
   }
 }

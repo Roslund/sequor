@@ -7,7 +7,7 @@ struct DashboardView: View {
   var body: some View {
     NavigationView {
         ZStack {
-          GameSceneView()
+          GameSceneView(treeLevel: appState.treeLevel)
           VStack {
             Text("In total, you have saved")
               .font(.headline)
@@ -21,6 +21,8 @@ struct DashboardView: View {
           }
       }
       .navigationBarTitle("Seqour CO₂", displayMode: .inline)
+    }.onAppear {
+      self.appState.refreshWallet()
     }
   }
 }

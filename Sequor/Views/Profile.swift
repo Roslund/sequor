@@ -17,13 +17,11 @@ struct ProfileView: View {
         Spacer()
         Text("Select user:")
         Picker("User ID", selection: $appState.userID) {
-          Text("User 1").tag(1)
-          Text("User 2").tag(2)
-          Text("User 3").tag(3)
-          Text("User 4").tag(4)
+          Text("User 1").tag("000000000000000000000001")
+          Text("User 2").tag("000000000000000000000002")
+          Text("User 3").tag("000000000000000000000003")
+          Text("User 4").tag("000000000000000000000004")
         }.pickerStyle(SegmentedPickerStyle())
-        Text("total CO2: \(appState.totalCO2)")
-        Slider(value: $appState.doubbleCO2, in: 0...1000)
         Spacer()
         
       }.navigationBarTitle("Purchase", displayMode: .inline)
@@ -34,13 +32,6 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
   
   static var previews: some View {
-    ProfileView().environmentObject({ () -> AppState in
-      let appState = AppState()
-      appState.userID = 3
-      return appState
-      }())
-  }
-  
-  init() {
+    ProfileView().environmentObject(AppState())
   }
 }
