@@ -8,6 +8,9 @@ final class TripSegmentator: NSObject, ObservableObject, CLLocationManagerDelega
     private let locationManager = CLLocationManager()
     private let activityManager = CMMotionActivityManager()
 
+    /// Keeps track on when to stop tracking. Normaly at the tickets experation
+    private var timer: Timer?
+
     /// mapView to update with new location and classification data.
     weak var mapView: MKMapView?
     private var previousCoordinate: CLLocationCoordinate2D?
@@ -93,8 +96,7 @@ final class TripSegmentator: NSObject, ObservableObject, CLLocationManagerDelega
         print(error)
     }
 
-    /// Should be called when a ticket is active. Will classify the users activity and store trip data untill
-    /// `stopMinitoring()` is called.
+    /// Will classify the users activity and store trip data untill `stopMinitoring()` is called.
     func startMonitoring() {
         // Activity Manager
         activityManager.startActivityUpdates(to: .main) { (activity) in

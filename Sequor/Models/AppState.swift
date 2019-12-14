@@ -3,6 +3,8 @@ import SwiftUI
 
 /// Envirorment object that holds the globl state of the app
 final class AppState: ObservableObject {
+  private var tripSegmentator: TripSegmentator
+  private var ticketTimer: Timer?
 
   /// The userID of the user we want to mock
   @Published var userID: Int = 1
@@ -25,24 +27,48 @@ final class AppState: ObservableObject {
   @Published var coupons: [Coupon] = []
 
   /// :nodoc:
-  init() {
+  init(tripSegmentator: TripSegmentator = TripSegmentator()) {
+    self.tripSegmentator = tripSegmentator
     // We probably want to request the state from the backend when we instanciate the object
   }
 
   /// Sends a request for ticket mocking to server
   func activateTicket() {
-    // Temp for testing. Should make request to server.
-    activeTicket = Ticket(uuid: "1", expiration: Date(timeInterval: 90*60, since: Date()))
+
+    HTTP.request(url: Endpoint.ticket().url!) { data in
+      let decoder = JSONDecoder()
+      decoder.dateDecodingStrategy = .millisecondsSince1970
+
+      guard let ticket = try? decoder.decode(Ticket.self, from: data) else {
+        print("Failed to get ticket from ticket service")
+        return
+      }
+
+      self.tripSegmentator.startMonitoring()
+
+      // Changes to the UI and Timers need to happen on the main thread
+      DispatchQueue.main.async {
+        self.activeTicket = ticket
+
+        // Set time to invalidate the ticket.
+        let timeInterval = ticket.expiration.timeIntervalSinceNow
+        self.ticketTimer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: false) { timer in
+          self.invalidateTicket()
+          timer.invalidate()
+        }
+      }
+
+    }
   }
 
-  // Should send a request to the server to invalidate the ticket.
-  /// Currently invalidates the ticket client side and send the trip to the server.
+  /// Invalidates the ticket client side.
   func invalidateTicket() {
-    // Temp for testing. Should make request to server.
-    activeTicket = nil
-//    if let trip = locationLogger?.end() {
-//      HTTP.post(asJSON: trip, to: Endpoint.postTrip(userID: "test", ticketID: "test").url!) { _ in }
-//    }
+    tripSegmentator.stopMonitoring()
+
+    // All changes to the UI need to happen on the main thread
+    DispatchQueue.main.async {
+      self.activeTicket = nil
+    }
   }
 
 }
