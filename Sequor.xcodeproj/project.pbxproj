@@ -82,6 +82,7 @@
 		AD1F063B236760CD00F74D9A /* SequorUITests.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SequorUITests.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AD1F063D236760CD00F74D9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD1F0649236761BD00F74D9A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AD2A2FF723A5218A0052EF0E /* Sequor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sequor.entitlements; sourceTree = "<group>"; };
 		AD34F9A8239FB0A100B78DAA /* TripSegmentator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSegmentator.swift; sourceTree = "<group>"; };
 		AD7E5A592399147400A22B7C /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		ADA166ED238430E700C53998 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
@@ -178,6 +179,7 @@
 		AD1F0618236760CC00F74D9A /* Sequor */ = {
 			isa = PBXGroup;
 			children = (
+				AD2A2FF723A5218A0052EF0E /* Sequor.entitlements */,
 				ADCD0AE223A03F040038114F /* Gamification */,
 				ADCD0ADE23A02E1B0038114F /* Utils */,
 				AD142BEE23999D5700A26F0B /* Networking */,
@@ -648,6 +650,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sequor/Sequor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Sequor/Preview Content\"";
@@ -670,6 +673,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sequor/Sequor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Sequor/Preview Content\"";
