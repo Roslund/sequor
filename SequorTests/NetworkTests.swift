@@ -8,7 +8,8 @@ class NetworkTests: XCTestCase {
     XCTAssertNotNil(Endpoint.allCouponsFor(userID: "test").url)
     XCTAssertNotNil(Endpoint.postTrip(userID: "test", ticketID: "test").url)
     XCTAssertNotNil(Endpoint.ticket().url)
-    XCTAssertNotNil(Endpoint.useCoupon(userID: "test", couponID: "test"))
+    XCTAssertNotNil(Endpoint.useCoupon(userID: "test", couponID: "test").url)
+    XCTAssertNotNil(Endpoint.walletFor(userID: "test").url)
   }
 
   func testGET() {

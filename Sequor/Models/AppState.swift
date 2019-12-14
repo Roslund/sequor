@@ -7,7 +7,15 @@ final class AppState: ObservableObject {
   private var ticketTimer: Timer?
 
   /// The userID of the user we want to mock
-  @Published var userID: Int = 1
+  var userID: String {
+    get {
+      return UserDefaults.standard.string(forKey: "userID") ?? "000000000000000000000001"
+    }
+    set {
+      UserDefaults.standard.set(newValue, forKey: "userID")
+      objectWillChange.send()
+    }
+  }
 
   /// If there is an active ticket is is held here
   @Published var activeTicket: Ticket?
@@ -15,21 +23,14 @@ final class AppState: ObservableObject {
   /// The total amount of CO2 the user has saved by taking public tansport
   @Published var totalCO2: Int = 0
 
-  /// For udpating totalCO2 with a bindable Double
-  var doubbleCO2 = 0.0 {
-    willSet {
-      totalCO2 = Int(newValue)
-      //objectWillChange.send()
-    }
-  }
-
   /// Valid coupons the user has erned.
   @Published var coupons: [Coupon] = []
 
   /// :nodoc:
   init(tripSegmentator: TripSegmentator = TripSegmentator()) {
     self.tripSegmentator = tripSegmentator
-    // We probably want to request the state from the backend when we instanciate the object
+
+    refreshWallet()
   }
 
   /// Sends a request for ticket mocking to server
@@ -77,14 +78,27 @@ extension AppState {
   /// Represents the visual state the tree should be in
   var treeLevel: Int {
     switch totalCO2 {
-    case ...200:
+    case ..<200:
       return 1
-    case ...400:
+    case ..<400:
       return 2
-    case ...800:
+    case ..<800:
       return 3
     default:
       return 3
+    }
+  }
+}
+
+// Refresh Methods
+extension AppState {
+  func refreshWallet() {
+    HTTP.request(url: Endpoint.walletFor(userID: userID).url!) { data in
+      if let wallet = try? JSONDecoder().decode(Wallet.self, from: data) {
+        DispatchQueue.main.async {
+          self.totalCO2 = wallet.totalCO2
+        }
+      }
     }
   }
 }

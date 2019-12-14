@@ -85,7 +85,6 @@ struct PurchaseView_Previews: PreviewProvider {
   static var previews: some View {
     PurchaseView().environmentObject({ () -> AppState in
       let appState = AppState()
-      appState.totalCO2 = 200
       appState.coupons.append(Coupon(
         id: 1,
         title: "200g of CO₂ Saved",
