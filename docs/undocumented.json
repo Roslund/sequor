@@ -41,6 +41,34 @@
       "symbol": "TreeFactory",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Models/AppState.swift",
+      "line": 95,
+      "symbol": "AppState.refreshWallet()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Models/Wallet.swift",
+      "line": 1,
+      "symbol": "Wallet",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Models/Wallet.swift",
+      "line": 2,
+      "symbol": "Wallet.userId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Models/Wallet.swift",
+      "line": 3,
+      "symbol": "Wallet.totalCO2",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
     }
   ],
   "source_directory": "/Users/enari/Documents/Repos/Sequor"

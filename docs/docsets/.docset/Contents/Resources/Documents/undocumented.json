@@ -1,6 +1,47 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Gamification/GameScene.swift",
+      "line": 12,
+      "symbol": "GameScene",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Gamification/GameScene.swift",
+      "line": 16,
+      "symbol": "GameScene.treeLevel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Gamification/GameScene.swift",
+      "line": 18,
+      "symbol": "GameScene.init(size:treeLevel:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Gamification/GameScene.swift",
+      "line": 23,
+      "symbol": "GameScene.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Gamification/GameScene.swift",
+      "line": 27,
+      "symbol": "GameScene.sceneDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Gamification/TreeFactory.swift",
+      "line": 5,
+      "symbol": "TreeFactory",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    }
   ],
   "source_directory": "/Users/enari/Documents/Repos/Sequor"
 }
