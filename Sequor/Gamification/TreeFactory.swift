@@ -91,7 +91,6 @@ enum TreeFactory { // swiftlint:disable:this type_body_length
             leafb1.run(rotateAction50)
             branch1.addChild(leafb1)
 
-            // swiftlint:disable:next identifier_name
             let leafb1_2 = SKSpriteNode(texture: leafTexture1)
             leafb1_2.anchorPoint = CGPoint(x: 0.85, y: 0.05)
             leafb1_2.position = CGPoint(x: branch1.size.width*0.13, y: branch1.size.height*0.5)
@@ -108,7 +107,6 @@ enum TreeFactory { // swiftlint:disable:this type_body_length
             branch2.zPosition = -10
             stem.addChild(branch2)
 
-            // swiftlint:disable:next identifier_name
             let leafb2_1 = SKSpriteNode(texture: leafTexture1)
             leafb2_1.xScale = -1
             leafb2_1.anchorPoint = CGPoint(x: 0.85, y: 0.05)

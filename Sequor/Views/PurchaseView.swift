@@ -83,17 +83,8 @@ struct PurchaseView: View {
 
 struct PurchaseView_Previews: PreviewProvider {
   static var previews: some View {
-    PurchaseView().environmentObject({ () -> AppState in
-      let appState = AppState()
-      appState.coupons.append(Coupon(
-        id: 1,
-        title: "200g of CO₂ Saved",
-        text: "You have saved the envirorment 200g of CO₂. "
-          + "For this we want to revard you. Here, have a coupon!",
-        discountPersentage: 12,
-        experation: Date())
-      )
-      return appState
-      }()).environmentObject(TripSegmentator())
+    PurchaseView()
+      .environmentObject(AppState())
+      .environmentObject(TripSegmentator())
   }
 }
