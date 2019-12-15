@@ -78,6 +78,8 @@ extension AppState {
   /// Represents the visual state the tree should be in
   var treeLevel: Int {
     switch totalCO2 {
+    case 0:
+      return 0
     case ..<200:
       return 1
     case ..<400:
@@ -92,6 +94,7 @@ extension AppState {
 
 // Refresh Methods
 extension AppState {
+  /// Fetches the wallet from the backend and updates the local state.
   func refreshWallet() {
     HTTP.request(url: Endpoint.walletFor(userID: userID).url!) { data in
       if let wallet = try? JSONDecoder().decode(Wallet.self, from: data) {

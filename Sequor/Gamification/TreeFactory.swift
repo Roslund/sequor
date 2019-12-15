@@ -1,12 +1,12 @@
 import Foundation
 import SpriteKit
 
-// swiftlint:disable all
-class TreeFactory {
+/// Contains factory metods for creating trees of different *levels*
+enum TreeFactory { // swiftlint:disable:this type_body_length
     /// Creates a tree corresponding to the level given as a parameter
     /// - parameter level: requested level of the tree
     /// - returns: a tree as a SKNode
-    static func createTree(level: Int) -> SKNode {
+    static func createTree(level: Int) -> SKNode { // swiftlint:disable:this function_body_length
         // Initialize actions
         let rotateAction04 = createRotationAction(angle: 0.04, duration: 6, loop: true)
         let rotateAction08 = createRotationAction(angle: 0.08, duration: 6, loop: true)
@@ -29,8 +29,11 @@ class TreeFactory {
         tree.addChild(ground)
 
         // Create level specific tree components
-        if (level == 1)
-        {
+        if level == 0 {
+            let mudPile = SKSpriteNode(imageNamed: "mud_pile")
+            mudPile.position = CGPoint(x: 0, y: ground.size.height*0.2)
+            ground.addChild(mudPile)
+        } else if level == 1 {
             let mudPile = SKSpriteNode(imageNamed: "mud_pile")
             mudPile.position = CGPoint(x: 0, y: ground.size.height*0.2)
             ground.addChild(mudPile)
@@ -57,9 +60,7 @@ class TreeFactory {
             let l2Action = SKAction.sequence([SKAction.wait(forDuration: 1), rotateAction50])
             leaf2.run(l2Action)
             stem.addChild(leaf2)
-        }
-        else if (level == 2)
-        {
+        } else if level == 2 {
             let mudPile = SKSpriteNode(imageNamed: "mud_pile")
             mudPile.position = CGPoint(x: 0, y: ground.size.height*0.2)
             ground.addChild(mudPile)
@@ -90,6 +91,7 @@ class TreeFactory {
             leafb1.run(rotateAction50)
             branch1.addChild(leafb1)
 
+            // swiftlint:disable:next identifier_name
             let leafb1_2 = SKSpriteNode(texture: leafTexture1)
             leafb1_2.anchorPoint = CGPoint(x: 0.85, y: 0.05)
             leafb1_2.position = CGPoint(x: branch1.size.width*0.13, y: branch1.size.height*0.5)
@@ -106,6 +108,7 @@ class TreeFactory {
             branch2.zPosition = -10
             stem.addChild(branch2)
 
+            // swiftlint:disable:next identifier_name
             let leafb2_1 = SKSpriteNode(texture: leafTexture1)
             leafb2_1.xScale = -1
             leafb2_1.anchorPoint = CGPoint(x: 0.85, y: 0.05)
@@ -129,9 +132,7 @@ class TreeFactory {
             leaf2.zRotation = -0.4
             leaf2.run(rotateAction50)
             stem.addChild(leaf2)
-        }
-        else if (level == 3)
-        {
+        } else if level == 3 {
             let shadow = SKSpriteNode(imageNamed: "shadow_stage3")
             shadow.position = CGPoint(x: 0, y: ground.size.height*0.1)
             shadow.run(scaleAction035)
@@ -280,8 +281,7 @@ class TreeFactory {
     /// - parameter duration: the duration of one iteration of the action sequence
     /// - parameter loop: if the action should loop
     /// - returns: SKAction sequence of rotation actions
-    static func createRotationAction(angle: CGFloat, duration: Double, loop: Bool) -> SKAction
-    {
+    static func createRotationAction(angle: CGFloat, duration: Double, loop: Bool) -> SKAction {
         let rotateLeft = SKAction.rotate(byAngle: angle, duration: duration*0.5)
         rotateLeft.timingMode = .easeInEaseOut
 
@@ -290,8 +290,7 @@ class TreeFactory {
 
         let actionSequence = SKAction.sequence([rotateLeft, rotateRight])
 
-        if (!loop)
-        {
+        if !loop {
             return actionSequence
         }
         return SKAction.repeatForever(actionSequence)
@@ -302,16 +301,14 @@ class TreeFactory {
     /// - parameter duration: the duration of one iteration of the action sequence
     /// - parameter loop: if the action should loop
     /// - returns: SKAction sequence of scale actions
-    static func createScaleAction(scaleAmount: CGFloat, duration: Double, loop: Bool) -> SKAction
-    {
+    static func createScaleAction(scaleAmount: CGFloat, duration: Double, loop: Bool) -> SKAction {
         let scaleIn = SKAction.scale(by: 1/scaleAmount, duration: duration*0.5)
         scaleIn.timingMode = .easeInEaseOut
         let scaleOut = SKAction.scale(by: scaleAmount, duration: duration*0.5)
         scaleOut.timingMode = .easeInEaseOut
 
         let actionSequence = SKAction.sequence([scaleIn, scaleOut])
-        if (!loop)
-        {
+        if !loop {
             return actionSequence
         }
         return SKAction.repeatForever(actionSequence)
