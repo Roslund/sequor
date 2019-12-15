@@ -56,6 +56,36 @@ class IntegrationTests: XCTestCase {
     waitForExpectations(timeout: 5, handler: nil)
   }
 
+  func testCouponEndpoint() {
+    let expectation = self.expectation(description: "Network Request")
+    let getEndpoint = Endpoint.allCouponsFor(userID: "000000000000000000000001")
+
+    HTTP.request(url: getEndpoint.url!) { data in
+      let decoder = JSONDecoder()
+      decoder.dateDecodingStrategy = .secondsSince1970
+
+      let coupons = try? decoder.decode([Coupon].self, from: data)
+      XCTAssertNotNil(coupons)
+      expectation.fulfill()
+
+//      if let id = coupons?.first?._id {
+//        let useEndpoint = Endpoint.useCoupon(userID: "000000000000000000000001", couponID: id)
+//        HTTP.request(method: .PUT, url: useEndpoint.url!) { data in
+//          expectation.fulfill()
+//        }
+//      }
+    }
+    waitForExpectations(timeout: 5, handler: nil)
+  }
+
+//  {
+//  "title": "Test Coupon",
+//  "text": "Test text",
+//  "experation": 2342345234,
+//  "discountPercentage": 100,
+//  "userId": "000000000000000000000001"
+//  }
+
 //  func testAddWalletCURD() {
 //    let expectation = self.expectation(description: "Network Request")
 //    let url = URL(string: "https://polimi-demo.partners.mia-platform.eu/v2/wallets/")!

@@ -1,12 +1,6 @@
 {
   "warnings": [
-    {
-      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Gamification/GameScene.swift",
-      "line": 21,
-      "symbol": "GameScene.sceneDidLoad()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    }
+
   ],
   "source_directory": "/Users/enari/Documents/Repos/Sequor"
 }

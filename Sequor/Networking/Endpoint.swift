@@ -38,13 +38,13 @@ extension Endpoint {
   
   /// Endpoint for getting all coupons owned by a userId
   static func allCouponsFor(userID: String) -> Endpoint {
-    Endpoint(path: "/coupon/user/\(userID)")
+    Endpoint(path: "/geolocalization/coupon/user/\(userID)")
   }
   
   /// Endpoint to use a coupon identified by a id
   /// **Expects PUT request**
   static func useCoupon(userID: String, couponID: String) -> Endpoint {
-    Endpoint(path: "/coupon/\(userID)/\(couponID)/use")
+    Endpoint(path: "/geolocalization/coupon/\(userID)/\(couponID)/use")
   }
 
   /// Endpoint for getting all coupons owned by a userId

@@ -5,7 +5,7 @@ struct CouponView: View {
   
   var body: some View {
     HStack {
-      Text("\(coupon.discountPersentage)%")
+      Text("\(coupon.discountPercentage)%")
         .fontWeight(.heavy)
         .font(.system(size: 40))
         // FIXME: The spasing is based on the width of the text,
@@ -47,12 +47,12 @@ struct CouponView_Previews: PreviewProvider {
   
   static var previews: some View {
     CouponView(coupon: Coupon(
-      id: 0,
+      _id: "0",
       title: "First Logged Trip",
       text: "Congratulations, You just logged your first trip. "
         + "On your trip you saved 340g CO₂, compared to driving.",
-      discountPersentage: 10,
-      experation: Date()
+      discountPercentage: 10,
+      expiration: Date()
     ))
   }
 }

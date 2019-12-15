@@ -1,9 +1,9 @@
 import Foundation
 
 /// Represents a discount that can be redeemed by the user.
-struct Coupon {
+struct Coupon: Codable {
   /// Unique id
-  let id: Int
+  let _id: String
 
   /// Presented at the top of the coupon in large font.
   let title: String
@@ -12,8 +12,8 @@ struct Coupon {
   let text: String
 
   /// The discount the coupons offers (1-100)%.
-  let discountPersentage: Int
+  let discountPercentage: Int
 
   /// The date when the coupon expires.
-  let experation: Date
+  let expiration: Date
 }
