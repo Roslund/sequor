@@ -52,24 +52,6 @@ final class TripSegmentator: NSObject, ObservableObject, CLLocationManagerDelega
 
     /// Delegate method called when new location data is available.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        // Filter out any reading with too poor accuracy. These should be locations derermined by cell tower
-        // or wifi triangulation. Or GPS Positions when the user is inside or underground.
-        // Someone said that less that 360 is garanteed to use the devices gps.
-        let locations = locations.filter { location in
-            location.horizontalAccuracy < 360
-        }
-
-        // Just used for the line updates on the MKMapView.
-        // However we need to keep track of it, even if we're currently not showing the mapview.
-        if let coordinate = locations.last?.coordinate {
-            previousCoordinate = coordinate
-        }
-
-        // Storing segments to display historic info on the map
-        if !segments.isEmpty {
-            segments[segments.count-1].coordinates.append(contentsOf: locations.map({$0.coordinate}))
-        }
-
         // For live updates of the MKMapView
         if let coordinate = previousCoordinate, mapView != nil {
             var area = [coordinate] + locations.map({$0.coordinate})
@@ -78,6 +60,24 @@ final class TripSegmentator: NSObject, ObservableObject, CLLocationManagerDelega
             // The title is used to color the line segment on the map.
             polyline.title = self.activity.rawValue
             mapView?.addOverlay(polyline)
+        }
+
+        // Just used for the line updates on the MKMapView.
+        // However we need to keep track of it, even if we're currently not showing the mapview.
+        if let coordinate = locations.last?.coordinate {
+            previousCoordinate = coordinate
+        }
+
+        // Filter out any reading with too poor accuracy. These should be locations derermined by cell tower
+        // or wifi triangulation. Or GPS Positions when the user is inside or underground.
+        // Someone said that less that 360 is garanteed to use the devices gps.
+        let locations = locations.filter { location in
+            location.horizontalAccuracy < 360
+        }
+
+        // Storing segments to display historic info on the map
+        if !segments.isEmpty {
+            segments[segments.count-1].coordinates.append(contentsOf: locations.map({$0.coordinate}))
         }
 
         // We only want to store trip data when the user is automotive (or cycling)

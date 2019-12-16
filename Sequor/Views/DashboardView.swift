@@ -7,7 +7,11 @@ struct DashboardView: View {
   var body: some View {
     NavigationView {
         ZStack {
-          GameSceneView(treeLevel: appState.treeLevel)
+          GeometryReader { geometry in
+            // I have no idea why we need to multiply the size by 10, but it works...
+            GameSceneView(size: CGSize(width: geometry.size.width*10, height: geometry.size.height*10),
+                          treeLevel: self.appState.treeLevel)
+          }
           VStack {
             Text("In total, you have saved")
               .font(.headline)

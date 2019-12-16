@@ -1,6 +1,8 @@
 import Foundation
 import SpriteKit
 
+// swiftlint:disable file_length
+
 /// Contains factory metods for creating trees of different *levels*
 enum TreeFactory { // swiftlint:disable:this type_body_length
     /// Creates a tree corresponding to the level given as a parameter
@@ -270,6 +272,151 @@ enum TreeFactory { // swiftlint:disable:this type_body_length
             leafBranchRightLower.zRotation = -0.2
             leafBranchRightLower.run(SKAction.sequence([SKAction.wait(forDuration: 0.5), rotateAction50]))
             branchRightLower.addChild(leafBranchRightLower)
+        } else if level == 4 {
+            let shadow = SKSpriteNode(imageNamed: "shadow_stage3")
+            shadow.position = CGPoint(x: 0, y: ground.size.height*0.1)
+            shadow.run(scaleAction035)
+            ground.addChild(shadow)
+
+            let stem = SKSpriteNode(imageNamed: "stem_stage3")
+            stem.name = interactableNodeName
+            stem.anchorPoint = CGPoint(x: 0.5, y: 0.025)
+            stem.position = CGPoint(x: 0, y: shadow.size.height*0.2)
+            stem.run(rotateAction04)
+            shadow.addChild(stem)
+
+            let grass = SKSpriteNode(imageNamed: "grass1")
+            grass.position = CGPoint(x: 0, y: shadow.size.height*0.25)
+            grass.zPosition = 10
+            shadow.addChild(grass)
+
+            //Middle
+            let branchTopLeft = SKSpriteNode(texture: branchStage3)
+            branchTopLeft.xScale = -1
+            branchTopLeft.anchorPoint = CGPoint(x: 0.5, y: 0.025)
+            branchTopLeft.position = CGPoint(x: stem.size.width*0.25, y: stem.size.height*0.95)
+            branchTopLeft.zRotation = 0.5
+            branchTopLeft.run(rotateAction12)
+            branchTopLeft.zPosition = -10
+            stem.addChild(branchTopLeft)
+
+            let branchTopRight = SKSpriteNode(texture: branchStage3)
+            branchTopRight.anchorPoint = CGPoint(x: 0.5, y: 0.025)
+            branchTopRight.position = CGPoint(x: stem.size.width*0.25, y: stem.size.height*0.95)
+            branchTopRight.zRotation = -0.5
+            branchTopRight.run(rotateAction12)
+            branchTopRight.zPosition = -10
+            stem.addChild(branchTopRight)
+
+            let bushTop = SKSpriteNode(texture: bushTextureSmall)
+            bushTop.setScale(1.2)
+            bushTop.anchorPoint = CGPoint(x: 0.5, y: 0.15)
+            bushTop.position = CGPoint(x: 0, y: stem.size.height*1.025)
+            bushTop.run(SKAction.sequence([SKAction.wait(forDuration: 1), rotateAction12]))
+            stem.addChild(bushTop)
+
+            // Branch on the left side
+            let branch1 = SKSpriteNode(imageNamed: "branch_stage3_big")
+            branch1.anchorPoint = CGPoint(x: 0.5, y: 0.025)
+            branch1.position = CGPoint(x: 0, y: stem.size.height*0.3)
+            branch1.zRotation = 0.4
+            branch1.run(rotateAction04)
+            branch1.zPosition = -10
+            stem.addChild(branch1)
+
+            let bushLeft = SKSpriteNode(texture: bushTextureSmall)
+            bushLeft.xScale = -1
+            bushLeft.anchorPoint = CGPoint(x: 0.5, y: 0.15)
+            bushLeft.position = CGPoint(x: branch1.size.width*0.2, y: branch1.size.height*0.9)
+            bushLeft.zRotation = -0.4
+            bushLeft.run(rotateAction12)
+            branch1.addChild(bushLeft)
+
+            let branchLeftLower = SKSpriteNode(texture: branchStage3)
+            branchLeftLower.xScale = -1
+            branchLeftLower.anchorPoint = CGPoint(x: 0.5, y: 0.025)
+            branchLeftLower.position = CGPoint(x: -branch1.size.width*0.25, y: branch1.size.height*0.45)
+            branchLeftLower.zRotation = 0.8
+            branchLeftLower.run(rotateAction12)
+            branchLeftLower.zPosition = -10
+            branch1.addChild(branchLeftLower)
+
+            let leafBranchLeftLower = SKSpriteNode(texture: leafTexture1)
+            leafBranchLeftLower.xScale = -1
+            leafBranchLeftLower.anchorPoint = CGPoint(x: 0.8, y: 0.1)
+            leafBranchLeftLower.position = CGPoint(x: 0, y: branchLeftLower.size.height*0.8)
+            leafBranchLeftLower.zRotation = -0.2
+            leafBranchLeftLower.run(SKAction.sequence([SKAction.wait(forDuration: 2), rotateAction50]))
+            branchLeftLower.addChild(leafBranchLeftLower)
+
+            let branchLeftUpper = SKSpriteNode(texture: branchStage3)
+            branchLeftUpper.anchorPoint = CGPoint(x: 0.5, y: 0.025)
+            branchLeftUpper.position = CGPoint(x: branch1.size.width*0.1, y: branch1.size.height*0.7)
+            branchLeftUpper.zRotation = -0.6
+            branchLeftUpper.run(rotateAction12)
+            branchLeftUpper.zPosition = -10
+            branch1.addChild(branchLeftUpper)
+
+            // Branch on the right side
+            let branch2 = SKSpriteNode(imageNamed: "branch_stage3_medium")
+            branch2.anchorPoint = CGPoint(x: 0.5, y: 0.05)
+            branch2.position = CGPoint(x: stem.size.width*0.4, y: stem.size.height*0.6)
+            branch2.zRotation = -0.85
+            branch2.run(rotateAction04)
+            branch2.zPosition = -10
+            stem.addChild(branch2)
+
+            let leaf2right = SKSpriteNode(texture: leafTexture1)
+            leaf2right.setScale(1.25)
+            leaf2right.anchorPoint = CGPoint(x: 0.8, y: 0.1)
+            leaf2right.position = CGPoint(x: 0, y: branch2.size.height*0.9)
+            leaf2right.zRotation = -0.2
+            leaf2right.run(rotateAction50)
+            branch2.addChild(leaf2right)
+
+            let leaf1right = SKSpriteNode(texture: leafTexture1)
+            leaf1right.xScale = -1
+            leaf1right.anchorPoint = CGPoint(x: 0.8, y: 0.1)
+            leaf1right.position = CGPoint(x: 0, y: branch2.size.height*0.9)
+            leaf1right.zRotation = -0.2
+            leaf1right.run(SKAction.sequence([SKAction.wait(forDuration: 1), rotateAction50]))
+            branch2.addChild(leaf1right)
+
+            let branchRightUpper = SKSpriteNode(texture: branchStage3)
+            branchRightUpper.anchorPoint = CGPoint(x: 0.5, y: 0.025)
+            branchRightUpper.position = CGPoint(x: branch2.size.width*0.1, y: branch2.size.height*0.55)
+            branchRightUpper.zRotation = -0.6
+            branchRightUpper.run(rotateAction12)
+            branchRightUpper.zPosition = -10
+            branch2.addChild(branchRightUpper)
+
+            let leafBranchRightUpper = SKSpriteNode(texture: leafTexture1)
+            leafBranchRightUpper.xScale = -1
+            leafBranchRightUpper.anchorPoint = CGPoint(x: 0.8, y: 0.1)
+            leafBranchRightUpper.position = CGPoint(x: 0, y: branchRightUpper.size.height*0.8)
+            leafBranchRightUpper.zRotation = -0.2
+            leafBranchRightUpper.run(SKAction.sequence([SKAction.wait(forDuration: 2.5), rotateAction50]))
+            branchRightUpper.addChild(leafBranchRightUpper)
+
+            let branchRightLower = SKSpriteNode(texture: branchStage3)
+            branchRightLower.anchorPoint = CGPoint(x: 0.5, y: 0.025)
+            branchRightLower.position = CGPoint(x: branch2.size.width*0.1, y: branch2.size.height*0.4)
+            branchRightLower.zRotation = 0.6
+            branchRightLower.run(rotateAction12)
+            branchRightLower.zPosition = -10
+            branch2.addChild(branchRightLower)
+
+            let leafBranchRightLower = SKSpriteNode(texture: leafTexture1)
+            leafBranchRightLower.anchorPoint = CGPoint(x: 0.8, y: 0.1)
+            leafBranchRightLower.position = CGPoint(x: 0, y: branchRightLower.size.height*0.8)
+            leafBranchRightLower.zRotation = -0.2
+            leafBranchRightLower.run(SKAction.sequence([SKAction.wait(forDuration: 0.5), rotateAction50]))
+            branchRightLower.addChild(leafBranchRightLower)
+
+            let apple = SKSpriteNode(imageNamed: "fruit")
+            apple.position = CGPoint(x: branchRightLower.size.width*1, y: -branchRightLower.size.height*0.5)
+            apple.run(scaleAction1)
+            branchRightLower.addChild(apple)
         }
         return tree
     }

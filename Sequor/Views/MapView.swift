@@ -21,6 +21,7 @@ final class MapView: NSObject, UIViewRepresentable, MKMapViewDelegate {
         view.showsUserLocation = true
         view.userTrackingMode = .follow
         view.isUserInteractionEnabled = true
+        view.pointOfInterestFilter = .excludingAll
 
         // Should add all overlays
         for segment in tripSegmentator.segments {

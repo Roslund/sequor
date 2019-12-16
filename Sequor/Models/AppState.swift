@@ -78,16 +78,16 @@ extension AppState {
   /// Represents the visual state the tree should be in
   var treeLevel: Int {
     switch totalCO2 {
-    case 0:
-      return 0
+//    case 0:
+//      return 0
     case ..<200:
       return 1
     case ..<400:
       return 2
-    case ..<800:
+    case ..<500:
       return 3
     default:
-      return 3
+      return 4
     }
   }
 }
