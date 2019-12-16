@@ -47,7 +47,7 @@ class GameScene: SKScene {
 
         // Create Tree
         treeNode = TreeFactory.createTree(level: treeLevel)
-        treeNode.position = CGPoint(x: size.width*0.5, y: size.height*0.25)
+        treeNode.position = CGPoint(x: size.width*0.5, y: size.height*0.15)
         addChild(treeNode!)
     }
 
