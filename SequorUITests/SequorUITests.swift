@@ -3,21 +3,11 @@ import XCTest
 class SequorUITests: XCTestCase {
 
   override func setUp() {
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-
     // In UI tests it is usually best to stop immediately when a failure occurs.
     continueAfterFailure = false
-
-    // In UI tests it’s important to set the initial state - such as interface orientation
-    // - required for your tests before they run. The setUp method is a good place to do this.
   }
 
-  override func tearDown() {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-  }
-
-  func testExample() {
-    // UI tests must launch the application that they test.
+  func testTabs() {
     let app = XCUIApplication()
     app.launch()
 
@@ -29,8 +19,32 @@ class SequorUITests: XCTestCase {
     tabBarsQuery.buttons["Discovery"].tap()
     tabBarsQuery.buttons["Profile"].tap()
     tabBarsQuery.buttons["Dashboard"].tap()
+  }
 
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+  func testSwitchUser() {
+    let app = XCUIApplication()
+    app.launch()
+
+    app.tabBars.buttons["Profile"].tap()
+    app.buttons["User 2"].tap()
+    app.buttons["User 1"].tap()
+  }
+
+  func testStartTracking() {
+    let app = XCUIApplication()
+    app.launch()
+
+    app.tabBars.buttons["Purchase"].tap()
+    app.buttons["Create and activate Ticket"].tap()
+    app.buttons["Invalidate Ticket"].tap()
+  }
+
+  func testShareSheet() {
+    let app = XCUIApplication()
+    app.launch()
+
+    app.tabBars.buttons["Purchase"].tap()
+    app.navigationBars["Purchase"].buttons["square.and.arrow.up"].tap()
   }
 
   func testLaunchPerformance() {

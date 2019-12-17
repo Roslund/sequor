@@ -26,6 +26,12 @@
 		AD7FAB06239FA9DE002EAAEB /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD114B672378A5E400313515 /* MapView.swift */; };
 		ADA166EE238430E700C53998 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA166ED238430E700C53998 /* ActivityView.swift */; };
 		ADAC7A7623A6CC3100A8C311 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDFE16923748F24007BD2A8 /* Coupon.swift */; };
+		ADB6793D23A7D1370025BDFB /* TreeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCD0AE323A03F870038114F /* TreeFactory.swift */; };
+		ADB6793E23A7D14B0025BDFB /* SequorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F0630236760CD00F74D9A /* SequorTests.swift */; };
+		ADB6793F23A7D1ED0025BDFB /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD8B71C237B0C9F00D8DD55 /* AppState.swift */; };
+		ADB6794023A7D22C0025BDFB /* TripSegmentator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD34F9A8239FB0A100B78DAA /* TripSegmentator.swift */; };
+		ADB6794123A7D2740025BDFB /* LocationSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCD0ADC23A02DDB0038114F /* LocationSegment.swift */; };
+		ADB6794223A7D2790025BDFB /* +CMMotionActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCD0ADF23A02E260038114F /* +CMMotionActivity.swift */; };
 		ADBEB00923743CB9001534CD /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBEB00823743CB9001534CD /* DashboardView.swift */; };
 		ADBEB00D2374423D001534CD /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBEB00C2374423D001534CD /* PurchaseView.swift */; };
 		ADC2A22B238714B10096F1ED /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC2A22A238714B10096F1ED /* HTTP.swift */; };
@@ -494,13 +500,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADB6793E23A7D14B0025BDFB /* SequorTests.swift in Sources */,
 				AD142C02239BCBD900A26F0B /* Trip.swift in Sources */,
+				ADB6794223A7D2790025BDFB /* +CMMotionActivity.swift in Sources */,
 				ADF9C54223A554D100FB342E /* Wallet.swift in Sources */,
 				AD142C03239C0C2C00A26F0B /* Ticket.swift in Sources */,
+				ADB6794023A7D22C0025BDFB /* TripSegmentator.swift in Sources */,
+				ADB6793D23A7D1370025BDFB /* TreeFactory.swift in Sources */,
 				ADAC7A7623A6CC3100A8C311 /* Coupon.swift in Sources */,
+				ADB6793F23A7D1ED0025BDFB /* AppState.swift in Sources */,
 				AD7E5A5A2399147400A22B7C /* NetworkTests.swift in Sources */,
 				AD142BF5239A686400A26F0B /* HTTP.swift in Sources */,
 				AD142C01239BC8DD00A26F0B /* IntegrationTests.swift in Sources */,
+				ADB6794123A7D2740025BDFB /* LocationSegment.swift in Sources */,
 				AD142BEF23999D5F00A26F0B /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
