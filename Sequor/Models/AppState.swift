@@ -3,7 +3,7 @@ import SwiftUI
 
 /// Envirorment object that holds the globl state of the app
 final class AppState: ObservableObject {
-  private var tripSegmentator: TripSegmentator
+  private var tripSegmentator: TripSegmentator?
   private var ticketTimer: Timer?
 
   /// The userID of the user we want to mock
@@ -27,7 +27,7 @@ final class AppState: ObservableObject {
   @Published var coupons: [Coupon] = []
 
   /// :nodoc:
-  init(tripSegmentator: TripSegmentator = TripSegmentator()) {
+  init(tripSegmentator: TripSegmentator? = nil) {
     self.tripSegmentator = tripSegmentator
 
     refreshWallet()
@@ -45,7 +45,7 @@ final class AppState: ObservableObject {
         return
       }
 
-      self.tripSegmentator.startMonitoring()
+      self.tripSegmentator?.startMonitoring()
 
       // Changes to the UI and Timers need to happen on the main thread
       DispatchQueue.main.async {

@@ -31,10 +31,13 @@ class IntegrationTests: XCTestCase {
   func testTripEndpoint() {
     let expectation = self.expectation(description: "Network Request")
 
-    // swiftlint:disable:next force_try
-    let trip = try! JSONDecoder().decode(Trip.self, from: tripJsonOptionalSpeedCourse.data(using: .utf8)!)
+    // swiftlint:disable force_try
+    //let optiionalTrip = try! JSONDecoder().decode(Trip.self, from: tripJsonOptionalSpeedCourse.data(using: .utf8)!)
+    let brokenTrip = try! JSONDecoder().decode(Trip.self, from: tripBrokenJSON.data(using: .utf8)!)
+    //let workingTrip = try! JSONDecoder().decode(Trip.self, from: tripWorkingJSON.data(using: .utf8)!)
 
-    HTTP.post(asJSON: trip, to: Endpoint.postTrip(userID: "test", ticketID: "test").url!) { data in
+    print(Endpoint.postTrip(userID: "1", ticketID: "2").url!)
+    HTTP.post(asJSON: brokenTrip, to: Endpoint.postTrip(userID: "1", ticketID: "2").url!) { data in
       XCTAssertEqual(String(data: data, encoding: .utf8)!, "")
       expectation.fulfill()
     }
@@ -142,5 +145,50 @@ let tripJsonOptionalSpeedCourse = """
 }
 }
 ]
+}
+"""
+
+let tripBrokenJSON = """
+{
+	"startDate": 595940155.43389,
+	"endDate": 595942509.0004162,
+	"locations": [
+		{
+			"speed": -1,
+			"course": -1,
+			"timestamp": 595940289.415538,
+			"coordinate": {
+				"longitude": 16.544660933187075,
+				"latitude": 59.61169594671437
+			}
+		}
+	]
+}
+"""
+
+let tripWorkingJSON = """
+{
+	"endDate":596474960.56034505,
+	"startDate":596474952.53599501,
+	"locations":[
+		{
+			"speed":-1,
+			"timestamp":596474949.13904703,
+			"course":-1,
+			"coordinate": {
+				"longitude":-35.27801,
+				"latitude":149.12958
+			}
+		},
+		{
+			"speed":-1,
+			"timestamp":596474949.13904703,
+			"course":-1,
+			"coordinate":{
+				"longitude":-35.28032,
+				"latitude":149.12907
+			}
+		}
+	]
 }
 """
