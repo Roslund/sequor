@@ -64,13 +64,13 @@ final class AppState: ObservableObject {
 
   /// Invalidates the ticket client side.
   func invalidateTicket() {
-    let trips = tripSegmentator.stopMonitoring()
-
-    // Post all trips to the backend
-    for trip in trips {
-      HTTP.post(asJSON: trip,
-                to: Endpoint.postTrip(userID: userID, ticketID: activeTicket!.uuid).url!) { _ in
-                // Asume everything went fine
+    if let trips = tripSegmentator?.stopMonitoring() {
+      // Post all trips to the backend
+      for trip in trips {
+        HTTP.post(asJSON: trip,
+                  to: Endpoint.postTrip(userID: userID, ticketID: activeTicket!.uuid).url!) { _ in
+                  // Asume everything went fine
+        }
       }
     }
 
