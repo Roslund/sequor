@@ -24,8 +24,7 @@ final class TripSegmentator: NSObject, ObservableObject, CLLocationManagerDelega
     /// Stores trips durring the tracking session
     var trips: [Trip] = []
 
-    /// Initializer.
-    /// Also sets up the locationmanager. Maybe this should be at a later point? We'll have to test
+    /// Initializer, setup the delegate and the locationmanager.
     override init() {
         super.init()
 
@@ -39,7 +38,7 @@ final class TripSegmentator: NSObject, ObservableObject, CLLocationManagerDelega
 
             // The minimum distance (measured in meters) a device must
             // move horizontally before an update event is generated.
-            locationManager.distanceFilter = 10.0
+            locationManager.distanceFilter = 15.0
 
             // No need to triger locationupdates when changing heading.
             // Found no way to turn this off, but a 360 degree change should be rare.
@@ -80,8 +79,8 @@ final class TripSegmentator: NSObject, ObservableObject, CLLocationManagerDelega
             segments[segments.count-1].coordinates.append(contentsOf: locations.map({$0.coordinate}))
         }
 
-        // We only want to store trip data when the user is automotive (or cycling)
-        if activity == .cycling || activity == .automotive {
+        // We only want to store trip data when the user is automotive
+        if activity == .automotive {
             trips[trips.count-1].locations.append(contentsOf: locations.map { location in
                 Location(timestamp: location.timestamp, speed: location.speed, course: location.course,
                          coordinate: Coordinate(latitude: location.coordinate.latitude,
@@ -103,25 +102,37 @@ final class TripSegmentator: NSObject, ObservableObject, CLLocationManagerDelega
             guard let activity = activity else {
                 return
             }
-            let newActivity = activity.classification
+            var newActivity = activity.classification
 
-            // If we are higliy confident that the new activity is something different, or walking
-            if self.activity != newActivity && (activity.confidence == .high || newActivity == .walking) {
-                self.activity = newActivity
+            // If we are higliy confident that the new activity is something different or automotive
+            if self.activity != newActivity && ((activity.confidence == .high) || newActivity == .automotive) {
+                // If the activity is unknow we want assume the user is on a vhecicle
+                // *BUT* only if there has been a previous classification of something other than unknow.
+                if newActivity == .unknown {
+                    if self.activity != .automotive {
+                        newActivity = .automotive
+                    } else {
+                        return
+                    }
+                }
 
                 // Update segments
                 self.segments.append(LocationsSegment(activity: newActivity))
 
-                // If the new activity is not automotive (or cycling) end the trip
-                if self.activity != .cycling || self.activity != .automotive {
+                // If the new activity is not automotive end the trip
+                if newActivity != .automotive {
                     if !self.trips.isEmpty {
                         self.trips[self.trips.count-1].endDate = Date()
                     }
                 }
-                // If the new activity is automotive (or cycling) start a new trip
-                if self.activity == .cycling || self.activity == .automotive {
+
+                // If the new activity is automotive start a new trip
+                if newActivity == .automotive {
                     self.trips.append(Trip())
                 }
+
+                //
+                self.activity = newActivity
             }
         }
 
@@ -132,12 +143,17 @@ final class TripSegmentator: NSObject, ObservableObject, CLLocationManagerDelega
     }
 
     /// Stops monitoring and empties logged trips and segments.
-    func stopMonitoring() {
+    func stopMonitoring() -> [Trip] {
         activityManager.stopActivityUpdates()
         locationManager.stopUpdatingLocation()
-        // Remove any existing segments
-        // Should probably send segments where activity is automotive to backend as trips :D
-        segments = []
-        trips = []
+
+        // Remove any existing segments after we have returned from the function.
+        // Defer blocks are super cool <3
+        defer {
+            segments = []
+            trips = []
+        }
+
+        return trips
     }
 }

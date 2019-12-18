@@ -32,12 +32,10 @@ class IntegrationTests: XCTestCase {
     let expectation = self.expectation(description: "Network Request")
 
     // swiftlint:disable force_try
-    //let optiionalTrip = try! JSONDecoder().decode(Trip.self, from: tripJsonOptionalSpeedCourse.data(using: .utf8)!)
-    let brokenTrip = try! JSONDecoder().decode(Trip.self, from: tripBrokenJSON.data(using: .utf8)!)
-    //let workingTrip = try! JSONDecoder().decode(Trip.self, from: tripWorkingJSON.data(using: .utf8)!)
+    let trip = try! JSONDecoder().decode(Trip.self, from: tripJSON.data(using: .utf8)!)
 
     print(Endpoint.postTrip(userID: "1", ticketID: "2").url!)
-    HTTP.post(asJSON: brokenTrip, to: Endpoint.postTrip(userID: "1", ticketID: "2").url!) { data in
+    HTTP.post(asJSON: trip, to: Endpoint.postTrip(userID: "1", ticketID: "2").url!) { data in
       XCTAssertEqual(String(data: data, encoding: .utf8)!, "")
       expectation.fulfill()
     }
@@ -81,14 +79,6 @@ class IntegrationTests: XCTestCase {
     waitForExpectations(timeout: 5, handler: nil)
   }
 
-//  {
-//  "title": "Test Coupon",
-//  "text": "Test text",
-//  "experation": 2342345234,
-//  "discountPercentage": 100,
-//  "userId": "000000000000000000000001"
-//  }
-
 //  func testAddWalletCURD() {
 //    let expectation = self.expectation(description: "Network Request")
 //    let url = URL(string: "https://polimi-demo.partners.mia-platform.eu/v2/wallets/")!
@@ -115,10 +105,12 @@ class IntegrationTests: XCTestCase {
 }
 
 // MARK: - TEST DATA
-let tripJsonOptionalSpeedCourse = """
+let tripJSON = """
 {
 "startDate": 595940155.43389,
 "endDate": 595942509.0004162,
+"speed": -1.0,
+"course": -1.0,
 "locations": [
 {
 "timestamp": 595940289.415538,
@@ -129,6 +121,7 @@ let tripJsonOptionalSpeedCourse = """
 },
 {
 "speed": 0.6348273158073425,
+"course": -1.0,
 "timestamp": 595940294.1770178,
 "coordinate": {
 "longitude": 16.54428380572857,
@@ -145,50 +138,5 @@ let tripJsonOptionalSpeedCourse = """
 }
 }
 ]
-}
-"""
-
-let tripBrokenJSON = """
-{
-	"startDate": 595940155.43389,
-	"endDate": 595942509.0004162,
-	"locations": [
-		{
-			"speed": -1,
-			"course": -1,
-			"timestamp": 595940289.415538,
-			"coordinate": {
-				"longitude": 16.544660933187075,
-				"latitude": 59.61169594671437
-			}
-		}
-	]
-}
-"""
-
-let tripWorkingJSON = """
-{
-	"endDate":596474960.56034505,
-	"startDate":596474952.53599501,
-	"locations":[
-		{
-			"speed":-1,
-			"timestamp":596474949.13904703,
-			"course":-1,
-			"coordinate": {
-				"longitude":-35.27801,
-				"latitude":149.12958
-			}
-		},
-		{
-			"speed":-1,
-			"timestamp":596474949.13904703,
-			"course":-1,
-			"coordinate":{
-				"longitude":-35.28032,
-				"latitude":149.12907
-			}
-		}
-	]
 }
 """

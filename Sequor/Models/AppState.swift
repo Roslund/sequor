@@ -64,7 +64,15 @@ final class AppState: ObservableObject {
 
   /// Invalidates the ticket client side.
   func invalidateTicket() {
-    tripSegmentator?.stopMonitoring()
+    if let trips = tripSegmentator?.stopMonitoring() {
+      // Post all trips to the backend
+      for trip in trips {
+        HTTP.post(asJSON: trip,
+                  to: Endpoint.postTrip(userID: userID, ticketID: activeTicket!.uuid).url!) { _ in
+                  // Asume everything went fine
+        }
+      }
+    }
 
     // All changes to the UI need to happen on the main thread
     DispatchQueue.main.async {

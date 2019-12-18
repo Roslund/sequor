@@ -33,8 +33,7 @@ struct PurchaseView: View {
           if self.appState.activeTicket == nil {
             self.appState.activateTicket()
           } else {
-            self.appState.activeTicket = nil
-            self.tripSegmentator.stopMonitoring()
+            self.appState.invalidateTicket()
           }
 
           // Haptic feedback
