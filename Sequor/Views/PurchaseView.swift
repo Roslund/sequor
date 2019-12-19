@@ -70,10 +70,7 @@ struct PurchaseView: View {
                 Image(systemName: "square.and.arrow.up").resizable().font(.system(size: 25)).padding(.trailing, 12)
                }))
       .sheet(isPresented: $showActivitySheet) {
-        ActivityView(activityItems: [
-          // swiftlint:disable:next force_try
-          String(data: try! JSONEncoder().encode(self.tripSegmentator.trips), encoding: .utf8)!
-            ], applicationActivities: nil)
+        ActivityView(activityItems: [self.tripSegmentator.trips.asJSONString()], applicationActivities: nil)
       }
 
     }

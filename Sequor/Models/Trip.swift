@@ -32,3 +32,15 @@ struct Coordinate: Codable {
   ///The longitude in degrees.
   let longitude: Double
 }
+
+extension Array where Element == Trip {
+    /// **Warning, Do not use**. Should only be used by the sharesheet extention in _PurchaseView.swift_
+    /// Should be removed at some later point
+    func asJSONString() -> String {
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .secondsSince1970
+        // swiftlint:disable:next force_try
+        return String(data: try! encoder.encode(self), encoding: .utf8)!
+
+    }
+}
