@@ -21,9 +21,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Allways and Uhen In Use Usage Description</string>
+	<string>Your location is used to determine how far you have traveled with public transportation. The distance is used to calculate how much co2 you save.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Allways Usage Description</string>
+	<string>Always Usage Description</string>
 	<key>NSLocationUsageDescription</key>
 	<string>Location Usage Description</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
