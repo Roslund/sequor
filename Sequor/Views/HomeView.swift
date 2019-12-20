@@ -2,7 +2,7 @@ import SwiftUI
 
 struct HomeView: View {
   @EnvironmentObject var tripSegmentator: TripSegmentator
-  @State private var selection = 3
+  @State private var selection = 2
   
   var body: some View {
     TabView(selection: $selection) {
