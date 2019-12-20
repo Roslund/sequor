@@ -19,7 +19,7 @@ struct DashboardView: View {
             Text("\(appState.totalCO2) KG CO₂")
               .font(.largeTitle)
               .fontWeight(.heavy)
-            Text("By taking public transpot")
+            Text("By taking public transprot")
               .font(.headline)
             Spacer()
           }

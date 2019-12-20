@@ -34,7 +34,6 @@ class IntegrationTests: XCTestCase {
     // swiftlint:disable force_try
     let trip = try! JSONDecoder().decode(Trip.self, from: tripJSON.data(using: .utf8)!)
 
-    print(Endpoint.postTrip(userID: "1", ticketID: "2").url!)
     HTTP.post(asJSON: trip, to: Endpoint.postTrip(userID: "1", ticketID: "2").url!) { data in
       XCTAssertEqual(String(data: data, encoding: .utf8)!, "")
       expectation.fulfill()
@@ -105,6 +104,8 @@ class IntegrationTests: XCTestCase {
 }
 
 // MARK: - TEST DATA
+
+/// Be carefull json is encoded with the default json encode and Apples time format.
 let tripJSON = """
 {
 "startDate": 595940155.43389,
