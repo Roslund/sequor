@@ -21,15 +21,6 @@ class SequorUITests: XCTestCase {
     tabBarsQuery.buttons["Dashboard"].tap()
   }
 
-  func testSwitchUser() {
-    let app = XCUIApplication()
-    app.launch()
-
-    app.tabBars.buttons["Profile"].tap()
-    app.buttons["User 2"].tap()
-    app.buttons["User 1"].tap()
-  }
-
   func testStartTracking() {
     let app = XCUIApplication()
     app.launch()
