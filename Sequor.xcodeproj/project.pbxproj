@@ -26,6 +26,7 @@
 		AD7FAB06239FA9DE002EAAEB /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD114B672378A5E400313515 /* MapView.swift */; };
 		ADA166EE238430E700C53998 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA166ED238430E700C53998 /* ActivityView.swift */; };
 		ADAC7A7623A6CC3100A8C311 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDFE16923748F24007BD2A8 /* Coupon.swift */; };
+		ADAFFEA723BF69B20013E5B8 /* FruitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAFFEA623BF69B20013E5B8 /* FruitFactory.swift */; };
 		ADB6793D23A7D1370025BDFB /* TreeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCD0AE323A03F870038114F /* TreeFactory.swift */; };
 		ADB6793E23A7D14B0025BDFB /* SequorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F0630236760CD00F74D9A /* SequorTests.swift */; };
 		ADB6793F23A7D1ED0025BDFB /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD8B71C237B0C9F00D8DD55 /* AppState.swift */; };
@@ -96,6 +97,7 @@
 		AD7E5A592399147400A22B7C /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		ADA166ED238430E700C53998 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		ADA7E08423775FAF0077E225 /* RectangleGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleGraph.swift; sourceTree = "<group>"; };
+		ADAFFEA623BF69B20013E5B8 /* FruitFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitFactory.swift; sourceTree = "<group>"; };
 		ADBEB00823743CB9001534CD /* DashboardView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		ADBEB00A23743E12001534CD /* CouponsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsView.swift; sourceTree = "<group>"; };
 		ADBEB00C2374423D001534CD /* PurchaseView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -280,6 +282,7 @@
 			children = (
 				ADCD0AE423A03F870038114F /* GameScene.swift */,
 				ADCD0AE323A03F870038114F /* TreeFactory.swift */,
+				ADAFFEA623BF69B20013E5B8 /* FruitFactory.swift */,
 			);
 			path = Gamification;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				ADDFE16A23748F24007BD2A8 /* Coupon.swift in Sources */,
 				ADCD0AE623A03F870038114F /* GameScene.swift in Sources */,
 				ADD8B71F237B0DDD00D8DD55 /* Profile.swift in Sources */,
+				ADAFFEA723BF69B20013E5B8 /* FruitFactory.swift in Sources */,
 				ADA166EE238430E700C53998 /* ActivityView.swift in Sources */,
 				ADCD0AE823A03FFC0038114F /* GameSceneView.swift in Sources */,
 				AD1F061C236760CC00F74D9A /* SceneDelegate.swift in Sources */,
