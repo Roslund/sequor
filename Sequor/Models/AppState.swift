@@ -9,7 +9,7 @@ final class AppState: ObservableObject {
   /// The userID of the user we want to mock
   var userID: String {
     get {
-      return UserDefaults.standard.string(forKey: "userID") ?? "000000000000000000000001"
+      return UserDefaults.standard.string(forKey: "userID") ?? UIDevice.current.name
     }
     set {
       UserDefaults.standard.set(newValue, forKey: "userID")

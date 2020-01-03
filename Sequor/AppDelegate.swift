@@ -5,6 +5,12 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    // Migrates users to the new id userid system.
+    if UserDefaults.standard.bool(forKey: "userIDMigration") == false {
+      UserDefaults.standard.set(UIDevice.current.name, forKey: "userID")
+      UserDefaults.standard.set(true, forKey: "userIDMigration")
+    }
+
     // Notifications setup
     UNUserNotificationCenter.current().delegate = self
     let center = UNUserNotificationCenter.current()
