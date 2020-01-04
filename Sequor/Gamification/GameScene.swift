@@ -5,10 +5,14 @@ class GameScene: SKScene {
     private var treeNode: SKNode!
     private var shakeAction: SKAction!
     private var treeLevel: Int
+    private var fruit: Bool
+    private var fruitTapCallback: () -> Void = {}
 
     /// Creates a scene with size and given tree level
-    init(size: CGSize, treeLevel: Int) {
+    init(size: CGSize, treeLevel: Int, fruit: Bool = false, fruitTapCallback: @escaping () -> Void = {}) {
         self.treeLevel = treeLevel
+        self.fruit = fruit
+        self.fruitTapCallback = fruitTapCallback
         super.init(size: size)
     }
 
@@ -48,20 +52,30 @@ class GameScene: SKScene {
         // Create Tree
         treeNode = TreeFactory.createTree(level: treeLevel)
         treeNode.position = CGPoint(x: size.width*0.5, y: size.height*0.15)
-        addChild(treeNode!)
+
+        // Add coupon fruit to Tree
+        if fruit {
+            treeNode = FruitFactory.addFruit(to: treeNode, withLevel: treeLevel)
+        }
+        addChild(treeNode)
     }
 
-    // Shake Tree When tapped
-    /*
-     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-     let touch = touches.first!
-     if treeNode.contains(touch.location(in: self)) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first!
+        let touchedNode = self.atPoint(touch.location(in: self))
 
-     // Shake the tree if it is touched
-     if let sprite = treeNode.childNode(withName: "//interactable") as? SKSpriteNode {
-     sprite.run(shakeAction)
-     }
-     }
-     }
-     */
+        if let name = touchedNode.name {
+            if name == "fruit" {
+                fruitTapCallback()
+            }
+        }
+
+        // Shake Tree When tapped
+//        if treeNode.contains(touch.location(in: self)) {
+//            // Shake the tree if it is touched
+//            if let sprite = treeNode.childNode(withName: "stem") as? SKSpriteNode {
+//                sprite.run(shakeAction)
+//            }
+//        }
+    }
 }

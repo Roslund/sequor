@@ -6,25 +6,26 @@ struct ProfileView: View {
   var body: some View {
     NavigationView {
       VStack {
-        Text("User Mocking").font(.system(size: 34))
-          .padding(.top, 24)
-          .padding(.bottom, 4)
-        
-        Text("This tab is used to mock user")
+        Text("User Mocking")
+          .font(.system(size: 34))
+          .padding(.bottom)
+
+        HStack {
+          Text("Enter decired userID")
+          Spacer()
+        }
+
+        TextField("", text: $appState.userID)
+          .textFieldStyle(RoundedBorderTextFieldStyle())
+
+        Text("The default userID is you device name. You are free to choose whatever ID you like. Your saved CO2 is assosiated with your user ID, If you change your ID you will lose your saved CO2. This tab is used for testing purpouses only.")
           .font(.caption)
-          .padding(.horizontal, 24)
-        
-        Spacer()
-        Text("Select user:")
-        Picker("User ID", selection: $appState.userID) {
-          Text("User 1").tag("000000000000000000000001")
-          Text("User 2").tag("000000000000000000000002")
-          Text("User 3").tag("000000000000000000000003")
-          Text("User 4").tag("000000000000000000000004")
-        }.pickerStyle(SegmentedPickerStyle())
+
         Spacer()
         
-      }.navigationBarTitle("Purchase", displayMode: .inline)
+      }
+      .padding()
+      .navigationBarTitle("Purchase", displayMode: .inline)
     }
   }
 }

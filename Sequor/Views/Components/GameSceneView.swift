@@ -2,9 +2,10 @@ import SwiftUI
 import SpriteKit
 
 struct GameSceneView: UIViewRepresentable {
-    //@EnvironmentObject var appState: AppState
     let size: CGSize
     let treeLevel: Int
+    let fruit: Bool
+    let fruitTapCallback: () -> Void
 
     func makeUIView(context: Context) -> SKView {
         // Let SwiftUI handle the sizing
@@ -12,7 +13,7 @@ struct GameSceneView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: SKView, context: Context) {
-         let scene = GameScene(size: size, treeLevel: treeLevel)
+        let scene = GameScene(size: size, treeLevel: treeLevel, fruit: fruit, fruitTapCallback: fruitTapCallback)
         uiView.presentScene(scene)
     }
 }

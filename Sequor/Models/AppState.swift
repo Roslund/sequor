@@ -9,7 +9,7 @@ final class AppState: ObservableObject {
   /// The userID of the user we want to mock
   var userID: String {
     get {
-      return UserDefaults.standard.string(forKey: "userID") ?? "000000000000000000000001"
+      return UserDefaults.standard.string(forKey: "userID") ?? UIDevice.current.name
     }
     set {
       UserDefaults.standard.set(newValue, forKey: "userID")
@@ -86,8 +86,8 @@ extension AppState {
   /// Represents the visual state the tree should be in
   var treeLevel: Int {
     switch totalCO2 {
-//    case 0:
-//      return 0
+    case 0:
+      return 0
     case ..<200:
       return 1
     case ..<400:
@@ -95,7 +95,7 @@ extension AppState {
     case ..<500:
       return 3
     default:
-      return 4
+      return 3
     }
   }
 }
@@ -108,6 +108,16 @@ extension AppState {
       if let wallet = try? JSONDecoder().decode(Wallet.self, from: data) {
         DispatchQueue.main.async {
           self.totalCO2 = wallet.totalCO2
+        }
+      }
+    }
+  }
+
+  func refreshCoupons() {
+    HTTP.request(url: Endpoint.allCouponsFor(userID: userID).url!) { data in
+      if let coupons = try? JSONDecoder().decode([Coupon].self, from: data) {
+        DispatchQueue.main.async {
+          self.coupons = coupons
         }
       }
     }
