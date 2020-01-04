@@ -1,6 +1,33 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Gamification/FruitFactory.swift",
+      "line": 4,
+      "symbol": "FruitFactory",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Gamification/FruitFactory.swift",
+      "line": 5,
+      "symbol": "FruitFactory.addFruit(to:withLevel:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Gamification/GameScene.swift",
+      "line": 63,
+      "symbol": "GameScene.touchesBegan(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/enari/Documents/Repos/Sequor/Sequor/Models/AppState.swift",
+      "line": 116,
+      "symbol": "AppState.refreshCoupons()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
   ],
   "source_directory": "/Users/enari/Documents/Repos/Sequor"
 }
