@@ -112,4 +112,14 @@ extension AppState {
       }
     }
   }
+
+  func refreshCoupons() {
+    HTTP.request(url: Endpoint.allCouponsFor(userID: userID).url!) { data in
+      if let coupons = try? JSONDecoder().decode([Coupon].self, from: data) {
+        DispatchQueue.main.async {
+          self.coupons = coupons
+        }
+      }
+    }
+  }
 }

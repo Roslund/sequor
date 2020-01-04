@@ -5,11 +5,13 @@ class GameScene: SKScene {
     private var treeNode: SKNode!
     private var shakeAction: SKAction!
     private var treeLevel: Int
+    private var fruit: Bool
     private var fruitTapCallback: () -> Void = {}
 
     /// Creates a scene with size and given tree level
-    init(size: CGSize, treeLevel: Int, fruitTapCallback: @escaping () -> Void = {}) {
+    init(size: CGSize, treeLevel: Int, fruit: Bool = false, fruitTapCallback: @escaping () -> Void = {}) {
         self.treeLevel = treeLevel
+        self.fruit = fruit
         self.fruitTapCallback = fruitTapCallback
         super.init(size: size)
     }
@@ -50,7 +52,12 @@ class GameScene: SKScene {
         // Create Tree
         treeNode = TreeFactory.createTree(level: treeLevel)
         treeNode.position = CGPoint(x: size.width*0.5, y: size.height*0.15)
-        addChild(FruitFactory.addFruit(to: treeNode, withLevel: treeLevel))
+
+        // Add coupon fruit to Tree
+        if fruit {
+            treeNode = FruitFactory.addFruit(to: treeNode, withLevel: treeLevel)
+        }
+        addChild(treeNode)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
