@@ -2,14 +2,19 @@ import SwiftUI
 
 struct CouponView: View {
   let coupon: Coupon
+  let dateFormatter = DateFormatter()
+
+  init(coupon: Coupon) {
+    self.coupon = coupon
+    dateFormatter.dateFormat = "DD MMM YYYY"
+  }
   
   var body: some View {
     HStack {
       Text("\(coupon.discountPercentage)%")
         .fontWeight(.heavy)
         .font(.system(size: 40))
-        // FIXME: The spasing is based on the width of the text,
-        // This becomes messed up when rotating. compare 1% discount to 100%.
+        .frame(width: 95, alignment: .center) // For fixing spacing
         .padding(.horizontal, -8)
         .rotationEffect(Angle(degrees: -90))
       
@@ -23,7 +28,7 @@ struct CouponView: View {
           .foregroundColor(.white)
         
         Spacer()
-        Text("VALID UNTIL: 31 Dec 2019")
+        Text("VALID UNTIL: \(dateFormatter.string(from: coupon.expiration))")
           .font(.caption)
           .foregroundColor(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
           .fontWeight(.bold)
