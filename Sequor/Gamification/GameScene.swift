@@ -60,6 +60,8 @@ class GameScene: SKScene {
         addChild(treeNode)
     }
 
+    /// Delecate method for handling user input
+    /// Currenly hooks up the callback event for the coupon fruit.
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
         let touchedNode = self.atPoint(touch.location(in: self))

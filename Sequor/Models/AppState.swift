@@ -113,6 +113,7 @@ extension AppState {
     }
   }
 
+  /// Fetches the coupons from the backend and updates the local state.
   func refreshCoupons() {
     HTTP.request(url: Endpoint.allCouponsFor(userID: userID).url!) { data in
       if let coupons = try? JSONDecoder().decode([Coupon].self, from: data) {

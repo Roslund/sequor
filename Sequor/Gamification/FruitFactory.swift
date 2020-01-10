@@ -1,7 +1,12 @@
 import Foundation
 import SpriteKit
 
+/// Contains factory metod for adding fruit to trees of different *levels*
 enum FruitFactory {
+    /// Adds a fruit to a tree of the given level
+    /// - parameter tree: the tree to add the fruit to
+    /// - parameter level: level of the tree
+    /// - returns: a tree with a fruit
     static func addFruit(to tree: SKNode, withLevel level: Int) -> SKNode {
         let scaleAction1 = TreeFactory.createScaleAction(scaleAmount: 1.1, duration: 12, loop: true)
         let fruit = SKSpriteNode(imageNamed: "fruit")

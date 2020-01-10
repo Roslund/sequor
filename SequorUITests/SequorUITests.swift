@@ -38,6 +38,24 @@ class SequorUITests: XCTestCase {
     app.navigationBars["Purchase"].buttons["square.and.arrow.up"].tap()
   }
 
+  func testClickFruit() {
+    let app = XCUIApplication()
+    app.launch()
+
+    app.tabBars.buttons["Profile"].tap()
+    
+    let textField = app.textFields["UserID Text Field"]
+    textField.press(forDuration: 1.5)
+    textField.typeText(String(XCUIKeyboardKey.delete.rawValue))
+    textField.typeText("Test1")
+    textField.typeText(String(XCUIKeyboardKey.return.rawValue))
+    
+    app.tabBars.buttons["Dashboard"].tap()
+
+    // It is impossible to actually tap the fruit thorught the accessability API...
+    // So I'm just going to ignore it  \_(x.x)_/
+  }
+
   func testLaunchPerformance() {
     if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
       // This measures how long it takes to launch your application.
