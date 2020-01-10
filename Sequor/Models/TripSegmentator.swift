@@ -154,6 +154,13 @@ final class TripSegmentator: NSObject, ObservableObject, CLLocationManagerDelega
             trips = []
         }
 
+        // Set an end date to the last trip if it does not have any.
+        // This would appen it the ticket expires (or the user manualy invalidates a ticket)
+        // while the user is automotive.
+        if trips.last != nil && trips.last?.endDate == nil {
+            self.trips[self.trips.count-1].endDate = Date()
+        }
+
         return trips
     }
 }
