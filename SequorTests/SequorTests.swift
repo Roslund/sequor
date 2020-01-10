@@ -16,6 +16,15 @@ class SequorTests: XCTestCase {
     }
   }
 
+  func testFruitFactory() {
+    for i in [2, 3] {
+      let tree = FruitFactory.addFruit(to: TreeFactory.createTree(level: i), withLevel: i)
+      let fruit = tree.childNode(withName: "//fruit")
+
+      XCTAssertNotNil(fruit)
+    }
+  }
+
   func testAppState() {
     let appState = AppState()
     appState.activateTicket()
