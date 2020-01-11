@@ -14,8 +14,6 @@ struct DashboardView: View {
                           fruit: !self.appState.coupons.isEmpty,
                           fruitTapCallback: {
                             self.showingSheet.toggle()
-                            let generator = UIImpactFeedbackGenerator(style: .soft)
-                            generator.impactOccurred()
             })
           }
           VStack {

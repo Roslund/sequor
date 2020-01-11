@@ -42,6 +42,10 @@
 		ADCD0AE523A03F870038114F /* TreeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCD0AE323A03F870038114F /* TreeFactory.swift */; };
 		ADCD0AE623A03F870038114F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCD0AE423A03F870038114F /* GameScene.swift */; };
 		ADCD0AE823A03FFC0038114F /* GameSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCD0AE723A03FFC0038114F /* GameSceneView.swift */; };
+		ADD0586023CA04E900AEAE5A /* fruit_effect1.sks in Resources */ = {isa = PBXBuildFile; fileRef = ADD0585D23CA04E900AEAE5A /* fruit_effect1.sks */; };
+		ADD0586123CA04E900AEAE5A /* fruit_effect2.sks in Resources */ = {isa = PBXBuildFile; fileRef = ADD0585E23CA04E900AEAE5A /* fruit_effect2.sks */; };
+		ADD0586223CA04E900AEAE5A /* fruit_effect3.sks in Resources */ = {isa = PBXBuildFile; fileRef = ADD0585F23CA04E900AEAE5A /* fruit_effect3.sks */; };
+		ADD0586423CA125B00AEAE5A /* boom.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ADD0586323CA125B00AEAE5A /* boom.mp3 */; };
 		ADD8B71D237B0C9F00D8DD55 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD8B71C237B0C9F00D8DD55 /* AppState.swift */; };
 		ADD8B71F237B0DDD00D8DD55 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD8B71E237B0DDD00D8DD55 /* Profile.swift */; };
 		ADD8B723237B4ECF00D8DD55 /* RelativeTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD8B722237B4ECF00D8DD55 /* RelativeTime.swift */; };
@@ -108,6 +112,10 @@
 		ADCD0AE323A03F870038114F /* TreeFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreeFactory.swift; sourceTree = "<group>"; };
 		ADCD0AE423A03F870038114F /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		ADCD0AE723A03FFC0038114F /* GameSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneView.swift; sourceTree = "<group>"; };
+		ADD0585D23CA04E900AEAE5A /* fruit_effect1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = fruit_effect1.sks; sourceTree = "<group>"; };
+		ADD0585E23CA04E900AEAE5A /* fruit_effect2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = fruit_effect2.sks; sourceTree = "<group>"; };
+		ADD0585F23CA04E900AEAE5A /* fruit_effect3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = fruit_effect3.sks; sourceTree = "<group>"; };
+		ADD0586323CA125B00AEAE5A /* boom.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = boom.mp3; sourceTree = "<group>"; };
 		ADD8B71C237B0C9F00D8DD55 /* AppState.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; tabWidth = 2; };
 		ADD8B71E237B0DDD00D8DD55 /* Profile.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; tabWidth = 2; };
 		ADD8B722237B4ECF00D8DD55 /* RelativeTime.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = RelativeTime.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -281,6 +289,10 @@
 		ADCD0AE223A03F040038114F /* Gamification */ = {
 			isa = PBXGroup;
 			children = (
+				ADD0586323CA125B00AEAE5A /* boom.mp3 */,
+				ADD0585D23CA04E900AEAE5A /* fruit_effect1.sks */,
+				ADD0585E23CA04E900AEAE5A /* fruit_effect2.sks */,
+				ADD0585F23CA04E900AEAE5A /* fruit_effect3.sks */,
 				ADCD0AE423A03F870038114F /* GameScene.swift */,
 				ADCD0AE323A03F870038114F /* TreeFactory.swift */,
 				ADAFFEA623BF69B20013E5B8 /* FruitFactory.swift */,
@@ -427,9 +439,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADD0586423CA125B00AEAE5A /* boom.mp3 in Resources */,
 				AD1F0626236760CD00F74D9A /* LaunchScreen.storyboard in Resources */,
+				ADD0586223CA04E900AEAE5A /* fruit_effect3.sks in Resources */,
 				AD1F0623236760CD00F74D9A /* Preview Assets.xcassets in Resources */,
 				AD1F0620236760CD00F74D9A /* Assets.xcassets in Resources */,
+				ADD0586123CA04E900AEAE5A /* fruit_effect2.sks in Resources */,
+				ADD0586023CA04E900AEAE5A /* fruit_effect1.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,7 +694,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Sequor/Sequor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"Sequor/Preview Content\"";
 				DEVELOPMENT_TEAM = M5QH7FM2T9;
 				ENABLE_PREVIEWS = YES;
@@ -701,7 +717,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Sequor/Sequor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"Sequor/Preview Content\"";
 				DEVELOPMENT_TEAM = M5QH7FM2T9;
 				ENABLE_PREVIEWS = YES;

@@ -1,4 +1,5 @@
 import SpriteKit
+import AVFoundation
 
 /// GameScene with the gamification tree
 class GameScene: SKScene {
@@ -7,12 +8,19 @@ class GameScene: SKScene {
     private var treeLevel: Int
     private var fruit: Bool
     private var fruitTapCallback: () -> Void = {}
+    /// For playing soundeffects when the fruit explodes
+    private var audioPlayer: AVAudioPlayer?
 
     /// Creates a scene with size and given tree level
     init(size: CGSize, treeLevel: Int, fruit: Bool = false, fruitTapCallback: @escaping () -> Void = {}) {
         self.treeLevel = treeLevel
         self.fruit = fruit
         self.fruitTapCallback = fruitTapCallback
+
+        let coinSound = Bundle.main.path(forResource: "boom", ofType: "mp3")
+        self.audioPlayer = try? AVAudioPlayer(contentsOf: URL(fileURLWithPath: coinSound!))
+        self.audioPlayer?.prepareToPlay()
+
         super.init(size: size)
     }
 
@@ -60,6 +68,20 @@ class GameScene: SKScene {
         addChild(treeNode)
     }
 
+    /// Removes the fruit with an explosion
+    func removeFruit() {
+        if let fruit = treeNode.childNode(withName: "//fruit") {
+            if let parent = fruit.parent {
+                audioPlayer?.play()
+                let generator = UIImpactFeedbackGenerator(style: .heavy)
+                generator.impactOccurred()
+                //AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+                parent.addChild(FruitFactory.createFruitExplosionEffect()!)
+                fruit.removeFromParent()
+            }
+        }
+    }
+
     /// Delecate method for handling user input
     /// Currenly hooks up the callback event for the coupon fruit.
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -68,7 +90,12 @@ class GameScene: SKScene {
 
         if let name = touchedNode.name {
             if name == "fruit" {
-                fruitTapCallback()
+                // This is not ideal, causes visual glitches.
+                // However this is the only way to achive this effect with swiftUI at the momement.
+                removeFruit()
+                DispatchQueue.main.asyncAfter(deadline: .now()+0.8) {
+                    self.fruitTapCallback()
+                }
             }
         }
 
