@@ -31,4 +31,25 @@ enum FruitFactory {
 
         return tree
     }
+
+    /// Creates an explosion effect
+    static func createFruitExplosionEffect() -> SKNode? {
+        let effect = SKNode()
+
+        let e1 = SKEmitterNode(fileNamed: "fruit_effect1.sks")
+        effect.addChild(e1!)
+
+        let e2 = SKEmitterNode(fileNamed: "fruit_effect2.sks")
+        effect.addChild(e2!)
+
+        let e3 = SKEmitterNode(fileNamed: "fruit_effect3.sks")
+        effect.addChild(e3!)
+
+        effect.setScale(5)
+
+        // Remove effect after duration
+        effect.run(SKAction.sequence([SKAction.wait(forDuration: 2.5), SKAction.removeFromParent()]))
+
+        return effect
+    }
 }
