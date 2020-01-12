@@ -16,11 +16,12 @@
 		AD18F0502385358300F3D1B8 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD18F04F2385358300F3D1B8 /* Trip.swift */; };
 		AD1F061A236760CC00F74D9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F0619236760CC00F74D9A /* AppDelegate.swift */; };
 		AD1F061C236760CC00F74D9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F061B236760CC00F74D9A /* SceneDelegate.swift */; };
-		AD1F061E236760CC00F74D9A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F061D236760CC00F74D9A /* HomeView.swift */; };
+		AD1F061E236760CC00F74D9A /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F061D236760CC00F74D9A /* TabView.swift */; };
 		AD1F0620236760CD00F74D9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD1F061F236760CD00F74D9A /* Assets.xcassets */; };
 		AD1F0623236760CD00F74D9A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD1F0622236760CD00F74D9A /* Preview Assets.xcassets */; };
 		AD1F0626236760CD00F74D9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD1F0624236760CD00F74D9A /* LaunchScreen.storyboard */; };
 		AD1F063C236760CD00F74D9A /* SequorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1F063B236760CD00F74D9A /* SequorUITests.swift */; };
+		AD300F2723CB41E900470E45 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD300F2623CB41E900470E45 /* HomeView.swift */; };
 		AD34F9A9239FB0A100B78DAA /* TripSegmentator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD34F9A8239FB0A100B78DAA /* TripSegmentator.swift */; };
 		AD7E5A5A2399147400A22B7C /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7E5A592399147400A22B7C /* NetworkTests.swift */; };
 		AD7FAB06239FA9DE002EAAEB /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD114B672378A5E400313515 /* MapView.swift */; };
@@ -85,7 +86,7 @@
 		AD1F0616236760CC00F74D9A /* Sequor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sequor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD1F0619236760CC00F74D9A /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AD1F061B236760CC00F74D9A /* SceneDelegate.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; tabWidth = 2; };
-		AD1F061D236760CC00F74D9A /* HomeView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; tabWidth = 2; };
+		AD1F061D236760CC00F74D9A /* TabView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AD1F061F236760CD00F74D9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD1F0622236760CD00F74D9A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AD1F0625236760CD00F74D9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,6 +99,7 @@
 		AD1F063D236760CD00F74D9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD1F0649236761BD00F74D9A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AD2A2FF723A5218A0052EF0E /* Sequor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sequor.entitlements; sourceTree = "<group>"; };
+		AD300F2623CB41E900470E45 /* HomeView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		AD34F9A8239FB0A100B78DAA /* TripSegmentator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripSegmentator.swift; sourceTree = "<group>"; };
 		AD7E5A592399147400A22B7C /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		ADA166ED238430E700C53998 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
@@ -250,7 +252,8 @@
 			children = (
 				ADA166EC238430D800C53998 /* Components */,
 				ADDFE16C23748F4B007BD2A8 /* CouponView.swift */,
-				AD1F061D236760CC00F74D9A /* HomeView.swift */,
+				AD1F061D236760CC00F74D9A /* TabView.swift */,
+				AD300F2623CB41E900470E45 /* HomeView.swift */,
 				ADBEB00823743CB9001534CD /* DashboardView.swift */,
 				ADBEB00C2374423D001534CD /* PurchaseView.swift */,
 				ADD8B71E237B0DDD00D8DD55 /* Profile.swift */,
@@ -493,6 +496,7 @@
 				ADF9C54123A554C000FB342E /* Wallet.swift in Sources */,
 				ADECEB142375AAD70097B726 /* Ticket.swift in Sources */,
 				ADD8B723237B4ECF00D8DD55 /* RelativeTime.swift in Sources */,
+				AD300F2723CB41E900470E45 /* HomeView.swift in Sources */,
 				ADC2A22B238714B10096F1ED /* HTTP.swift in Sources */,
 				ADD8B71D237B0C9F00D8DD55 /* AppState.swift in Sources */,
 				AD34F9A9239FB0A100B78DAA /* TripSegmentator.swift in Sources */,
@@ -509,7 +513,7 @@
 				ADA166EE238430E700C53998 /* ActivityView.swift in Sources */,
 				ADCD0AE823A03FFC0038114F /* GameSceneView.swift in Sources */,
 				AD1F061C236760CC00F74D9A /* SceneDelegate.swift in Sources */,
-				AD1F061E236760CC00F74D9A /* HomeView.swift in Sources */,
+				AD1F061E236760CC00F74D9A /* TabView.swift in Sources */,
 				ADCD0AE523A03F870038114F /* TreeFactory.swift in Sources */,
 				AD18F0502385358300F3D1B8 /* Trip.swift in Sources */,
 				ADCD0AE023A02E260038114F /* +CMMotionActivity.swift in Sources */,
@@ -694,7 +698,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Sequor/Sequor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"Sequor/Preview Content\"";
 				DEVELOPMENT_TEAM = M5QH7FM2T9;
 				ENABLE_PREVIEWS = YES;
@@ -717,7 +721,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Sequor/Sequor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"Sequor/Preview Content\"";
 				DEVELOPMENT_TEAM = M5QH7FM2T9;
 				ENABLE_PREVIEWS = YES;
