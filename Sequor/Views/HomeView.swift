@@ -1,45 +1,41 @@
 import SwiftUI
 
 struct HomeView: View {
+  @EnvironmentObject var appState: AppState
   @EnvironmentObject var tripSegmentator: TripSegmentator
-  @State private var selection = 2
-  
+  @State private var showActivitySheet = false
+
   var body: some View {
-    TabView(selection: $selection) {
-      Text("Home View").tabItem {
-        Image(systemName: "house")
-        Text("Home")
-      }.tag(1)
-      PurchaseView().tabItem {
-        Image(systemName: "cart")
-        Text("Purchase")
-      }.tag(2)
-      DashboardView().tabItem {
-        Image(systemName: "cloud")
-        Text("Dashboard")
-      }.tag(3)
-      MapView(tripSegmentator: tripSegmentator).edgesIgnoringSafeArea(.vertical).tabItem {
-        Image(systemName: "arrowtriangle.up")
-        Text("Discovery")
-      }.tag(4)
-      ProfileView().tabItem {
-        Image(systemName: "person")
-        Text("Profile")
-      }.tag(5)
+    NavigationView {
+      VStack(alignment: .leading) {
+        if appState.activeTicket != nil {
+            Text("Ticket.ID: \(appState.activeTicket!.uuid)")
+            Text("Ticket.experation: \(ISO8601DateFormatter().string(from: appState.activeTicket!.expiration))")
+        }
+        Text("Activity: \(tripSegmentator.activity.rawValue)")
+      }
+      .navigationBarTitle("Home", displayMode: .inline)
+      .navigationBarItems(trailing:
+        Button(action: {
+          // Haptic feedback
+          let generator = UIImpactFeedbackGenerator(style: .heavy)
+          generator.impactOccurred()
+          self.showActivitySheet = true
+        },
+               label: {
+                Image(systemName: "square.and.arrow.up").resizable().font(.system(size: 25)).padding(.trailing, 12)
+        }))
+        .sheet(isPresented: $showActivitySheet) {
+          ActivityView(activityItems: [self.tripSegmentator.trips.asJSONString()], applicationActivities: nil)
+      }
+
     }
-    .accentColor(.green)
-    .edgesIgnoringSafeArea(.top)
-  }
-  
-  init() {
-    // Probably not the best way to do this, but it works and sets it for all views
-    UINavigationBar.appearance().backgroundColor = .green
   }
 }
 
 struct HomeView_Previews: PreviewProvider {
   static var previews: some View {
-    HomeView()
+    PurchaseView()
       .environmentObject(AppState())
       .environmentObject(TripSegmentator())
   }
