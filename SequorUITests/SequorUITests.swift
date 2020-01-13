@@ -34,8 +34,8 @@ class SequorUITests: XCTestCase {
     let app = XCUIApplication()
     app.launch()
 
-    app.tabBars.buttons["Purchase"].tap()
-    app.navigationBars["Purchase"].buttons["square.and.arrow.up"].tap()
+    app.tabBars.buttons["Home"].tap()
+    app.navigationBars["Home"].buttons["square.and.arrow.up"].tap()
   }
 
   func testClickFruit() {
