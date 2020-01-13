@@ -23,7 +23,7 @@ struct DashboardView: View {
             Text("\(appState.totalCO2) KG CO₂")
               .font(.largeTitle)
               .fontWeight(.heavy)
-            Text("By taking public transprot")
+            Text("By taking public transport")
               .font(.headline)
             Spacer()
             }.popover(isPresented: $showingSheet) {
