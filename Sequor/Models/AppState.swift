@@ -107,7 +107,7 @@ extension AppState {
     HTTP.request(url: Endpoint.walletFor(userID: userID).url!) { data in
       if let wallet = try? JSONDecoder().decode(Wallet.self, from: data) {
         DispatchQueue.main.async {
-          self.totalCO2 = wallet.totalCO2
+          self.totalCO2 = Int(wallet.totalCO2)
         }
       }
     }
